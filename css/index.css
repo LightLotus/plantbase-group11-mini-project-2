@@ -38,7 +38,7 @@
   list-style-type: none;
 }
 
-.nav-link-container li a,
+.nav-link-container .nav-link-items a,
 .nav-sign-in li a,
 .useful-links-col li a,
 .footer-social-media-icons span a {
@@ -48,8 +48,12 @@
   transition: 0.3s;
 }
 
-.nav-link-container li a {
-  margin: 0 1.5rem;
+.nav-link-container .nav-link-items a {
+  padding: 0 1.5rem;
+}
+
+.hamburger-toggle {
+  display: none;
 }
 
 .nav-sign-in {
@@ -69,9 +73,27 @@
   opacity: 50%;
 }
 
-.nav-link-sign-in li {
+.shop-items {
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 20vw;
 }
 
+.shop-items span {
+  display: block;
+}
+
+.shop-items span a {
+  opacity: 0.5;
+  transition: cubic-bezier(1, 0, 0, 1) 0.3s;
+}
+
+.shop-items span a:hover,
+.shop-items span a:focus,
+.shop-items span a:active {
+  color: #32502e;
+  opacity: 1;
+}
 /* carousel section */
 .carousel-inner img {
   width: 100%;
@@ -341,7 +363,7 @@ footer {
 
 .social-media-col .accredited-payments img {
   display: inline-block;
-  width: 4rem;
+  width: 3rem;
   margin-right: 1rem;
 }
 
@@ -349,4 +371,96 @@ footer {
   opacity: 0.8;
   color: #212121;
   font-size: 0.9rem;
+  margin-bottom: 0;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* mobile view */
+
+@media (max-width: 800px) {
+  /* navbar section mobile */
+  .hamburger-toggle {
+    border: none;
+    background-color: transparent;
+    display: block;
+  }
+
+  .hamburger-toggle span i {
+    font-size: 2rem;
+  }
+
+  .nav-link-container,
+  .nav-sign-in {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .nav-sign-in span {
+    display: none;
+  }
+
+  .nav-sign-in {
+    padding: 0;
+  }
+
+  .nav-link-container .nav-link-items a,
+  .nav-sign-in li a,
+  form {
+    margin: 0.5rem 0;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  /* footer section mobile */
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter-container form {
+    width: 100%;
+  }
+
+  .newsletter-container .newsletter-input,
+  .newsletter-container .newsletter-btn {
+    width: 100%;
+  }
+
+  .footer-content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-us-col,
+  .social-media-col {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  div.footer-social-media-icons {
+    margin: 0 auto;
+  }
+
+  div.accredited-payments-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .social-media-col .accredited-payments img {
+    margin: 0;
+  }
+
+  p.footer-content-label {
+    text-align: center;
+  }
 }

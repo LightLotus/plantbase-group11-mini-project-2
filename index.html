@@ -23,8 +23,11 @@
   <body>
     <nav class="navbar navbar-expand-lg py-4">
       <div class="nav-container container-fluid p-0">
+        <a class="navbar-brand" href="#"
+          ><img id="logo" src="./images/plantbase-logo.svg" alt=""
+        /></a>
         <button
-          class="navbar-toggler"
+          class="hamburger-toggle"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -32,17 +35,14 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span><i class="fa-solid fa-bars"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a class="navbar-brand" href="#"
-            ><img id="logo" src="./images/plantbase-logo.svg" alt=""
-          /></a>
           <ul class="nav-link-container mx-auto mb-2 mb-lg-0">
-            <li>
+            <li class="nav-link-items">
               <a aria-current="page" href="#">Homepage</a>
             </li>
-            <li class="dropdown">
+            <li class="dropdown nav-link-items">
               <a
                 class="dropdown-toggle"
                 href="#"
@@ -52,25 +52,50 @@
               >
                 Shop
               </a>
-              <ul class="dropdown-menu shadow p-3 mb-5 bg-body rounded">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+              <div class="shop-items dropdown-menu">
+                <span><a href="#">All Plants</a></span>
+                <span><hr class="dropdown-divider" /></span>
+                <span>
+                  <a href="#">Aesthetic Indoor Plants</a>
+                </span>
+                <span><a href="#">Aglaonema</a></span>
+                <span><a href="#">Calathea</a></span>
+                <span>
+                  <a href="#">Flowering Plants</a>
+                </span>
+                <span><a href="#">Fruit Bearing</a></span>
+                <span><hr class="dropdown-divider" /></span>
+                <span><a href="#">Hanging Plants</a></span>
+                <span><a href="#">Herbs</a></span>
+                <span><a href="#">Peperomia</a></span>
+                <span><a href="#">Philodendron</a></span>
+                <span><a href="#">Pothos</a></span>
+                <span><hr class="dropdown-divider" /></span>
+                <span><a href="#">Rare Alert</a></span>
+                <span>
+                  <a href="#">Table Top</a>
+                </span>
+                <span>
+                  <a href="#">Promos</a>
+                </span>
+                <span>
+                  <a href="#">Bundles</a>
+                </span>
+                <span>
+                  <a href="#">Buy One Take One Deals</a>
+                </span>
+              </div>
             </li>
-            <li>
+            <li class="nav-link-items">
               <a href="#">Blogs</a>
             </li>
-            <li>
+            <li class="nav-link-items">
               <a href="#">FAQs</a>
             </li>
-            <li>
+            <li class="nav-link-items">
               <a href="#">Plant Identifier</a>
             </li>
-            <li>
+            <li class="nav-link-items">
               <a href="#">Contact Us</a>
             </li>
           </ul>
@@ -84,16 +109,16 @@
               ><i class="fa-solid fa-magnifying-glass"></i
             ></span>
           </form>
+          <ul class="nav-sign-in mb-2 mb-lg-0">
+            <li>
+              <a href="#">Login</a>
+            </li>
+            <span>/</span>
+            <li>
+              <a href="#">Sign Up</a>
+            </li>
+          </ul>
         </div>
-        <ul class="nav-sign-in mb-2 mb-lg-0">
-          <li>
-            <a href="#">Login</a>
-          </li>
-          <span>/</span>
-          <li>
-            <a href="#">Sign Up</a>
-          </li>
-        </ul>
       </div>
     </nav>
     <div
@@ -389,13 +414,12 @@
         </div>
         <div class="footer-content-container">
           <div class="about-us-col">
-            <p>
+            <p class="about-us-description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <p class="copyright">Copyright &copy; 2022 | All Rights Reserved</p>
           </div>
           <div class="address-telephone-col">
             <ul>
@@ -439,17 +463,20 @@
             </div>
             <div class="accredited-payments">
               <p class="footer-content-label">ACCREDITED PAYMENT OPTIONS</p>
-              <img src="./images/GCah_2019.webp" alt="" />
-              <img src="./images/mastercard.png" alt="" />
-              <img src="./images/visa.png" alt="" />
-              <img
-                src="./images/COD_cash_on_delivery_shipping_payment_delivery-512.webp"
-                alt=""
-              />
+              <div class="accredited-payments-logo">
+                <img src="./images/GCah_2019.webp" alt="" />
+                <img src="./images/mastercard.png" alt="" />
+                <img src="./images/visa.png" alt="" />
+                <img
+                  src="./images/COD_cash_on_delivery_shipping_payment_delivery-512.webp"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <p class="copyright">Copyright &copy; 2022 | All Rights Reserved</p>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
