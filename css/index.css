@@ -3,6 +3,8 @@
 * {
   font-family: "Lato", sans-serif;
   font-size: 14px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -154,7 +156,6 @@ h5 {
 }
 
 .plant-identifier-wrapper {
-  width: 50%;
   margin: 10rem auto 0;
 }
 
@@ -416,6 +417,71 @@ footer {
 
   .dropdown-menu {
     width: 100%;
+  }
+
+  /* about us section mobile */
+  div.about-us-wrapper,
+  div.service-features {
+    grid-template-columns: 1fr;
+    margin: 4rem 2rem;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  div.about-us-text {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .about-us-image img {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  /* service features mobile*/
+  /* plant identifier section mobile*/
+  div.plant-identifier-wrapper {
+    margin: 4rem 2rem;
+    text-align: center;
+  }
+
+  .plant-identifier-title {
+    padding-top: 5rem;
+  }
+
+  .plant-identifier img[src="./images/leaf.svg"] {
+    top: -20%;
+    width: 6rem;
+  }
+
+  .plant-identifier img[src="./images/leaf-2.svg"] {
+    right: 0;
+    top: unset;
+    bottom: -40%;
+    width: 15%;
+  }
+
+  /* shop category section mobile*/
+  .shop-category-label {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 2rem;
+  }
+
+  .shop-category-items-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .show-all-category {
+    margin-bottom: 2rem;
+  }
+
+  /* blogs section mobile */
+
+  .blogs-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin: 0 2rem;
   }
 
   /* footer section mobile */
