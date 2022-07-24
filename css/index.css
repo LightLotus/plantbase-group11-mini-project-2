@@ -3,12 +3,15 @@
 * {
   font-family: "Lato", sans-serif;
   font-size: 14px;
+  box-sizing: border-box;
 }
 
 /* navbar section */
+.nav-container {
+  margin: 0 2rem;
+}
 #logo {
-  max-width: 10rem;
-  margin: 0 1rem;
+  max-width: 8rem;
 }
 
 .search-form {
@@ -30,15 +33,33 @@
 }
 
 .nav-link-container li,
-.nav-login-container li {
-  list-style: none;
+.nav-sign-in li,
+.footer-content-container ul li {
+  list-style-type: none;
+}
+
+.nav-link-container li a,
+.nav-sign-in li a,
+.useful-links-col li a,
+.footer-social-media-icons span a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
 }
 
 .nav-link-container li a {
-  display: inline-block;
-  text-decoration: none;
   margin: 0 1.5rem;
-  color: #000;
+}
+
+.nav-sign-in {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-sign-in span {
+  display: inline-block;
+  margin: 0 1.5rem;
 }
 
 .search-input {
@@ -46,6 +67,9 @@
   border-radius: 0.8rem;
   border: 1px solid #000;
   opacity: 50%;
+}
+
+.nav-link-sign-in li {
 }
 
 /* carousel section */
@@ -90,7 +114,7 @@ h5 {
 }
 
 .service-features-icon i {
-  color: #000;
+  color: #32502e;
   font-size: 4rem;
   display: inline-block;
   margin: 1rem 0;
@@ -116,7 +140,7 @@ h5 {
   color: #32502e;
 }
 
-.plant-identifier-wrapper a {
+.link-button {
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
@@ -124,11 +148,10 @@ h5 {
   padding: 0.8rem 1rem;
   margin: 1rem 0;
   display: inline-block;
-  border-radius: 1rem;
   transition: 0.3s;
 }
 
-.plant-identifier-wrapper a:hover {
+.link-button:hover {
   color: #32502e;
   background-color: #fff;
   border: 1px solid #32502e;
@@ -179,11 +202,151 @@ h5 {
 
 .shop-category-items-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 0 2rem;
 }
 
 .shop-category-items {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../images/kelsey-brown-2LlRY-bMmig-unsplash.jpg");
+  width: 100%;
+  height: 20rem;
+  background-image: url("https://images.unsplash.com/photo-1509069575671-3df40ce5307c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.shop-category-items .category-label {
+  text-transform: capitalize;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: auto;
+  height: 100%;
+  background-color: transparent;
+  color: transparent;
+  font-weight: bold;
+  padding-top: 4rem;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+.shop-category-items .category-label:active,
+.shop-category-items .category-label:hover,
+.shop-category-items .category-label:focus {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* blogs section */
+.blogs-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4rem;
+  margin: 0 2rem;
+}
+
+.blogs-container .blogs-items img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.blogs-container .blogs-items .blogs-links {
+  text-decoration: none;
+  color: #32502e;
+}
+
+.blog-date {
+  color: #32502e;
+}
+
+/* footer */
+.newsletter {
+  background-color: #ece7b4;
+  color: #32502e;
+  margin-top: 10rem;
+}
+
+.newsletter-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsletter-title {
+  font-weight: bold;
+}
+
+.newsletter form {
+  width: 50%;
+}
+
+.newsletter-btn {
+  border: 1px solid #32502e;
+  width: 10rem;
+  display: block;
+}
+
+.newsletter-input {
+  border: 1px solid #32502e;
+  padding: 0.8rem 1rem;
+  width: 70%;
+}
+
+/* footer section */
+footer {
+  background-color: #f3efcc;
+}
+
+.footer-container {
+  padding: 2rem;
+}
+
+.footer-content-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footer-logo-container {
+  margin-bottom: 1rem;
+}
+.footer-content-label {
+  color: #32502e;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-social-media-icons {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.footer-social-media-icons span i {
+  font-size: 2.5rem;
+  transition: 0.3s;
+}
+
+.useful-links-col li a:hover,
+.useful-links-col li a:focus,
+.useful-links-col li a:active,
+.footer-social-media-icons span i:hover,
+.footer-social-media-icons span i:focus,
+.footer-social-media-icons span i:active {
+  color: #32502e;
+}
+
+.social-media-col .accredited-payments .footer-content-label {
+  margin: 2rem 0 1rem;
+}
+
+.social-media-col .accredited-payments img {
+  display: inline-block;
+  width: 4rem;
+  margin-right: 1rem;
+}
+
+.copyright {
+  opacity: 0.8;
+  color: #212121;
+  font-size: 0.9rem;
 }
