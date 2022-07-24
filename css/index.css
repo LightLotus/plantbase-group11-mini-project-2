@@ -157,6 +157,8 @@ h5 {
 
 .plant-identifier-wrapper {
   margin: 10rem auto 0;
+  text-align: center;
+  width: 50vw;
 }
 
 .plant-identifier-title {
@@ -443,6 +445,7 @@ footer {
   div.plant-identifier-wrapper {
     margin: 4rem 2rem;
     text-align: center;
+    width: 90%;
   }
 
   .plant-identifier-title {
