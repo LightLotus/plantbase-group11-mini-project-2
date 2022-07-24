@@ -96,6 +96,7 @@
   color: #32502e;
   opacity: 1;
 }
+
 /* carousel section */
 .carousel-inner img {
   width: 100%;
@@ -391,7 +392,6 @@ footer {
 
   .hamburger-toggle span i {
     font-size: 2rem;
-    color: #fff;
   }
 
   .nav-link-container,
