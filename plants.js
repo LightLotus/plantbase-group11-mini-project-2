@@ -15,9 +15,8 @@
 			  
 			
 			  const res = response;
-			
 
-
+			  
 			  const allData = res.map((showAll)=>{
 				const commonIndex = showAll.common;
 
@@ -42,30 +41,32 @@
 			  })
 
 			  const category = res.map((showAll)=>{
-				return showAll.category;
+				return  showAll.category;
+				
 
 			  })
 
-			  console.log(category);
-			  const set1 = new Set(category)
-			  console.log(set1);
+			//   console.log(category);
+			//   const set1 = new Set(category)
+			//   const set2 = [...set1];
+			//   console.log(set2);
 			  
 
 			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length);i++){
-				console.log(allData[i])
+				// console.log(allData[i])
 				
 
 				const dataAll = allData[i];
-				const familyAll = familyName[i];
-				const latNames = latName[i];
+				// const familyAll = familyName[i];
+				// const latNames = latName[i];
 				const categories = category[i];
 				// const body = document.querySelector('body');
 				const newMainContainer = document.querySelector('.main-container');
 				const subContainer = document.createElement('div');
 				subContainer.classList.add('subContainer');
 
+				// console.log(dataAll);
 				
-
 
 
 			
@@ -118,12 +119,12 @@
 				// subContainer.append(categoryName);
 				// newMainContainer.append(subContainer);
 
+				// const categoryName = ()=>{
+				// 	if (categories === 'hanging'){
 
-				
-
-
-
-
+				// 	}
+				// }
+				// console.log(categories);
 
 				const cardPlant = document.createElement('div');
 				cardPlant.classList.add('card');
@@ -133,21 +134,21 @@
 				newImg.setAttribute('id', 'imageCard');
 				
 				newImg.src = `/image/${dataAll}.webp` 
+
+				const fig = document.createElement('figure');
+				fig.append(newImg);
 		
 
-				cardPlant.append(newImg);
+				cardPlant.append(fig);
 				cardPlant.append(subContainer);
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
 
 				// body.append(newMainContainer);
 
-				
 			  }
 			})
 			.catch(err => console.error(err));
-
-
 
 
 			function getRandomInt(min, max) {
@@ -163,7 +164,7 @@
 
 			  let mybutton = document.querySelector("#myBtn");
 			  let navbar = document.querySelector('.navbar')
-			//   let navbarContent = document.querySelector('.keychainify-checked')
+		
 			  
 			  // When the user scrolls down 20px from the top of the document, show the button
 			  window.onscroll = function() {scrollFunction()};
@@ -171,11 +172,11 @@
 			  function scrollFunction() {
 				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 				  mybutton.style.display = "block";
-					navbar.style.backgroundColor = "rgba(18, 78, 21, 0.96)";
+					navbar.style.backgroundColor = "white";
 					// navbar.style.color = "white";
 				} else {
 				  mybutton.style.display = "none";
-				  navbar.style.backgroundColor = "transparent";
+				//   navbar.style.backgroundColor = "transparent";
 				}
 			  }
 			  

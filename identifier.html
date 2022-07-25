@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="./css/index.css" />
+
+<title>Plant Identifier</title>
+</head>
+
+<body class="identifier">
+   <!-- navbar starts here -->
+   <nav class="navbar navbar-expand-lg py-4">
+    <div class="nav-container container-fluid p-0">
+      <a class="navbar-brand" href="#"
+        ><img id="logo" src="./images/plantbase-logo.svg" alt=""
+      /></a>
+      <button
+        class="hamburger-toggle"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav-link-container mx-auto mb-2 mb-lg-0">
+          <li class="nav-link-items">
+            <a aria-current="page" href="index.html">Homepage</a>
+          </li>
+          <li class="dropdown nav-link-items">
+            <a
+              class="dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Shop
+            </a>
+            <div class="shop-items dropdown-menu">
+              <span><a href="allplants.html">All Plants</a></span>
+              <span><hr class="dropdown-divider" /></span>
+              <span>
+                <a href="#">Aesthetic Indoor Plants</a>
+              </span>
+              <span><a href="#">Aglaonema</a></span>
+              <span><a href="#">Calathea</a></span>
+              <span>
+                <a href="#">Flowering Plants</a>
+              </span>
+              <span><a href="#">Fruit Bearing</a></span>
+              <span><hr class="dropdown-divider" /></span>
+              <span><a href="#">Hanging Plants</a></span>
+              <span><a href="#">Herbs</a></span>
+              <span><a href="#">Peperomia</a></span>
+              <span><a href="#">Philodendron</a></span>
+              <span><a href="#">Pothos</a></span>
+              <span><hr class="dropdown-divider" /></span>
+              <span><a href="#">Rare Alert</a></span>
+              <span>
+                <a href="#">Table Top</a>
+              </span>
+              <span>
+                <a href="#">Promos</a>
+              </span>
+              <span>
+                <a href="#">Bundles</a>
+              </span>
+              <span>
+                <a href="#">Buy One Take One Deals</a>
+              </span>
+            </div>
+          </li>
+          <li class="nav-link-items">
+            <a href="#">Blogs</a>
+          </li>
+          <li class="nav-link-items">
+            <a href="#">FAQs</a>
+          </li>
+          <li class="nav-link-items">
+            <a href="identifier.html">Plant Identifier</a>
+          </li>
+          <li class="nav-link-items">
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+        <form class="search-form d-flex" role="search">
+          <input
+            class="search-input me-2"
+            type="search"
+            placeholder="Search"
+          />
+          <span class="search-icon"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+        </form>
+        <ul class="nav-sign-in mb-2 mb-lg-0">
+          <li>
+            <a href="#">Login</a>
+          </li>
+          <span>/</span>
+          <li>
+            <a href="#">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar ends here -->
+
+  <h1>PLANT BASE IDENTIFIER</h1>
+
+  <div class="divForm">
+  <form class="search-form" >
+    <input type="file" multiple />
+    <button id="search-btn" type="button">Identify</button>
+  </form>
+</div>
+  
+  <hr>
+ <div class="main-container">
+
+
+ </div>
+<script type="text/javascript">
+  
+document.querySelector('#search-btn').onclick = function sendIdentification() {
+    const files = [...document.querySelector('input[type=file]').files];
+    const promises = files.map((file) => {
+      return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            const res = event.target.result;
+            console.log(res);
+            resolve(res);
+          }
+          reader.readAsDataURL(file)
+          
+       
+      })
+    })
+    
+    Promise.all(promises).then((base64files) => {
+      console.log(base64files)
+            
+      const data = {
+        api_key: 'okMbPdmE10p9YNGwgXRg57x5d1fGIubAPvS3AKBUGYBd1CaxgT',
+        // api_key: 'E9v6gnIZ1pVKmewFwQ61xQ9vbNfpmUXRDMdHy1qsrnJlhOAtSq',
+        images: base64files,
+        // modifiers docs: https://github.com/flowerchecker/Plant-id-API/wiki/Modifiers
+        modifiers: ["crops_fast", "similar_images"],
+        plant_language: "en",
+        // plant details docs: https://github.com/flowerchecker/Plant-id-API/wiki/Plant-details
+        plant_details: ["common_names",
+                        "url",
+                        "name_authority",
+                        "wiki_description",
+                        "taxonomy",
+                        "synonyms"],
+      };
+      
+      fetch('https://api.plant.id/v2/identify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        const dataImage = data.images[0].url;
+        const suggest = data.suggestions;
+        // const plantDetails = data.suggestions[0].plant_details;
+        // console.log(plantDetails);
+
+      
+        // map to get similar image
+        const newSuggest = suggest.map((plant)=>{
+          return plant.similar_images[0].url
+         
+        
+        })
+
+        // map to get plant names
+        const newplantName = suggest.map((plant)=>{
+          return plant.plant_name;
+        })
+
+        // map to get commom names
+        const newPlantDetails = suggest.map((details)=>{
+          return details.plant_details.common_names;
+        })
+
+        // this part is to view your local uploaded photo
+        // const div = document.querySelector('.main-container')
+        const divForm = document.querySelector('.divForm');
+        const cardImageDiv = document.createElement('div');
+        cardImageDiv.classList.add('card');
+
+       
+        
+     
+        const localImage = document.createElement('img');
+        localImage.classList.add('localImage');
+        localImage.src = dataImage;
+        cardImageDiv.append(localImage);
+        divForm.append(cardImageDiv);
+        // cardImage.append(localImageDiv);
+
+        for (let i=0; (i<newSuggest.length)&&(i<newplantName.length)&&(i<newPlantDetails.length); i++){
+          console.log(newSuggest[i])
+          console.log(newplantName[i])
+   
+
+          const getPlantName = newplantName[i];
+          const getimage = newSuggest[i];
+          const getPlantDetails = newPlantDetails[i];
+        
+          // const getPlantDetails = info;
+          const div = document.querySelector('.main-container')
+          const mainCardDiv = document.createElement('div')
+          mainCardDiv.classList.add('mainCardDiv')
+
+           // create a new div with a class of card
+           const cardDiv = document.createElement('div');
+          cardDiv.classList.add('card');
+
+          const pDiv = document.createElement('div')
+          const cardParagraph = document.createElement('p')
+
+          cardParagraph.classList.add('cardParagraphClass')
+          cardParagraph.innerHTML = getPlantName;
+
+          pDiv.append(cardParagraph);
+          
+          cardDiv.append(pDiv);
+
+           // plant details paragraph div
+           const mainPlantDetailsDiv = document.createElement('div')
+          mainPlantDetailsDiv.classList.add('mainPlantDetailsDiv')
+          const plantDetailsParagraph = document.createElement('p')
+          plantDetailsParagraph.classList.add('plantDetails')
+          plantDetailsParagraph.innerHTML = ('Common Names:' + ' ' + getPlantDetails);
+          mainPlantDetailsDiv.append(plantDetailsParagraph)
+
+         div.append(mainPlantDetailsDiv)
+
+          const image = document.createElement('img');
+          image.classList.add('image-url');
+          image.src=getimage;
+          const newAnchor = document.createElement('a');
+          newAnchor.href = newSuggest;
+          newAnchor.append(image);
+          cardDiv.append(newAnchor);
+          mainCardDiv.append(cardDiv);
+          div.append(mainCardDiv);
+
+
+
+    
+        }
+
+      
+     
+     
+
+ 
+        
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    })
+  
+};
+
+
+</script>
+</body>
+
+</html>
