@@ -534,3 +534,85 @@ footer {
     text-align: center;
   }
 }
+
+
+/* All Plants CSS c/o Gio  STARTS HERE*/
+
+.subContainer{
+  margin-top:0.75rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-right: 1rem;
+  line-height: 1rem;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card{
+  width: 18rem;
+  box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
+}
+
+#imageCard{
+  height: 20rem;
+}
+
+img .card-img-top{
+  width:100%;
+  height:100%;
+}
+
+.main-container{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left:1rem;
+  margin-right:1rem;
+  /* padding-left: 2rem; */
+  align-items: center;
+  justify-content:space-evenly;
+
+}
+
+.price{
+  padding-top: 0.3rem;
+  font-size: 1.25rem;
+  color:rgb(40, 107, 40);
+  padding-left: 1rem;
+}
+
+.commonName{
+  font-size: 1rem;
+}
+
+.priceAndFavoriteDiv{
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+  padding-right:1rem;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top{
+  position:fixed;
+  bottom:1.25rem;
+  right:1.25rem;
+  z-index:996;
+  /* font-size: 2rem;  */
+  /* padding:.75rem; */
+  /* border: 1px solid rgb(227, 79,38); */
+  color:rgb(4, 63, 7);
+  /* background-color: rgba(0,0,0,0.5); */
+  /* width:5.3rem; */
+  /* border-radius: 50%;   */
+}
+
+#myBtn:hover {
+color: rgb(106, 175, 133);
+
+}
+/* All Plants CSS c/o Gio  ENDS HERE*/
