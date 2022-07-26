@@ -611,4 +611,134 @@ img .card-img-top {
 #myBtn:hover {
   color: rgb(106, 175, 133);
 }
+<<<<<<< HEAD
 /* All Plants CSS c/o Gio  ENDS HERE*/
+=======
+
+.identifier .main-container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:space-evenly;
+    row-gap: 5rem;
+    column-gap: 2rem; 
+    padding-bottom: 5rem;; 
+}
+
+/* .identifier .navbar.navbar-expand{
+  padding-bottom:5rem;
+} */
+
+.identifier, h1{
+  text-align: center;
+  /* margin-top: 5rem; */
+  padding-bottom: 10rem;
+}
+
+
+.identifier .image-url{
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+}
+
+.identifier .mainCardDiv .card{
+  display:flex;
+  width:10rem;
+  margin-top: 2rem;
+  background-color:#32502e;
+  border-radius:0.3rem;
+  align-items:center;
+  justify-content: center;
+}
+
+
+
+.identifier .localImage{
+  width:100%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+.identifier .cardParagraphClass{
+  text-align: center;
+  color:#ece7b4;
+  padding-top: 0.5rem;
+
+}
+
+.identifier.card{
+display: flex;
+width:10rem;
+background-color:#32502e;
+border-radius:0.3rem;
+align-items:center;
+justify-content: center;
+margin-top: 3rem;
+
+}
+
+.identifier.mainPlantDetailsDiv{
+
+display:flex;
+flex-direction: row;
+gap: 3rem;
+justify-content: center;
+
+}
+
+.identifier.divForm{
+  /* padding-top:5rem; */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.identifier, #search-btn{
+background-color:#32502e;
+color:#fff;
+border-radius:0.3rem;
+}
+
+.identifier, #search-btn:hover{
+background-color:#fff;
+color:black;
+
+}
+
+
+.identifier, input[type=file]::file-selector-button{
+background-color:#32502e;
+border-radius:0.3rem;
+color:#fff;
+}
+
+
+.identifier, input[type=file]::file-selector-button:hover{
+background-color:#fff;
+color:black;
+}
+
+h1{
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+
+/* HOVER EFFECTS OF IMAGE */
+.card figure {
+	background: #01271f;
+}
+.card figure img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.card figure:hover img {
+	opacity: .5;
+}
+
+/* All Plants CSS c/o Gio  ENDS HERE*/
+>>>>>>> ff37903b16b5dc63f1c0d7a498a1545a0d409269
