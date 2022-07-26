@@ -149,18 +149,30 @@ h2 {
   object-fit: cover;
 }
 
+div.blogs-items {
+  margin-bottom: 2rem;
+}
+
+.blogs-description {
+  margin-bottom: 0;
+}
+
 .blogs-container .blogs-items .blogs-links {
   text-decoration: none;
   color: #32502e;
 }
 
-.blog-date {
+.blog-date, .recent-post {
   color: #32502e;
 }
 
 .blog-ads {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
+}
+
+.recent-post {
+  margin:  2rem 0;
 }
 
 .blog-ads::after {
@@ -181,6 +193,34 @@ h2 {
 
 .blog-ads .fs-2 {
   font-weight: bold;
+}
+
+p.title.fs-2 {
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+.blogs-other-topics-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+p.blogs-other-topics-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+.blogs-other-topics-item img {
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: cover;
+}
+
+.blogs-other-topics a {
+  text-decoration: none;
+  color: #000;
 }
 
 .blog-ads .link-button {
