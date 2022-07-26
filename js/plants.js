@@ -70,87 +70,87 @@
 				// console.log(categories);
 
 				// ***************this is for category display ********************************
-				const arrayCategory = {name:dataAll, category:categories};
+				// const arrayCategory = {name:dataAll, category:categories};
 			
-				if (arrayCategory.category === 'Hanging'){
-					const hangingCategory = arrayCategory;
+				// if (arrayCategory.category === 'Hanging'){
+				// 	const hangingCategory = arrayCategory;
 
-					// const cardhanging = document.createElement('div');
-					// cardhanging.classList.add('card');
+				// 	// const cardhanging = document.createElement('div');
+				// 	// cardhanging.classList.add('card');
 
-					// const newImghanging = document.createElement('img');
-					// newImghanging.classList.add('card-img-top');
-					// newImghanging.setAttribute('id', 'imageCard');
+				// 	// const newImghanging = document.createElement('img');
+				// 	// newImghanging.classList.add('card-img-top');
+				// 	// newImghanging.setAttribute('id', 'imageCard');
 				
-					// newImghanging.src = `/image/${dataAll}.webp` 
+				// 	// newImghanging.src = `/image/${dataAll}.webp` 
 
-					// const fig = document.createElement('figure');
-					// fig.append(newImghanging);
+				// 	// const fig = document.createElement('figure');
+				// 	// fig.append(newImghanging);
 
-					// cardhanging.append(fig);
-					// cardhanging.append(subContainer);
-					// cardPlant.append(newDiv);
-					// newMainContainer.append(cardPlant);
+				// 	// cardhanging.append(fig);
+				// 	// cardhanging.append(subContainer);
+				// 	// cardPlant.append(newDiv);
+				// 	// newMainContainer.append(cardPlant);
 
-					// console.log(hangingCategory);
-				}else if (arrayCategory.category === 'Fern'){
-					const fernCategory = arrayCategory;
-					// console.log(fernCategory);
-				}else if (arrayCategory.category === 'Bromeliad'){
-					const bromeliadCategory = arrayCategory;
-					// console.log(bromeliadCategory);
-				}else if (arrayCategory.category === 'Cactus & Succulent'){
-					const cactusCategory = arrayCategory;
-					// console.log(cactusCategory);
-				}else if (arrayCategory.category === 'Aglaonema'){
-					const aglaonemaCategory = arrayCategory;
-					// console.log(aglaonemaCategory);
-				}else if (arrayCategory.category === 'Flower'){
-					const flowerCategory = arrayCategory;
-					// console.log(flowerCategory);
-				}else if (arrayCategory.category === 'Foliage plant'){
-					const foliageCategory = arrayCategory;
-					// console.log(foliageCategory);
-				}else if (arrayCategory.category === 'Anthurium'){
-					const anthuriumCategory = arrayCategory;
-					// console.log(anthuriumCategory);
-				}else if (arrayCategory.category === 'Palm'){
-					const palmCategory = arrayCategory;
-					// console.log(palmCategory);
-				}else if (arrayCategory.category === 'Dieffenbachia'){
-					const dieffenbachiaCategory = arrayCategory;
-					// console.log(dieffenbachiaCategory);
-				}else if (arrayCategory.category === 'Dracaena'){
-					const dracaenaCategory = arrayCategory;
-					// console.log(dracaenaCategory);
-				}else if (arrayCategory.category === 'Ficus'){
-					const ficusCategory = arrayCategory;
-					// console.log(ficusCategory);
-				}else if (arrayCategory.category === 'Aralia'){
-					const araliaCategory = arrayCategory;
-					// console.log(araliaCategory);
-				}else if (arrayCategory.category === 'Philodendron'){
-					const philodendronCategory = arrayCategory;
-					// console.log(philodendronCategory);
-				}else if (arrayCategory.category === 'Grass'){
-					const grassCategory = arrayCategory;
-					// console.log(grassCategory);
-				}else if (arrayCategory.category === 'Topiairy'){
-					const topiairyCategory = arrayCategory;
-					// console.log(topiairyCategory);
-				}else if (arrayCategory.category === 'Sansevieria'){
-					const sansevieriaCategory = arrayCategory;
-					// console.log(sansevieriaCategory);
-				}else if (arrayCategory.category === 'Spathiphyllum'){
-					const spathiphyllumCategory = arrayCategory;
-					// console.log(spathiphyllumCategory);
-				}else if (arrayCategory.category === 'Schefflera'){
-					const scheffleraCategory = arrayCategory;
-					// console.log(scheffleraCategory);
-				}else if (arrayCategory.category === 'Other'){
-					const otherCategory = arrayCategory;
-					console.log(otherCategory);
-				}
+				// 	// console.log(hangingCategory);
+				// }else if (arrayCategory.category === 'Fern'){
+				// 	const fernCategory = arrayCategory;
+				// 	// console.log(fernCategory);
+				// }else if (arrayCategory.category === 'Bromeliad'){
+				// 	const bromeliadCategory = arrayCategory;
+				// 	// console.log(bromeliadCategory);
+				// }else if (arrayCategory.category === 'Cactus & Succulent'){
+				// 	const cactusCategory = arrayCategory;
+				// 	// console.log(cactusCategory);
+				// }else if (arrayCategory.category === 'Aglaonema'){
+				// 	const aglaonemaCategory = arrayCategory;
+				// 	// console.log(aglaonemaCategory);
+				// }else if (arrayCategory.category === 'Flower'){
+				// 	const flowerCategory = arrayCategory;
+				// 	// console.log(flowerCategory);
+				// }else if (arrayCategory.category === 'Foliage plant'){
+				// 	const foliageCategory = arrayCategory;
+				// 	// console.log(foliageCategory);
+				// }else if (arrayCategory.category === 'Anthurium'){
+				// 	const anthuriumCategory = arrayCategory;
+				// 	// console.log(anthuriumCategory);
+				// }else if (arrayCategory.category === 'Palm'){
+				// 	const palmCategory = arrayCategory;
+				// 	// console.log(palmCategory);
+				// }else if (arrayCategory.category === 'Dieffenbachia'){
+				// 	const dieffenbachiaCategory = arrayCategory;
+				// 	// console.log(dieffenbachiaCategory);
+				// }else if (arrayCategory.category === 'Dracaena'){
+				// 	const dracaenaCategory = arrayCategory;
+				// 	// console.log(dracaenaCategory);
+				// }else if (arrayCategory.category === 'Ficus'){
+				// 	const ficusCategory = arrayCategory;
+				// 	// console.log(ficusCategory);
+				// }else if (arrayCategory.category === 'Aralia'){
+				// 	const araliaCategory = arrayCategory;
+				// 	// console.log(araliaCategory);
+				// }else if (arrayCategory.category === 'Philodendron'){
+				// 	const philodendronCategory = arrayCategory;
+				// 	// console.log(philodendronCategory);
+				// }else if (arrayCategory.category === 'Grass'){
+				// 	const grassCategory = arrayCategory;
+				// 	// console.log(grassCategory);
+				// }else if (arrayCategory.category === 'Topiairy'){
+				// 	const topiairyCategory = arrayCategory;
+				// 	// console.log(topiairyCategory);
+				// }else if (arrayCategory.category === 'Sansevieria'){
+				// 	const sansevieriaCategory = arrayCategory;
+				// 	// console.log(sansevieriaCategory);
+				// }else if (arrayCategory.category === 'Spathiphyllum'){
+				// 	const spathiphyllumCategory = arrayCategory;
+				// 	// console.log(spathiphyllumCategory);
+				// }else if (arrayCategory.category === 'Schefflera'){
+				// 	const scheffleraCategory = arrayCategory;
+				// 	// console.log(scheffleraCategory);
+				// }else if (arrayCategory.category === 'Other'){
+				// 	const otherCategory = arrayCategory;
+				// 	console.log(otherCategory);
+				// }
 
 
 
