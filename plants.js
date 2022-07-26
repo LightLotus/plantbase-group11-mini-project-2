@@ -1,187 +1,157 @@
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "b7e21a7304msh9cbad96d4b859b2p17967cjsnaab2590c43b9",
+    "X-RapidAPI-Host": "house-plants.p.rapidapi.com",
+  },
+};
 
+fetch("https://house-plants.p.rapidapi.com/all", options)
+  .then((response) => response.json())
+  .then((response) => {
+    const res = response;
 
-		const options = {
-			method: 'GET',
-			headers: {
-			  'X-RapidAPI-Key': 'b7e21a7304msh9cbad96d4b859b2p17967cjsnaab2590c43b9',
-			  'X-RapidAPI-Host': 'house-plants.p.rapidapi.com'
-			}
-		  };
-		  
-		  fetch('https://house-plants.p.rapidapi.com/all', options)
-			.then(response => response.json())
-			.then(response => {
-			  
-			
-			  const res = response;
-			
+    const allData = res.map((showAll) => {
+      const commonIndex = showAll.common;
 
+      if (commonIndex[0] === "Chinese Evergreen") {
+        return commonIndex[1];
+      } else if (commonIndex[0] === commonIndex[0]) {
+        return commonIndex[0];
+      } else {
+        return commonIndex[0];
+      }
+    });
 
-			  const allData = res.map((showAll)=>{
-				const commonIndex = showAll.common;
+    const familyName = res.map((showAll) => {
+      return showAll.family;
+    });
 
-				if (commonIndex[0] === 'Chinese Evergreen'){
-					return commonIndex[1]
-				}else if(commonIndex[0]===commonIndex[0]){
-					return commonIndex[0]
-				}else{
-					return commonIndex[0]
-				}
-			   
-			  })
+    const latName = res.map((showAll) => {
+      return showAll.latin;
+    });
 
-			  const familyName = res.map((showAll)=>{
-				return showAll.family;
+    const category = res.map((showAll) => {
+      return showAll.category;
+    });
 
-			  })
+    console.log(category);
+    const set1 = new Set(category);
+    console.log(set1);
 
-			  const latName = res.map((showAll)=>{
-				return showAll.latin;
+    for (
+      let i = 0;
+      i < allData.length &&
+      i < familyName.length &&
+      i < latName.length &&
+      i < category.length;
+      i++
+    ) {
+      console.log(allData[i]);
 
-			  })
+      const dataAll = allData[i];
+      const familyAll = familyName[i];
+      const latNames = latName[i];
+      const categories = category[i];
+      // const body = document.querySelector('body');
+      const newMainContainer = document.querySelector(".main-container");
+      const subContainer = document.createElement("div");
+      subContainer.classList.add("subContainer");
 
-			  const category = res.map((showAll)=>{
-				return showAll.category;
-			  })
+      const newParagraph = document.createElement("p");
+      newParagraph.classList.add("commonName");
+      newParagraph.innerHTML = dataAll;
+      subContainer.append(newParagraph);
+      newMainContainer.append(subContainer);
 
-			  console.log(category);
-			  const set1 = new Set(category)
-			  console.log(set1);
-			  
+      const iconP = document.createElement("p");
+      iconP.classList.add("iconP");
+      iconP.innerHTML = '<i class="bi bi-cart-plus fa-2x"></i>';
+      subContainer.append(iconP);
 
-			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length);i++){
-				console.log(allData[i])
-				
+      const newDiv = document.createElement("div");
+      newDiv.classList.add("priceAndFavoriteDiv");
+      const price = document.createElement("p");
+      price.classList.add("price");
+      price.innerHTML = "₱ " + "" + getRandomInt(100, 300) + ".00";
+      newDiv.append(price);
 
-				const dataAll = allData[i];
-				const familyAll = familyName[i];
-				const latNames = latName[i];
-				const categories = category[i];
-				// const body = document.querySelector('body');
-				const newMainContainer = document.querySelector('.main-container');
-				const subContainer = document.createElement('div');
-				subContainer.classList.add('subContainer');
+      const iconHeart = document.createElement("p");
+      iconHeart.classList.add("iconHeart");
+      iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>';
+      newDiv.append(iconHeart);
 
-				
+      // const familyNames = document.createElement('p');
+      // familyNames.classList.add('familyName');
+      // familyNames.innerHTML = ('Family : ' + '' + familyAll);
+      // subContainer.append(familyNames);
+      // newMainContainer.append(subContainer);
 
+      // const latinName = document.createElement('p');
+      // latinName.classList.add('latinName');
+      // latinName.innerHTML = ('Latin : ' + '' + latNames);
+      // subContainer.append(latinName);
+      // newMainContainer.append(subContainer);
 
+      // const categoryName = document.createElement('p');
+      // categoryName.classList.add('categoryName');
+      // categoryName.innerHTML = ('Category : ' + '' + categories);
+      // subContainer.append(categoryName);
+      // newMainContainer.append(subContainer);
 
-			
+      const cardPlant = document.createElement("div");
+      cardPlant.classList.add("card");
 
-				const newParagraph = document.createElement('p');
-				newParagraph.classList.add('commonName')
-				newParagraph.innerHTML = ( dataAll );
-				subContainer.append(newParagraph);
-				newMainContainer.append(subContainer);
+      const newImg = document.createElement("img");
+      newImg.classList.add("card-img-top");
+      newImg.setAttribute("id", "imageCard");
 
-				
-				
-				const iconP = document.createElement('p');
-				iconP.classList.add('iconP')
-				iconP.innerHTML = '<i class="bi bi-cart-plus fa-2x"></i>';
-				subContainer.append(iconP);
-			
+      newImg.src = `./image/${dataAll}.webp`;
 
+      cardPlant.append(newImg);
+      cardPlant.append(subContainer);
+      cardPlant.append(newDiv);
+      newMainContainer.append(cardPlant);
 
-				
-				const newDiv = document.createElement('div');
-				newDiv.classList.add('priceAndFavoriteDiv');
-				const price = document.createElement('p');
-				price.classList.add('price');
-				price.innerHTML = ('Php ' + '' + getRandomInt(100, 300) + '.00');
-				newDiv.append(price);
-				
-				const iconHeart = document.createElement('p');
-				iconHeart.classList.add('iconHeart')
-				iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>';
-				newDiv.append(iconHeart);
+      // body.append(newMainContainer);
+    }
+  })
+  .catch((err) => console.error(err));
 
-			
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
 
-				// const familyNames = document.createElement('p');
-				// familyNames.classList.add('familyName');
-				// familyNames.innerHTML = ('Family : ' + '' + familyAll);
-				// subContainer.append(familyNames);
-				// newMainContainer.append(subContainer);
+//   console.log(getRandomInt(100, 300))
 
-				// const latinName = document.createElement('p');
-				// latinName.classList.add('latinName');
-				// latinName.innerHTML = ('Latin : ' + '' + latNames);
-				// subContainer.append(latinName);
-				// newMainContainer.append(subContainer);
+//  ******************** BACK TO TOP ARROW ********************************
 
-				// const categoryName = document.createElement('p');
-				// categoryName.classList.add('categoryName');
-				// categoryName.innerHTML = ('Category : ' + '' + categories);
-				// subContainer.append(categoryName);
-				// newMainContainer.append(subContainer);
+let mybutton = document.querySelector("#myBtn");
+let navbar = document.querySelector(".navbar");
+//   let navbarContent = document.querySelector('.keychainify-checked')
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
 
-				
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+    navbar.style.backgroundColor = "rgba(18, 78, 21, 0.96)";
+    // navbar.style.color = "white";
+  } else {
+    mybutton.style.display = "none";
+    navbar.style.backgroundColor = "transparent";
+  }
+}
 
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
-
-
-
-				const cardPlant = document.createElement('div');
-				cardPlant.classList.add('card');
-
-				const newImg = document.createElement('img');
-				newImg.classList.add('card-img-top');
-				newImg.setAttribute('id', 'imageCard');
-				
-				newImg.src = `/image/${dataAll}.webp` 
-		
-
-				cardPlant.append(newImg);
-				cardPlant.append(subContainer);
-				cardPlant.append(newDiv);
-				newMainContainer.append(cardPlant);
-
-				// body.append(newMainContainer);
-
-				
-			  }
-			})
-			.catch(err => console.error(err));
-
-
-
-
-			function getRandomInt(min, max) {
-				min = Math.ceil(min);
-				max = Math.floor(max);
-				return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-			  }
-			  
-			//   console.log(getRandomInt(100, 300))
-
-
-	//  ******************** BACK TO TOP ARROW ********************************
-
-			  let mybutton = document.querySelector("#myBtn");
-			  let navbar = document.querySelector('.navbar')
-			//   let navbarContent = document.querySelector('.keychainify-checked')
-			  
-			  // When the user scrolls down 20px from the top of the document, show the button
-			  window.onscroll = function() {scrollFunction()};
-			  
-			  function scrollFunction() {
-				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-				  mybutton.style.display = "block";
-					navbar.style.backgroundColor = "rgba(18, 78, 21, 0.96)";
-					// navbar.style.color = "white";
-				} else {
-				  mybutton.style.display = "none";
-				  navbar.style.backgroundColor = "transparent";
-				}
-			  }
-			  
-			  // When the user clicks on the button, scroll to the top of the document
-			  function topFunction() {
-				document.body.scrollTop = 0;
-				document.documentElement.scrollTop = 0;
-				
-			  }
-
-	//  ******************** BACK TO TOP ARROW ********************************
+//  ******************** BACK TO TOP ARROW ********************************
