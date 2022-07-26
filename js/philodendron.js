@@ -69,8 +69,8 @@
 				// ***************this is for category display ********************************
 				const arrayCategory = {name:dataAll, category:categories};
 			
-				if (arrayCategory.category === 'Cactus & Succulent'){
-					const cactusCategory = arrayCategory;
+				if (arrayCategory.category === 'Philodendron'){
+					const philodendronCategory = arrayCategory;
 
 				const newParagraph = document.createElement('p');
 				newParagraph.classList.add('commonName')
@@ -102,7 +102,7 @@
 				newImg.classList.add('card-img-top');
 				newImg.setAttribute('id', 'imageCard');
 				
-				newImg.src = `/image/${cactusCategory.name}.webp` 
+				newImg.src = `/image/${philodendronCategory.name}.webp` 
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
@@ -112,7 +112,7 @@
 				cardPlant.append(subContainer);
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
-				console.log(cactusCategory);
+				console.log(philodendronCategory);
                 
 
 				
