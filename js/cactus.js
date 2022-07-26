@@ -15,7 +15,7 @@
 			  
 			
 			  const res = response;
-
+			 
 			  
 			  const allData = res.map((showAll)=>{
 				const commonIndex = showAll.common;
@@ -46,11 +46,9 @@
 
 			  })
 
-			//   console.log(category);
-			//   const set1 = new Set(category)
-			//   const set2 = [...set1];
-			//   console.log(set2);
+		
 			  
+			
 
 			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length);i++){
 				// console.log(allData[i])
@@ -60,16 +58,19 @@
 				// const familyAll = familyName[i];
 				// const latNames = latName[i];
 				const categories = category[i];
-				// const body = document.querySelector('body');
 				const newMainContainer = document.querySelector('.main-container');
+        
 				const subContainer = document.createElement('div');
 				subContainer.classList.add('subContainer');
 
 				// console.log(dataAll);
-				
+				// console.log(categories);
 
-
+				// ***************this is for category display ********************************
+				const arrayCategory = {name:dataAll, category:categories};
 			
+				if (arrayCategory.category === 'Cactus & Succulent'){
+					const cactusCategory = arrayCategory;
 
 				const newParagraph = document.createElement('p');
 				newParagraph.classList.add('commonName')
@@ -77,15 +78,10 @@
 				subContainer.append(newParagraph);
 				newMainContainer.append(subContainer);
 
-				
-				
 				const iconP = document.createElement('p');
 				iconP.classList.add('iconP')
 				iconP.innerHTML = '<i class="bi bi-cart-plus fa-2x"></i>';
 				subContainer.append(iconP);
-			
-
-
 				
 				const newDiv = document.createElement('div');
 				newDiv.classList.add('priceAndFavoriteDiv');
@@ -99,33 +95,6 @@
 				iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>';
 				newDiv.append(iconHeart);
 
-			
-
-				// const familyNames = document.createElement('p');
-				// familyNames.classList.add('familyName');
-				// familyNames.innerHTML = ('Family : ' + '' + familyAll);
-				// subContainer.append(familyNames);
-				// newMainContainer.append(subContainer);
-
-				// const latinName = document.createElement('p');
-				// latinName.classList.add('latinName');
-				// latinName.innerHTML = ('Latin : ' + '' + latNames);
-				// subContainer.append(latinName);
-				// newMainContainer.append(subContainer);
-
-				// const categoryName = document.createElement('p');
-				// categoryName.classList.add('categoryName');
-				// categoryName.innerHTML = ('Category : ' + '' + categories);
-				// subContainer.append(categoryName);
-				// newMainContainer.append(subContainer);
-
-				// const categoryName = ()=>{
-				// 	if (categories === 'hanging'){
-
-				// 	}
-				// }
-				// console.log(categories);
-
 				const cardPlant = document.createElement('div');
 				cardPlant.classList.add('card');
 
@@ -133,7 +102,7 @@
 				newImg.classList.add('card-img-top');
 				newImg.setAttribute('id', 'imageCard');
 				
-				newImg.src = `/image/${dataAll}.webp` 
+				newImg.src = `/image/${cactusCategory.name}.webp` 
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
@@ -143,8 +112,12 @@
 				cardPlant.append(subContainer);
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
+				console.log(cactusCategory);
+                
 
-				// body.append(newMainContainer);
+				
+				
+                }
 
 			  }
 			})
@@ -156,11 +129,9 @@
 				max = Math.floor(max);
 				return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 			  }
-			  
-			//   console.log(getRandomInt(100, 300))
 
 
-	//  ******************** BACK TO TOP ARROW ********************************
+              //  ******************** BACK TO TOP ARROW ********************************
 
 			  let mybutton = document.querySelector("#myBtn");
 			  let navbar = document.querySelector('.navbar')
@@ -188,3 +159,6 @@
 			  }
 
 	//  ******************** BACK TO TOP ARROW ********************************
+			  
+		
+
