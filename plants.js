@@ -11,7 +11,6 @@
 		  fetch('https://house-plants.p.rapidapi.com/all', options)
 			.then(response => response.json())
 			.then(response => {
-			  console.log(response)
 			  
 			
 			  const res = response;
@@ -43,7 +42,6 @@
 
 			  const category = res.map((showAll)=>{
 				return showAll.category;
-
 			  })
 
 			  console.log(category);
