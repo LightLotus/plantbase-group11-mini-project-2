@@ -162,7 +162,8 @@ div.blogs-items {
   color: #32502e;
 }
 
-.blog-date, .recent-post {
+.blog-date,
+.recent-post {
   color: #32502e;
 }
 
@@ -172,7 +173,7 @@ div.blogs-items {
 }
 
 .recent-post {
-  margin:  2rem 0;
+  margin: 2rem 0;
 }
 
 .blog-ads::after {
@@ -430,6 +431,10 @@ footer {
     grid-template-columns: 1fr;
     gap: 4rem;
     margin: 0 2rem;
+  }
+
+  .blogs-container .blogs-items img {
+    height: 10rem;
   }
 
   /* footer section mobile */

@@ -97,6 +97,16 @@
   opacity: 1;
 }
 
+/* breadcrumbs */
+.breadcrumbs {
+  margin-left: 2rem;
+}
+
+.breadcrumbs a {
+  color: #32502e;
+  text-decoration: none;
+}
+
 /* carousel section */
 .carousel-inner img {
   width: 100%;
