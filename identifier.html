@@ -149,6 +149,7 @@
     <button id="search-btn" type="button">Identify</button>
   </form>
 </div>
+<div class="mainImage"></div>
   
   <hr>
  <div class="main-container">
@@ -190,8 +191,11 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
       console.log(base64files)
             
       const data = {
-        api_key: 'okMbPdmE10p9YNGwgXRg57x5d1fGIubAPvS3AKBUGYBd1CaxgT',
+        // api_key: 'okMbPdmE10p9YNGwgXRg57x5d1fGIubAPvS3AKBUGYBd1CaxgT',
         // api_key: 'E9v6gnIZ1pVKmewFwQ61xQ9vbNfpmUXRDMdHy1qsrnJlhOAtSq',
+
+        // api_key:'aRLxRcJm5RclUp5P3E6acUmUWCX9XjCe64qLKUyRsLsIkwBcdR', daniel john
+        api_key:'2CYXqGzFtfjI3fbf3LFebC3YAOvJqvErUVVFiOXWx9cL2FtXDA',   
         images: base64files,
         // modifiers docs: https://github.com/flowerchecker/Plant-id-API/wiki/Modifiers
         modifiers: ["crops_fast", "similar_images"],
@@ -220,7 +224,7 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
         // const plantDetails = data.suggestions[0].plant_details;
         // console.log(plantDetails);
 
-      
+      console.log(suggest);
         // map to get similar image
         const newSuggest = suggest.map((plant)=>{
           return plant.similar_images[0].url
@@ -243,6 +247,7 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
         const divForm = document.querySelector('.divForm');
         const cardImageDiv = document.createElement('div');
         cardImageDiv.classList.add('card');
+        const mainImage = document.querySelector('.mainImage');
 
        
         
@@ -251,8 +256,8 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
         localImage.classList.add('localImage');
         localImage.src = dataImage;
         cardImageDiv.append(localImage);
-        divForm.append(cardImageDiv);
-        // cardImage.append(localImageDiv);
+        mainImage.append(cardImageDiv);
+        // cardImageDiv.append(localImageDiv);
 
         for (let i=0; (i<newSuggest.length)&&(i<newplantName.length)&&(i<newPlantDetails.length); i++){
           console.log(newSuggest[i])
@@ -262,35 +267,45 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
           const getPlantName = newplantName[i];
           const getimage = newSuggest[i];
           const getPlantDetails = newPlantDetails[i];
+
+          console.log(getPlantDetails)
         
           // const getPlantDetails = info;
           const div = document.querySelector('.main-container')
+          const wrapper = document.createElement('div');
+          wrapper.classList.add('wrapper')
           const mainCardDiv = document.createElement('div')
           mainCardDiv.classList.add('mainCardDiv')
 
            // create a new div with a class of card
-           const cardDiv = document.createElement('div');
+          const cardDiv = document.createElement('div');
           cardDiv.classList.add('card');
 
-          const pDiv = document.createElement('div')
-          const cardParagraph = document.createElement('p')
+          // const pDiv = document.createElement('div')
+          // const cardParagraph = document.createElement('p')
 
-          cardParagraph.classList.add('cardParagraphClass')
-          cardParagraph.innerHTML = getPlantName;
+          // cardParagraph.classList.add('cardParagraphClass')
+          // cardParagraph.innerHTML = getPlantName;
 
-          pDiv.append(cardParagraph);
+          // pDiv.append(cardParagraph);
           
-          cardDiv.append(pDiv);
+          // cardDiv.append(pDiv);
 
            // plant details paragraph div
            const mainPlantDetailsDiv = document.createElement('div')
           mainPlantDetailsDiv.classList.add('mainPlantDetailsDiv')
           const plantDetailsParagraph = document.createElement('p')
           plantDetailsParagraph.classList.add('plantDetails')
-          plantDetailsParagraph.innerHTML = ('Common Names:' + ' ' + getPlantDetails);
-          mainPlantDetailsDiv.append(plantDetailsParagraph)
 
-         div.append(mainPlantDetailsDiv)
+          const plantName = document.createElement('p')
+          plantName.classList.add('plantName')
+          plantName.innerHTML = ('Name : ' + '' + getPlantName.toUpperCase());
+          plantDetailsParagraph.innerHTML = ('Common Names:' + ' ' + getPlantDetails[0].toUpperCase());
+          // plantDetailsParagraph.innerHTML = (getPlantDetails[0]);
+          mainPlantDetailsDiv.append(plantName);
+          mainPlantDetailsDiv.append(plantDetailsParagraph);
+         
+
 
           const image = document.createElement('img');
           image.classList.add('image-url');
@@ -300,8 +315,10 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
           newAnchor.append(image);
           cardDiv.append(newAnchor);
           mainCardDiv.append(cardDiv);
-          div.append(mainCardDiv);
-
+          // div.append(mainCardDiv);
+          wrapper.append(mainCardDiv)
+          wrapper.append(mainPlantDetailsDiv);
+          div.append(wrapper)
 
 
     
