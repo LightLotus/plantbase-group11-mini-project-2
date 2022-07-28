@@ -107,21 +107,6 @@
   text-decoration: none;
 }
 
-/* carousel section */
-.carousel-inner img {
-  width: 100%;
-  height: 85vh;
-  object-fit: cover;
-}
-
-/* about us section */
-.about-us-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  margin: 10rem;
-}
-
 h5 {
   text-align: center;
   text-transform: uppercase;
@@ -129,6 +114,11 @@ h5 {
   color: #32502e;
 }
 
+.form-label {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #32502e;
+}
 .about-us-text p {
   margin: 2rem 0;
 }
@@ -139,27 +129,94 @@ h5 {
   object-fit: cover;
 }
 
-/* service features section */
-.service-features {
+/* checkout container */
+.checkout-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  margin: 0 10rem;
-  text-align: center;
 }
 
-.service-features-icon i {
-  color: #32502e;
-  font-size: 4rem;
+.delivery-method-container,
+.my-order-container,
+.payment-cash-on-delivery {
+  border: 1px solid #32502e;
+  padding: 2rem;
+}
+
+.checkout-container-left {
+  margin-left: 2rem;
+}
+
+.checkout-container-right {
+  margin-right: 2rem;
+}
+
+.checkout-container-right ul {
+  margin-bottom: 0;
+}
+
+.name-details {
+  display: flex;
+  gap: 1rem;
+}
+
+input[type="radio"] {
+  accent-color: #32502e;
+}
+
+#checkbox :checked {
+  background-color: #32502e;
+}
+
+.shipping-address-input {
   display: inline-block;
-  margin: 1rem 0;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #32502e;
 }
 
-.service-features-title {
-  text-transform: uppercase;
-  color: #32502e;
+.shipping-address-input:focus {
+  outline: none;
+  border: 1px solid #32502e;
+  border-radius: 0.5rem;
 }
 
+.my-order-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.my-order-container ul li {
+  list-style-type: none;
+}
+
+.cash-on-delivery-container {
+  margin-top: 1rem;
+}
+
+.cash-on-delivery-form,
+.payment-options-methods {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pay-when-received {
+  opacity: 0.8;
+  color: #212121;
+  font-size: 0.9rem;
+  margin: 1rem 0 0;
+}
+
+.payment-logos img {
+  width: 6rem;
+}
+
+.btn-place-order {
+  border: transparent;
+  width: 100%;
+}
 /* plant identifier section */
 .plant-identifier {
   position: relative;
@@ -430,6 +487,29 @@ footer {
 
   .dropdown-menu {
     width: 100%;
+  }
+
+  /* checkout section */
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+
+  div.checkout-container-left {
+    margin-left: 0;
+    margin: 0 2rem;
+  }
+
+  div.checkout-container-right {
+    margin-right: 0;
+    margin: 0 2rem;
+  }
+
+  .payment-logos img.container-fluid {
+    width: 3rem;
+  }
+
+  #pay-when-received {
+    margin: 0;
   }
 
   /* about us section mobile */

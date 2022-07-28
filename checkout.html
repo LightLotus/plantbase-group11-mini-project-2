@@ -21,10 +21,10 @@
     <title>PlantBase | Checkout</title>
   </head>
   <body>
-    <!-- navbar -->
+    <!-- navbar starts here -->
     <nav class="navbar navbar-expand-lg py-4">
       <div class="nav-container container-fluid p-0">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="./index.html"
           ><img id="logo" src="./images/plantbase-logo.svg" alt=""
         /></a>
         <button
@@ -41,12 +41,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="nav-link-container mx-auto mb-2 mb-lg-0">
             <li class="nav-link-items">
-              <a aria-current="page" href="#">Homepage</a>
+              <a aria-current="page" href="./index.html">Homepage</a>
             </li>
             <li class="dropdown nav-link-items">
               <a
                 class="dropdown-toggle"
-                href="#"
+                href="./allplants.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -54,36 +54,52 @@
                 Shop
               </a>
               <div class="shop-items dropdown-menu">
-                <span><a href="#">All Plants</a></span>
+                <span><a href="./allplants.html">All Plants</a></span>
                 <span><hr class="dropdown-divider" /></span>
                 <span>
-                  <a href="#">Aesthetic Indoor Plants</a>
+                  <a href="./hangingplant.html">Hanging</a>
                 </span>
-                <span><a href="#">Aglaonema</a></span>
-                <span><a href="#">Calathea</a></span>
+                <span><a href="./fern.html">Fern</a></span>
+                <span><a href="./bromeliad.html">Bromeliad</a></span>
                 <span>
-                  <a href="#">Flowering Plants</a>
+                  <a href="./cactus.html">Cactus & Succulent</a>
                 </span>
-                <span><a href="#">Fruit Bearing</a></span>
+                <span><a href="./aglaonema.html">Aglaonema</a></span>
                 <span><hr class="dropdown-divider" /></span>
-                <span><a href="#">Hanging Plants</a></span>
-                <span><a href="#">Herbs</a></span>
-                <span><a href="#">Peperomia</a></span>
-                <span><a href="#">Philodendron</a></span>
-                <span><a href="#">Pothos</a></span>
-                <span><hr class="dropdown-divider" /></span>
-                <span><a href="#">Rare Alert</a></span>
+                <span><a href="./other.html">Other</a></span>
+                <span><a href="./flower.html">Flower</a></span>
+                <span><a href="./foliage.html">Foliage plant</a></span>
+                <span><a href="./anthurium.html">Anthurium</a></span>
+                <span><a href="./palm.html">Palm</a></span>
+                <span><hr class="./dropdown-divider" /></span>
+                <span><a href="./dieffenbachia.html">Dieffenbachia</a></span>
                 <span>
-                  <a href="#">Table Top</a>
+                  <a href="./dracaena.html">Dracaena</a>
                 </span>
                 <span>
-                  <a href="#">Promos</a>
+                  <a href="./ficus.html">Ficus</a>
                 </span>
                 <span>
-                  <a href="#">Bundles</a>
+                  <a href="./aralia.html">Aralia</a>
                 </span>
                 <span>
-                  <a href="#">Buy One Take One Deals</a>
+                  <a href="./philodendron.html">Philodendron</a>
+                </span>
+                <span><hr class="./dropdown-divider" /></span>
+                <span>
+                  <a href="./grass.html">Grass</a>
+                </span>
+                <span>
+                  <a href="./topiairy.html">Topiairy</a>
+                </span>
+                <span>
+                  <a href="./sansevieria.html">Sansevieria</a>
+                </span>
+                <span>
+                  <a href="./spathiphyllum.html">Spathiphyllum</a>
+                </span>
+                <span>
+                  <a href="./schefflera.html">Schefflera</a>
                 </span>
               </div>
             </li>
@@ -94,7 +110,7 @@
               <a href="#">FAQs</a>
             </li>
             <li class="nav-link-items">
-              <a href="#">Plant Identifier</a>
+              <a href="./identifier.html">Plant Identifier</a>
             </li>
             <li class="nav-link-items">
               <a href="#">Contact Us</a>
@@ -122,17 +138,175 @@
         </div>
       </div>
     </nav>
-    <span class="breadcrumbs"
+    <!-- <span class="breadcrumbs"
       ><a href="./index.html">Homepage </a><span>/</span>
       <a href="./checkout.html">Checkout</a></span
-    >
+    > -->
     <!-- checkout main content -->
+    <h5 class="fs-2">checkout</h5>
     <div class="checkout-container">
       <div class="checkout-container-left">
-        <div><p>Delivery Method</p>
+        <div>
+          <p class="form-label">Delivery Method</p>
+          <div class="delivery-method-container">
+            <form class="delivery-method-options">
+              <div>
+                <input type="radio" name="delivery-method" />
+                <img src="./images/store-icon.svg" alt="" />
+                <label for="delivery-method">&emsp;Pick Up</label>
+              </div>
+              <div>
+                <input type="radio" name="delivery-method" />
+                <img src="./images/bus-icon.svg" alt="" />
+                <label for="delivery-method">&emsp;Door to Door Delivery</label>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="shipping-form">
+          <p class="form-label mt-3">Shipping Address</p>
+          <div class="address-form">
+            <input
+              class="shipping-address-input"
+              type="text"
+              placeholder="  Country / Region"
+            />
+            <div class="name-details">
+              <input
+                class="shipping-address-input"
+                type="text"
+                placeholder="  First Name"
+              />
+              <input
+                class="shipping-address-input"
+                type="text"
+                placeholder="  Last Name"
+              />
+            </div>
+            <input
+              class="shipping-address-input"
+              type="text"
+              placeholder="  Address"
+            />
+            <div class="name-details">
+              <input
+                class="shipping-address-input"
+                type="text"
+                placeholder="  Postal Code"
+              />
+              <input
+                class="shipping-address-input"
+                type="text"
+                placeholder="  City"
+              />
+            </div>
+            <div>
+              <input
+                class="shipping-address-input"
+                type="text"
+                placeholder="  Region"
+              />
+            </div>
+            <div>
+              <input
+                class="shipping-address-input"
+                type="text"
+                placeholder="  Phone"
+              />
+            </div>
+            <div>
+              <input id="checkbox" type="checkbox" />
+              <label for="">Save this information for next time</label>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="checkout-container-right"></div>
+      <div class="checkout-container-right">
+        <div>
+          <p class="form-label">My Order</p>
+          <div class="my-order-container">
+            <div class="product">
+              <p>Product</p>
+              <ul>
+                <li>Aglaonema Katrina × 3</li>
+                <li>Shipping</li>
+              </ul>
+              <p class="my-order-total fs-2"><strong>&emsp;&emsp;Total</strong></p>
+            </div>
+            <div class="total">
+              <p>Subtotal</p>
+              <ul>
+                <li>₱ 750.00</li>
+                <li>₱ 200.00 <span>(via Third Party Courier)</span></li>
+              </ul>
+              <p class="my-order-total fs-2"><strong>&emsp;&emsp;₱ 950.00</strong></p>
+            </div>
+          </div>
+          <div class="payment-options-container">
+            <form class="payment-options">
+              <div class="payment-cash-on-delivery mt-3">
+                <div class="cash-on-delivery-form">
+                  <div>
+                    <img src="./images/cash-on-delivery-icon.svg" alt="" />
+                    <label for="delivery-method">&emsp;Cash On Delivery</label>
+                  </div>
+                  <input type="radio" name="cash-on-delivery" />
+                </div>
+                <p id="pay-when-received">Pay when you received</p>
+                <div class="cash-on-delivery-form mt-3">
+                  <div>
+                    <img class="w-25" src="./images/GCah_2019.webp" alt="" />
+                    <label for="delivery-method">&emsp;GCash</label>
+                  </div>
+                  <input type="radio" name="cash-on-delivery" />
+                </div>
+              </div>
+              <div class="payment-cash-on-delivery mt-3">
+                <div class="cash-on-delivery-form">
+                  <div>
+                    <img
+                      class="w-25"
+                      src="./images/credit-debit-card-icon.svg"
+                      alt=""
+                    />
+                    <label for="delivery-method">&emsp;Debit / Credit</label>
+                  </div>
+                  <input type="radio" name="cash-on-delivery" />
+                </div>
+                <hr />
+                <div class="payment-options">
+                  <div class="payment-options-methods">
+                    <p id="pay-when-received">Tap to add cart</p>
+                    <div class="payment-logos">
+                      <img
+                        class="container-fluid"
+                        src="./images/american-express.png"
+                        alt=""
+                      />
+                      <img
+                        class="container-fluid"
+                        src="./images/visa.png"
+                        alt=""
+                      />
+                      <img
+                        class="container-fluid"
+                        src="./images/mastercard.png"
+                        alt=""
+                      />
+                      <img
+                        class="container-fluid"
+                        src="./images/ucb-logo.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="link-button btn-place-order">Place Order</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- newsletter section starts here -->
     <div class="newsletter">
@@ -227,6 +401,7 @@
       </div>
       <p class="copyright">Copyright &copy; 2022 | All Rights Reserved</p>
     </footer>
+    <script src="./js/plants.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
