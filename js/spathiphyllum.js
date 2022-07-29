@@ -30,6 +30,26 @@
 			   
 			  })
 
+			  const origin = res.map((showAll)=>{
+				return showAll.origin;
+			  })
+
+			  
+
+			  const ideallight = res.map((showAll)=>{
+				return showAll.ideallight;
+			  })
+
+			 
+		
+			  const watering = res.map((showAll)=>{
+				return showAll.watering;
+			  })
+
+			  const toleratedLight = res.map((showAll)=>{
+				return showAll.toleratedlight;
+			  })
+
 			  const familyName = res.map((showAll)=>{
 				return showAll.family;
 
@@ -50,14 +70,18 @@
 			  
 			
 
-			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length);i++){
+			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length) && (i<watering.length)&& (i<origin.length)&& (i<ideallight.length)&& (i<toleratedLight.length);i++){
 				// console.log(allData[i])
 				
 
 				const dataAll = allData[i];
-				// const familyAll = familyName[i];
-				// const latNames = latName[i];
+				const familyAll = familyName[i];
+				const latNames = latName[i];
 				const categories = category[i];
+				const water = watering[i];
+				const ideallights = ideallight[i];
+				const origins = origin[i];
+				const toleratedLights = toleratedLight[i];
 				const newMainContainer = document.querySelector('.main-container');
         
 				const subContainer = document.createElement('div');
@@ -101,6 +125,8 @@
 				const newImg = document.createElement('img');
 				newImg.classList.add('card-img-top');
 				newImg.setAttribute('id', 'imageCard');
+				newImg.setAttribute('data-bs-toggle', 'modal');
+				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
 				newImg.src = `/image/${spathiphyllumCategory.name}.webp` 
 
@@ -112,7 +138,61 @@
 				cardPlant.append(subContainer);
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
-				console.log(spathiphyllumCategory);
+				
+				// DISPLAY SPECIFIC PLANT WHEN CLICK
+                newImg.addEventListener('click', e =>{
+					const modal = document.querySelector('.modal-body');
+	
+					const wrap = document.createElement('div');
+					wrap.classList.add('wrap');
+	
+					const detailsDiv = document.createElement('div');
+					detailsDiv.classList.add('detailsDiv');
+	
+					wrap.append(cardPlant)
+	
+					const categoryParagraph = document.createElement('p');
+						categoryParagraph.innerHTML = ('Category Name : ' + '' + categories);
+						// categoryParagraph.append(categories);
+						
+						const familyParagraph = document.createElement('p');
+						familyParagraph.innerHTML = ('Family Name : '+ '' + familyAll);
+					
+	
+						const latinParagraph = document.createElement('p');
+						latinParagraph.innerHTML = ('Latin Name : ' + '' + latNames);
+	
+						const waterParagraph = document.createElement('p');
+						waterParagraph.innerHTML = ('Watering : ' + '' + water);
+	
+						const originParagraph = document.createElement('p');
+						originParagraph.innerHTML = ('Origin : ' + '' + origins);
+	
+						const ideallightParagraph = document.createElement('p');
+						ideallightParagraph.innerHTML = ('Ideal Light : ' + '' + ideallights);
+	
+						const toleratedLightParagraph = document.createElement('p');
+						toleratedLightParagraph.innerHTML = ('Tolerated Light : ' + '' + toleratedLights);
+					
+	
+	
+						detailsDiv.append(categoryParagraph);
+						detailsDiv.append(familyParagraph);
+						detailsDiv.append(latinParagraph);
+						detailsDiv.append(waterParagraph);
+						detailsDiv.append(originParagraph);
+						detailsDiv.append(ideallightParagraph);
+						detailsDiv.append(toleratedLightParagraph);
+	
+						wrap.append(detailsDiv);
+						modal.append(wrap);
+	
+					})
+	
+					const modalClose = document.querySelector('.btn-secondary');
+						modalClose.addEventListener('click', ()=>{
+							location.reload();
+						})
                 
 
 				

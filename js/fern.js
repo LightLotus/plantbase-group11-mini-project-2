@@ -30,6 +30,26 @@
 			   
 			  })
 
+			  const origin = res.map((showAll)=>{
+				return showAll.origin;
+			  })
+
+			  
+
+			  const ideallight = res.map((showAll)=>{
+				return showAll.ideallight;
+			  })
+
+			 
+		
+			  const watering = res.map((showAll)=>{
+				return showAll.watering;
+			  })
+
+			  const toleratedLight = res.map((showAll)=>{
+				return showAll.toleratedlight;
+			  })
+
 			  const familyName = res.map((showAll)=>{
 				return showAll.family;
 
@@ -50,14 +70,18 @@
 			  
 			
 
-			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length);i++){
+			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length) && (i<watering.length)&& (i<origin.length)&& (i<ideallight.length)&& (i<toleratedLight.length);i++){
 				// console.log(allData[i])
 				
 
 				const dataAll = allData[i];
-				// const familyAll = familyName[i];
-				// const latNames = latName[i];
+				const familyAll = familyName[i];
+				const latNames = latName[i];
 				const categories = category[i];
+				const water = watering[i];
+				const ideallights = ideallight[i];
+				const origins = origin[i];
+				const toleratedLights = toleratedLight[i];
 				const newMainContainer = document.querySelector('.main-container');
         
 				const subContainer = document.createElement('div');
@@ -101,6 +125,8 @@
 				const newImg = document.createElement('img');
 				newImg.classList.add('card-img-top');
 				newImg.setAttribute('id', 'imageCard');
+				newImg.setAttribute('data-bs-toggle', 'modal');
+				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
 				newImg.src = `/image/${fernCategory.name}.webp` 
 
@@ -112,113 +138,66 @@
 				cardPlant.append(subContainer);
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
-				console.log(fernCategory);
+
+				// DISPLAY SPECIFIC PLANT WHEN CLICK
+                newImg.addEventListener('click', e =>{
+					const modal = document.querySelector('.modal-body');
+	
+					const wrap = document.createElement('div');
+					wrap.classList.add('wrap');
+	
+					const detailsDiv = document.createElement('div');
+					detailsDiv.classList.add('detailsDiv');
+	
+					wrap.append(cardPlant)
+	
+					const categoryParagraph = document.createElement('p');
+						categoryParagraph.innerHTML = ('Category Name : ' + '' + categories);
+						// categoryParagraph.append(categories);
+						
+						const familyParagraph = document.createElement('p');
+						familyParagraph.innerHTML = ('Family Name : '+ '' + familyAll);
+					
+	
+						const latinParagraph = document.createElement('p');
+						latinParagraph.innerHTML = ('Latin Name : ' + '' + latNames);
+	
+						const waterParagraph = document.createElement('p');
+						waterParagraph.innerHTML = ('Watering : ' + '' + water);
+	
+						const originParagraph = document.createElement('p');
+						originParagraph.innerHTML = ('Origin : ' + '' + origins);
+	
+						const ideallightParagraph = document.createElement('p');
+						ideallightParagraph.innerHTML = ('Ideal Light : ' + '' + ideallights);
+	
+						const toleratedLightParagraph = document.createElement('p');
+						toleratedLightParagraph.innerHTML = ('Tolerated Light : ' + '' + toleratedLights);
+					
+	
+	
+						detailsDiv.append(categoryParagraph);
+						detailsDiv.append(familyParagraph);
+						detailsDiv.append(latinParagraph);
+						detailsDiv.append(waterParagraph);
+						detailsDiv.append(originParagraph);
+						detailsDiv.append(ideallightParagraph);
+						detailsDiv.append(toleratedLightParagraph);
+	
+						wrap.append(detailsDiv);
+						modal.append(wrap);
+	
+					})
+	
+					const modalClose = document.querySelector('.btn-secondary');
+						modalClose.addEventListener('click', ()=>{
+							location.reload();
+						})
+			
                 
 
-				// }else if (arrayCategory.category === 'Fern'){
-				// 	const fernCategory = arrayCategory;
-                    
-                    // const fernContainer = document.querySelector('.fern-container');
-                    // const subContainer = document.createElement('div');
-                    // subContainer.classList.add('subContainer');
-
-                    // const newParagraph = document.createElement('p');
-                    // newParagraph.classList.add('commonName')
-                    // newParagraph.innerHTML = ( dataAll );
-                    // subContainer.append(newParagraph);
-                    // newMainContainer.append(subContainer);
-
-                    // const iconP = document.createElement('p');
-                    // iconP.classList.add('iconP')
-                    // iconP.innerHTML = '<i class="bi bi-cart-plus fa-2x"></i>';
-                    // subContainer.append(iconP);
-                    
-                    // const newDiv = document.createElement('div');
-                    // newDiv.classList.add('priceAndFavoriteDiv');
-                    // const price = document.createElement('p');
-                    // price.classList.add('price');
-                    // price.innerHTML = ('Php ' + '' + getRandomInt(100, 300) + '.00');
-                    // newDiv.append(price);
-                    
-                    // const iconHeart = document.createElement('p');
-                    // iconHeart.classList.add('iconHeart')
-                    // iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>';
-                    // newDiv.append(iconHeart);
-
-                    // const cardPlant = document.createElement('div');
-                    // cardPlant.classList.add('card');
-
-                    // const newImg = document.createElement('img');
-                    // newImg.classList.add('card-img-top');
-                    // newImg.setAttribute('id', 'imageCard');
-                    
-                    // newImg.src = `/image/${fernCategory.name}.webp` 
-
-                    // const fig = document.createElement('figure');
-                    // fig.append(newImg);
-            
-
-                    // cardPlant.append(fig);
-                    // cardPlant.append(subContainer);
-                    // cardPlant.append(newDiv);
-                    // fernContainer.append(cardPlant);
-                
-                    // console.log(fernCategory.name);
-				}else if (arrayCategory.category === 'Bromeliad'){
-					const bromeliadCategory = arrayCategory;
-					// console.log(bromeliadCategory);
-				}else if (arrayCategory.category === 'Cactus & Succulent'){
-					const cactusCategory = arrayCategory;
-					// console.log(cactusCategory);
-				}else if (arrayCategory.category === 'Aglaonema'){
-					const aglaonemaCategory = arrayCategory;
-					// console.log(aglaonemaCategory);
-				}else if (arrayCategory.category === 'Flower'){
-					const flowerCategory = arrayCategory;
-					// console.log(flowerCategory);
-				}else if (arrayCategory.category === 'Foliage plant'){
-					const foliageCategory = arrayCategory;
-					// console.log(foliageCategory);
-				}else if (arrayCategory.category === 'Anthurium'){
-					const anthuriumCategory = arrayCategory;
-					// console.log(anthuriumCategory);
-				}else if (arrayCategory.category === 'Palm'){
-					const palmCategory = arrayCategory;
-					// console.log(palmCategory);
-				}else if (arrayCategory.category === 'Dieffenbachia'){
-					const dieffenbachiaCategory = arrayCategory;
-					// console.log(dieffenbachiaCategory);
-				}else if (arrayCategory.category === 'Dracaena'){
-					const dracaenaCategory = arrayCategory;
-					// console.log(dracaenaCategory);
-				}else if (arrayCategory.category === 'Ficus'){
-					const ficusCategory = arrayCategory;
-					// console.log(ficusCategory);
-				}else if (arrayCategory.category === 'Aralia'){
-					const araliaCategory = arrayCategory;
-					// console.log(araliaCategory);
-				}else if (arrayCategory.category === 'Philodendron'){
-					const philodendronCategory = arrayCategory;
-					// console.log(philodendronCategory);
-				}else if (arrayCategory.category === 'Grass'){
-					const grassCategory = arrayCategory;
-					// console.log(grassCategory);
-				}else if (arrayCategory.category === 'Topiairy'){
-					const topiairyCategory = arrayCategory;
-					// console.log(topiairyCategory);
-				}else if (arrayCategory.category === 'Sansevieria'){
-					const sansevieriaCategory = arrayCategory;
-					// console.log(sansevieriaCategory);
-				}else if (arrayCategory.category === 'Spathiphyllum'){
-					const spathiphyllumCategory = arrayCategory;
-					// console.log(spathiphyllumCategory);
-				}else if (arrayCategory.category === 'Schefflera'){
-					const scheffleraCategory = arrayCategory;
-					// console.log(scheffleraCategory);
-				}else if (arrayCategory.category === 'Other'){
-					const otherCategory = arrayCategory;
-					// console.log(otherCategory);
-                }
+				}
+           
 
 			  }
 			})
