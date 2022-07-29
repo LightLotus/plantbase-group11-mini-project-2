@@ -15,6 +15,8 @@
 			  
 			
 			  const res = response;
+
+			//   console.log(res.tempmax);
 			 
 			  
 			  const allData = res.map((showAll)=>{
@@ -29,6 +31,29 @@
 				}
 			   
 			  })
+
+			 
+			  const origin = res.map((showAll)=>{
+				return showAll.origin;
+			  })
+
+			  
+
+			  const ideallight = res.map((showAll)=>{
+				return showAll.ideallight;
+			  })
+
+			 
+		
+			  const watering = res.map((showAll)=>{
+				return showAll.watering;
+			  })
+
+			  const toleratedLight = res.map((showAll)=>{
+				return showAll.toleratedlight;
+			  })
+		
+			  console.log(toleratedLight);
 
 			  const familyName = res.map((showAll)=>{
 				return showAll.family;
@@ -46,6 +71,9 @@
 
 			  })
 
+
+		
+
 			//   console.log(category);
 			//   const set1 = new Set(category)
 			//   const set2 = [...set1];
@@ -53,14 +81,19 @@
 			  
 			
 
-			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length);i++){
+			  for (let i=0; (i<allData.length) && (i<familyName.length) && (i<latName.length) && (i<category.length) && (i<watering.length)&& (i<origin.length)&& (i<ideallight.length)&& (i<toleratedLight.length);i++){
 				// console.log(allData[i])
 				
 
 				const dataAll = allData[i];
-				// const familyAll = familyName[i];
-				// const latNames = latName[i];
+				
+				const familyAll = familyName[i];
+				const latNames = latName[i];
 				const categories = category[i];
+				const water = watering[i];
+				const ideallights = ideallight[i];
+				const origins = origin[i];
+				const toleratedLights = toleratedLight[i];
 				// const body = document.querySelector('body');
 				const newMainContainer = document.querySelector('.main-container');
 				const subContainer = document.createElement('div');
@@ -69,107 +102,16 @@
 				// console.log(dataAll);
 				// console.log(categories);
 
-				// ***************this is for category display ********************************
-				// const arrayCategory = {name:dataAll, category:categories};
-			
-				// if (arrayCategory.category === 'Hanging'){
-				// 	const hangingCategory = arrayCategory;
-
-				// 	// const cardhanging = document.createElement('div');
-				// 	// cardhanging.classList.add('card');
-
-				// 	// const newImghanging = document.createElement('img');
-				// 	// newImghanging.classList.add('card-img-top');
-				// 	// newImghanging.setAttribute('id', 'imageCard');
-				
-				// 	// newImghanging.src = `/image/${dataAll}.webp` 
-
-				// 	// const fig = document.createElement('figure');
-				// 	// fig.append(newImghanging);
-
-				// 	// cardhanging.append(fig);
-				// 	// cardhanging.append(subContainer);
-				// 	// cardPlant.append(newDiv);
-				// 	// newMainContainer.append(cardPlant);
-
-				// 	// console.log(hangingCategory);
-				// }else if (arrayCategory.category === 'Fern'){
-				// 	const fernCategory = arrayCategory;
-				// 	// console.log(fernCategory);
-				// }else if (arrayCategory.category === 'Bromeliad'){
-				// 	const bromeliadCategory = arrayCategory;
-				// 	// console.log(bromeliadCategory);
-				// }else if (arrayCategory.category === 'Cactus & Succulent'){
-				// 	const cactusCategory = arrayCategory;
-				// 	// console.log(cactusCategory);
-				// }else if (arrayCategory.category === 'Aglaonema'){
-				// 	const aglaonemaCategory = arrayCategory;
-				// 	// console.log(aglaonemaCategory);
-				// }else if (arrayCategory.category === 'Flower'){
-				// 	const flowerCategory = arrayCategory;
-				// 	// console.log(flowerCategory);
-				// }else if (arrayCategory.category === 'Foliage plant'){
-				// 	const foliageCategory = arrayCategory;
-				// 	// console.log(foliageCategory);
-				// }else if (arrayCategory.category === 'Anthurium'){
-				// 	const anthuriumCategory = arrayCategory;
-				// 	// console.log(anthuriumCategory);
-				// }else if (arrayCategory.category === 'Palm'){
-				// 	const palmCategory = arrayCategory;
-				// 	// console.log(palmCategory);
-				// }else if (arrayCategory.category === 'Dieffenbachia'){
-				// 	const dieffenbachiaCategory = arrayCategory;
-				// 	// console.log(dieffenbachiaCategory);
-				// }else if (arrayCategory.category === 'Dracaena'){
-				// 	const dracaenaCategory = arrayCategory;
-				// 	// console.log(dracaenaCategory);
-				// }else if (arrayCategory.category === 'Ficus'){
-				// 	const ficusCategory = arrayCategory;
-				// 	// console.log(ficusCategory);
-				// }else if (arrayCategory.category === 'Aralia'){
-				// 	const araliaCategory = arrayCategory;
-				// 	// console.log(araliaCategory);
-				// }else if (arrayCategory.category === 'Philodendron'){
-				// 	const philodendronCategory = arrayCategory;
-				// 	// console.log(philodendronCategory);
-				// }else if (arrayCategory.category === 'Grass'){
-				// 	const grassCategory = arrayCategory;
-				// 	// console.log(grassCategory);
-				// }else if (arrayCategory.category === 'Topiairy'){
-				// 	const topiairyCategory = arrayCategory;
-				// 	// console.log(topiairyCategory);
-				// }else if (arrayCategory.category === 'Sansevieria'){
-				// 	const sansevieriaCategory = arrayCategory;
-				// 	// console.log(sansevieriaCategory);
-				// }else if (arrayCategory.category === 'Spathiphyllum'){
-				// 	const spathiphyllumCategory = arrayCategory;
-				// 	// console.log(spathiphyllumCategory);
-				// }else if (arrayCategory.category === 'Schefflera'){
-				// 	const scheffleraCategory = arrayCategory;
-				// 	// console.log(scheffleraCategory);
-				// }else if (arrayCategory.category === 'Other'){
-				// 	const otherCategory = arrayCategory;
-				// 	console.log(otherCategory);
-				// }
-
-
-
-
-
-				// console.log(arrayCategory.category);
-
-				// if (dataAll === )
-				// const [common, family, categor]  = res
-				// console.log(common.common);
-				// console.log(family.family);
-				// console.log(categor.category);
-			
 
 				const newParagraph = document.createElement('p');
 				newParagraph.classList.add('commonName')
 				newParagraph.innerHTML = ( dataAll );
 				subContainer.append(newParagraph);
 				newMainContainer.append(subContainer);
+
+				// document.addEventListener("click", function(){
+					
+				//   });
 
 				
 				
@@ -191,7 +133,8 @@
 				newDiv.append(iconHeart);
 
 			
-
+				// const subContainer = document.createElement('div');
+				// subContainer.classList.add('subContainer');
 				// const familyNames = document.createElement('p');
 				// familyNames.classList.add('familyName');
 				// familyNames.innerHTML = ('Family : ' + '' + familyAll);
@@ -216,34 +159,148 @@
 				// 	}
 				// }
 				// console.log(categories);
-
+			
 
 
 				const cardPlant = document.createElement('div');
 				cardPlant.classList.add('card');
 
+				
+
 				const newImg = document.createElement('img');
 				newImg.classList.add('card-img-top');
 				newImg.setAttribute('id', 'imageCard');
+				newImg.setAttribute('data-bs-toggle', 'modal');
+				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
-				newImg.src = `/image/${dataAll}.webp` 
+				newImg.src = `/image/${dataAll}.webp`
+
+				// const anchor = document.createElement('a');
+				// anchor.setAttribute('href', newImg.src)
+
+				// anchor.append(newImg);
+
+				
+				
+				// console.log(newImg.src);
+				
+
+				
+
+				
+				
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
-		
+
+
 
 				cardPlant.append(fig);
 				cardPlant.append(subContainer);
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
 
-				// body.append(newMainContainer);
+				
 
+				newImg.addEventListener('click', e =>{
+					
+					// console.log( e.target.src);
+					const modal = document.querySelector('.modal-body');
+					// modal({backdrop: 'static', keyboard: false})
+					const wrap = document.createElement('div');
+					wrap.classList.add('wrap');
+					const detailsDiv = document.createElement('div');
+					detailsDiv.classList.add('detailsDiv');
+
+					wrap.append(cardPlant)
+
+					const categoryParagraph = document.createElement('p');
+					categoryParagraph.innerHTML = ('Category Name : ' + '' + categories);
+					// categoryParagraph.append(categories);
+					
+					const familyParagraph = document.createElement('p');
+					familyParagraph.innerHTML = ('Family Name : '+ '' + familyAll);
+				
+
+					const latinParagraph = document.createElement('p');
+					latinParagraph.innerHTML = ('Latin Name : ' + '' + latNames);
+
+					const waterParagraph = document.createElement('p');
+					waterParagraph.innerHTML = ('Watering : ' + '' + water);
+
+					const originParagraph = document.createElement('p');
+					originParagraph.innerHTML = ('Origin : ' + '' + origins);
+
+					const ideallightParagraph = document.createElement('p');
+					ideallightParagraph.innerHTML = ('Ideal Light : ' + '' + ideallights);
+
+					const toleratedLightParagraph = document.createElement('p');
+					toleratedLightParagraph.innerHTML = ('Tolerated Light : ' + '' + toleratedLights);
+				
+
+
+					detailsDiv.append(categoryParagraph);
+					detailsDiv.append(familyParagraph);
+					detailsDiv.append(latinParagraph);
+					detailsDiv.append(waterParagraph);
+					detailsDiv.append(originParagraph);
+					detailsDiv.append(ideallightParagraph);
+					detailsDiv.append(toleratedLightParagraph);
+
+					wrap.append(detailsDiv);
+
+					modal.append(wrap);
+					
+					console.log(dataAll)
+					console.log(categories)
+					console.log(familyAll)
+					console.log(latNames)
+
+					
+									
+				})
+
+			
+					const modalClose = document.querySelector('.btn-secondary');
+					modalClose.addEventListener('click', ()=>{
+						location.reload();
+					})
+			
+				
+
+				// const plantClick = document.querySelector('card-img-top');
+				
+				// plantClick.addEventListener('click', ()=>{
+				// const container = document.querySelector('.containerPlant');
+			
+				
+				// containerPlant.append(cardPlant);
+				// })
+				// body.append(newMainContainer);
+				// console.log(dataAll);
+
+				// function specificPlant(){
+				// 	return dataAll
+				
+				//   }
+				//   console.log(specificPlant())
+				
+			
 			  }
+
+		
+			 
+			 
+			
 			})
 			.catch(err => console.error(err));
 
 
+
+			
+
+
+			
 			function getRandomInt(min, max) {
 				min = Math.ceil(min);
 				max = Math.floor(max);

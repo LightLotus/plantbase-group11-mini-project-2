@@ -146,7 +146,8 @@
   <div class="divForm">
   <form class="search-form" >
     <input type="file" multiple />
-    <button id="search-btn" type="button">Identify</button>
+    <button id="search-btn" type="button" >Identify</button>
+    <input class="reload" type="button" value="Reload" onClick="window.location.reload(true)">
   </form>
 </div>
 <div class="mainImage"></div>
@@ -180,6 +181,7 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
             const res = event.target.result;
             console.log(res);
             resolve(res);
+            input = "";
           }
           reader.readAsDataURL(file)
           
