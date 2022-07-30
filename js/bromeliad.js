@@ -126,7 +126,7 @@
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
-				newImg.src = `/image/${bromeliadCategory.name}.webp` 
+				newImg.src = `./image/${bromeliadCategory.name}.webp` 
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);

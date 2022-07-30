@@ -124,7 +124,7 @@
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
-				newImg.src = `/image/${hangingCategory.name}.webp` 
+				newImg.src = `./image/${hangingCategory.name}.webp` 
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);

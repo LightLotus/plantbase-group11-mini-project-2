@@ -129,7 +129,7 @@
 				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
 				
-				newImg.src = `/image/${flowerCategory.name}.webp` 
+				newImg.src = `./image/${flowerCategory.name}.webp` 
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
