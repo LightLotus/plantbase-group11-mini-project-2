@@ -173,7 +173,7 @@
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
-				newImg.src = `/image/${dataAll}.webp`
+				newImg.src = `./image/${dataAll}.webp`
 
 				// const anchor = document.createElement('a');
 				// anchor.setAttribute('href', newImg.src)
