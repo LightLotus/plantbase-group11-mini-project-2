@@ -278,6 +278,7 @@ h5 {
 .default-address {
   opacity: 0.8;
 }
+
 .checkout-container-right {
   margin: 1rem 0;
   display: grid;
@@ -350,14 +351,30 @@ input[type="radio"] {
 
 .sub-label {
   font-weight: bold;
-  color:#32502e;
-
+  color: #32502e;
 }
 
 .sub-label span {
   opacity: 0.8;
 }
 
+.recent-orders {
+  grid-column: 1 / span 3;
+}
+
+.recent-orders .card-subtotals-container {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 2rem);
+}
+
+.recent-order-menu {
+  display: flex;
+  padding-left: 0;
+}
+.recent-order-menu li {
+  list-style-type: none;
+}
 #pay-when-received {
   opacity: 0.8;
   color: #212121;
@@ -368,10 +385,12 @@ input[type="radio"] {
 .payment-logos img {
   width: 6rem;
 }
+
 .btn-container {
   display: flex;
   justify-content: right;
 }
+
 .btn-place-order {
   border: transparent;
 }
