@@ -263,9 +263,13 @@
 			
 					const modalClose = document.querySelector('.btn-secondary');
 					modalClose.addEventListener('click', ()=>{
+						
 						location.reload();
+						// window.location = window.location
+						
 					})
 			
+				
 				
 
 				// const plantClick = document.querySelector('card-img-top');
