@@ -128,7 +128,7 @@
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
-				newImg.src = `/image/${araliaCategory.name}.webp` 
+				newImg.src = `./image/${araliaCategory.name}.webp` 
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
