@@ -264,8 +264,20 @@ h5 {
 .card-subtotals-container-right {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
+.card-subtotals-container-right ul {
+  padding-left: 0;
+}
+
+.card-subtotals-container-right ul li {
+  list-style-type: none;
+}
+
+.default-address {
+  opacity: 0.8;
+}
 .checkout-container-right {
   margin: 1rem 0;
   display: grid;
@@ -284,26 +296,6 @@ h5 {
 
 .checkout-container-left {
   margin-left: 2rem;
-}
-
-.voucher-btn {
-  padding: 0.5rem 1rem;
-  color: #32502e;
-  outline: none;
-  background-color: #ece7b4;
-  border: 1px solid #ece7b4;
-}
-
-.voucher-input {
-  padding: 0.5rem 1rem;
-  outline: none;
-  border: 1px solid #32502e;
-}
-
-.btn-proceed-checkout {
-  width: 100%;
-  padding: 1rem;
-  border: transparent;
 }
 
 .checkout-container-right {
@@ -354,6 +346,16 @@ input[type="radio"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.sub-label {
+  font-weight: bold;
+  color:#32502e;
+
+}
+
+.sub-label span {
+  opacity: 0.8;
 }
 
 #pay-when-received {
