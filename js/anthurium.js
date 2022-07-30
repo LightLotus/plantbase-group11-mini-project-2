@@ -128,7 +128,7 @@
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
-				newImg.src = `/image/${anthuriumCategory.name}.webp` 
+				newImg.src = `./image/${anthuriumCategory.name}.webp` 
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
@@ -140,6 +140,7 @@
 				newMainContainer.append(cardPlant);
 
 			
+				// DISPLAY SPECIFIC PLANT WHEN CLICK
                 newImg.addEventListener('click', e =>{
 				const modal = document.querySelector('.modal-body');
 

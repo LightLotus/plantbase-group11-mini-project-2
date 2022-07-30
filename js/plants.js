@@ -173,7 +173,7 @@
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
 				
-				newImg.src = `/image/${dataAll}.webp`
+				newImg.src = `./image/${dataAll}.webp`
 
 				// const anchor = document.createElement('a');
 				// anchor.setAttribute('href', newImg.src)
@@ -263,9 +263,13 @@
 			
 					const modalClose = document.querySelector('.btn-secondary');
 					modalClose.addEventListener('click', ()=>{
+						
 						location.reload();
+						// window.location = window.location
+						
 					})
 			
+				
 				
 
 				// const plantClick = document.querySelector('card-img-top');
