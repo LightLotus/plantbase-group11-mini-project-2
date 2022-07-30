@@ -8,6 +8,7 @@
   box-sizing: border-box;
 }
 
+
 /* navbar section */
 .nav-container {
   margin: 0 2rem;
@@ -613,6 +614,10 @@ img .card-img-top {
 }
 /* All Plants CSS c/o Gio  ENDS HERE*/
 
+.identifier .navbar{
+  background-color:#fff;
+}
+
 .identifier .main-container{
     display:flex;
     /* flex-direction:column; */
@@ -756,10 +761,10 @@ background-color:#fff;
 color:black;
 }
 
-h1{
+/* h1{
   padding-top: 2rem;
   padding-bottom: 6rem;
-}
+} */
 
 
 /* HOVER EFFECTS OF IMAGE */
@@ -843,4 +848,8 @@ h1{
 #myDiv {
   display: none;
   text-align: center;
+}
+
+H1{
+  padding-top: 10rem;
 }
