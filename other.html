@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="./css/index.css" />
     <title>Other Category</title>
 </head>
-<body>
+<body onload="myFunction()" style="margin:0;">
     <!-- navbar starts here -->
     <nav class="navbar navbar-expand-lg py-4">
         <div class="nav-container container-fluid p-0">
@@ -141,6 +141,14 @@
       </nav>
       <!-- navbar ends here -->
       <h1> Other Plants Categroy</h1>
+
+      <!-- LOADING ANIMATION -->
+      <div id="loader"></div>
+      <div style="display:none;" id="myDiv" class="animate-bottom">
+  
+      </div>
+      <!-- LOADING ANIMATION -->
+
     <div class="main-container"></div>
 
      <!------------------------ BACK TO TOP BUTTON ----------------->
@@ -178,6 +186,20 @@
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
     crossorigin="anonymous"
   ></script>
+
+  <!-- LOADING ANIMATION -->
+  <script>
+    var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 1000);
+    }
+    
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+    </script>
     
 </body>
 </html>

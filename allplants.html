@@ -26,9 +26,11 @@
   />
   <link rel="stylesheet" href="./css/index.css" />
 
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
     <title>All Plants</title>
 </head>
-<body class="loads">
+<body onload="myFunction()" style="margin:0;" >
       <!-- navbar starts here -->
     <nav class="navbar navbar-expand-lg py-4">
       <div class="nav-container container-fluid p-0">
@@ -156,15 +158,8 @@
     <!-- <button onclick="topFunction()" id="myBtn" class="back-to-top"><i class="bi bi-arrow-up-circle"></i></button>  -->
     <i onclick="topFunction()" id="myBtn" class="bi bi-arrow-up-circle-fill back-to-top fa-3x"></i>
 
-<<<<<<< HEAD
-    <script src="./js/plants.js"></script>
-=======
-    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-      View Plant Details
-    </button>
-     -->
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header">
@@ -181,19 +176,34 @@
         </div>
       </div>
     </div>
+    
+    <!-- <div class="loader"></div> -->
+      <!-- <span  id="myname">
+        <i class="fa fa-spinner fa-4x fa-spin"></i>
+      </span> -->
 
-    <div class="modal-container"></div>
+      
 
-
+        <div id="loader"></div>
+        
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+          <!-- <h2>Tada!</h2>
+          <p>Some text in my newly loaded page..</p> -->
+        </div>
+        
+<!-- DON'T DELETE THIS CONTAINER -->
     <div class="main-container">
+   
       
     </div>
 
+
+<!-- DON'T DELETE THIS CONTAINER -->
     
 
     
     <script src="/js/plants.js"></script>
->>>>>>> 448b309ec13bea197bef3cdc67ab7d75b51eef7a
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
@@ -204,6 +214,20 @@
       integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      var myVar;
+      
+      function myFunction() {
+        myVar = setTimeout(showPage, 1000);
+      }
+      
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
+      </script>
+
 
    
 </body>

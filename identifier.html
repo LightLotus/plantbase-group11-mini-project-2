@@ -143,6 +143,8 @@
 
   <h1>PLANT BASE IDENTIFIER</h1>
 
+     
+
   <div class="divForm">
   <form class="search-form" >
     <input type="file" multiple />
@@ -153,12 +155,17 @@
 <div class="mainImage"></div>
   
   <hr>
+
+
  <div class="main-container">
 
 
 
 
  </div>
+
+ 
+    
  <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
@@ -226,13 +233,24 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
         // const plantDetails = data.suggestions[0].plant_details;
         // console.log(plantDetails);
 
-      console.log(suggest);
+      // console.log(suggest);
         // map to get similar image
         const newSuggest = suggest.map((plant)=>{
           return plant.similar_images[0].url
          
         
         })
+
+        const newProbability = suggest.map((plant)=>{
+          // return plant.similar_images[0].similarity
+          return plant.probability
+         
+        
+        })
+
+
+        
+
 
         // map to get plant names
         const newplantName = suggest.map((plant)=>{
@@ -261,7 +279,7 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
         mainImage.append(cardImageDiv);
         // cardImageDiv.append(localImageDiv);
 
-        for (let i=0; (i<newSuggest.length)&&(i<newplantName.length)&&(i<newPlantDetails.length); i++){
+        for (let i=0; (i<newSuggest.length)&&(i<newplantName.length)&&(i<newPlantDetails.length)&&(i<newProbability.length); i++){
           console.log(newSuggest[i])
           console.log(newplantName[i])
    
@@ -269,13 +287,14 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
           const getPlantName = newplantName[i];
           const getimage = newSuggest[i];
           const getPlantDetails = newPlantDetails[i];
+          const getProbability = newProbability[i];
 
-          console.log(getPlantDetails)
+          // console.log(getSimilarity)
         
           // const getPlantDetails = info;
           const div = document.querySelector('.main-container')
           const wrapper = document.createElement('div');
-          wrapper.classList.add('wrapper')
+          wrapper.classList.add('wrapper-wrapper')
           const mainCardDiv = document.createElement('div')
           mainCardDiv.classList.add('mainCardDiv')
 
@@ -296,16 +315,22 @@ document.querySelector('#search-btn').onclick = function sendIdentification() {
            // plant details paragraph div
            const mainPlantDetailsDiv = document.createElement('div')
           mainPlantDetailsDiv.classList.add('mainPlantDetailsDiv')
+
           const plantDetailsParagraph = document.createElement('p')
           plantDetailsParagraph.classList.add('plantDetails')
+
+          const probabilityParagraph = document.createElement('p')
+          probabilityParagraph.classList.add('probability')
 
           const plantName = document.createElement('p')
           plantName.classList.add('plantName')
           plantName.innerHTML = ('Name : ' + '' + getPlantName.toUpperCase());
-          plantDetailsParagraph.innerHTML = ('Common Names:' + ' ' + getPlantDetails[0].toUpperCase());
+          plantDetailsParagraph.innerHTML = ('Common Names :' + ' ' + getPlantDetails[0].toUpperCase());
+          probabilityParagraph.innerHTML = ('Probability :' + ' ' + getProbability);
           // plantDetailsParagraph.innerHTML = (getPlantDetails[0]);
           mainPlantDetailsDiv.append(plantName);
           mainPlantDetailsDiv.append(plantDetailsParagraph);
+          mainPlantDetailsDiv.append(probabilityParagraph);
          
 
 

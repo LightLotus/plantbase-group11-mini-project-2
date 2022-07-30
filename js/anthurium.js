@@ -140,6 +140,7 @@
 				newMainContainer.append(cardPlant);
 
 			
+				// DISPLAY SPECIFIC PLANT WHEN CLICK
                 newImg.addEventListener('click', e =>{
 				const modal = document.querySelector('.modal-body');
 
