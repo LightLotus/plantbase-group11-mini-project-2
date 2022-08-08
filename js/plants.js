@@ -130,7 +130,11 @@
 				price.classList.add('price');
 				let val = getRandomInt(100, 300);
 				
+<<<<<<< HEAD
 				price.innerHTML = val;
+=======
+				price.innerHTML = ('Php' + val);
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 
 				price.setAttribute('value', val)
 				newDiv.append(price);
@@ -155,9 +159,9 @@
 				newImg.setAttribute('id', 'imageCard');
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
-				
 				newImg.src = `./image/${dataAll}.webp`
 
+<<<<<<< HEAD
 				// const anchor = document.createElement('a');
 				// anchor.setAttribute('href', newImg.src)
 
@@ -165,6 +169,8 @@
 
 		
 				
+=======
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
@@ -263,7 +269,11 @@
 					})
 				
 				
+<<<<<<< HEAD
 				})
+=======
+				}) 
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 
 				const modalClose = document.querySelector('.btn-secondary');
 				modalClose.addEventListener('click', ()=>{
@@ -295,6 +305,7 @@
 			
 					
 			// ----------------ADD TO CART FUNCTION--------------------------------------
+<<<<<<< HEAD
 		// dito natapos
 			
 			iconP.addEventListener('click', (e) =>{
@@ -306,16 +317,52 @@
 			
 
 				
+=======
+			let arr = []
+			iconP.addEventListener('click', (event) =>{
+				
+				addToCart()
+				// getTotal()
+
+				const cartPlantPrice = document.querySelector('.cartPlantPrice');
+			
+				let thirdchild = document.querySelector('.subCardDiv').children[2].value ;
+				const subTotal = document.querySelector('#subTotalPrice')
+				
+				// arr.push(thirdchild)
+				// +
+				
+				// for (let i = 0; i < cartPlantPrice.length; i++) {
+				// 	subTotal.value =  parseInt(subTotal.value) + parseInt(cartPlantPrice.value)
+					
+				//   }
+
+				// console.log(thirdchild)
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 			
 				// cartPlantPrice.clone()
 				// subTotal.value = 900
 
 				// total.value = parseInt(subTotal.value) + parseInt(cartPlantPrice.value) + parseInt(shippingFee.value);
 
+<<<<<<< HEAD
 				// subTotal.value = parseInt(plantPrice) + parseInt(plantPrice);
 			
 				iconP.style.color = "red";
 
+=======
+				subTotal.value = parseInt(cartPlantPrice) + parseInt(cartPlantPrice);
+			
+				iconP.style.color = "red";
+
+			}, false)
+
+			iconP.addEventListener('change', ()=>{
+				const cartPlantPrice = document.querySelector('.cartPlantPrice');
+				const subTotal = document.querySelector('#subTotalPrice');
+				console.log(parseInt(cartPlantPrice.value) + parseInt(cartPlantPrice.value ))
+
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 			})
 
 
@@ -337,12 +384,20 @@
 				cartPlantName.classList.add('cartPlantName');
 				cartPlantName.append(allData[i]);
 		
+<<<<<<< HEAD
 				let cartPlantPrice = document.createElement('input');
+=======
+				let cartPlantPrice = document.createElement('p');
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 				cartPlantPrice.classList.add('cartPlantPrice');
 			
 				cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
 
+<<<<<<< HEAD
 				// cartPlantPrice.value = (price.innerHTML).value;
+=======
+				cartPlantPrice.innerHTML = `${price.innerHTML}`
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 
 				
 		
@@ -377,6 +432,7 @@
 
 
 			
+<<<<<<< HEAD
 			function getTotal(){
 				
 				arr = []
@@ -388,6 +444,21 @@
 			
 
 				}
+=======
+			// function getTotal(){
+				
+			// 	// arr = []
+				
+			
+
+			// 	let thirdchild = document.querySelector('.subCardDiv').children[2].value ;
+				
+			// 	// arr.push(thirdchild)
+			// 	console.log(thirdchild  + event.target.textContent)
+			
+
+			// 	}
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 
 			
 		

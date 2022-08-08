@@ -184,7 +184,11 @@
 						buyThisPlantButton.setAttribute('data-bs-target', '#cartModal');
 					
 					
+<<<<<<< HEAD
 					buyThisPlantButton.innerHTML = 'Buy this Plant';
+=======
+						buyThisPlantButton.innerHTML = 'Buy this Plant';
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 					
 	
 	
@@ -229,6 +233,7 @@
 				// ----------------ADD TO CART FUNCTION--------------------------------------
 			
 				iconP.addEventListener('click', (e) =>{
+<<<<<<< HEAD
 				
 				addToCart()
 				// getTotal()
@@ -240,10 +245,17 @@
 
 				// subTotal.value = parseInt(plantPrice) + parseInt(plantPrice);
 			
+=======
+				addToCart()
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 				iconP.style.color = "red";
 
 			})
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 			function addToCart(){
 				const plantItems = document.querySelector('.plant-item-details');
 
@@ -261,12 +273,20 @@
 				cartPlantName.classList.add('cartPlantName');
 				cartPlantName.append(allData[i]);
 		
+<<<<<<< HEAD
 				let cartPlantPrice = document.createElement('input');
+=======
+				let cartPlantPrice = document.createElement('p');
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 				cartPlantPrice.classList.add('cartPlantPrice');
 			
 				cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
 
+<<<<<<< HEAD
 				// cartPlantPrice.value = (price.innerHTML).value;
+=======
+				cartPlantPrice.innerHTML = `${price.innerHTML}`;
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 
 				
 		
