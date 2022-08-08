@@ -9,12 +9,21 @@
 }
 
 
+
 /* navbar section */
 .nav-container {
   margin: 0 2rem;
 }
 #logo {
   max-width: 8rem;
+}
+
+/* #navbarSupportedContent{
+  padding-left: 3rem;
+} */
+
+.cartIconNav{
+ padding-left:3rem;
 }
 
 .search-form {
@@ -551,6 +560,7 @@ footer {
 
 .card {
   width: 18rem;
+
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 }
 
@@ -616,6 +626,19 @@ img .card-img-top {
 
 .identifier .navbar{
   background-color:#fff;
+}
+
+.identifier #newsletter{
+  
+  display: flex;
+  flex-direction: column;
+  
+  /* margin-left: 6.7rem; */
+ 
+}
+
+.identifier .newsletters-btn{
+  width:10rem;
 }
 
 .identifier .main-container{
@@ -852,4 +875,223 @@ color:black;
 
 H1{
   padding-top: 10rem;
+}
+
+.detailsDiv p{
+  font-size: 1.25rem;
+}
+
+.commonName{
+  font-weight: bold;
+  color:#056e24;
+  font-size: 1.08rem;
+  /* line-height: 1.5rem; */
+}
+
+
+/*-------------------- ADD TO CART  modal---------------------*/
+.plant-item-details{
+  display:flex;
+  flex-direction:column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
+}
+
+
+.delivery-method-container,
+.my-order-container,
+.payment-cash-on-delivery,
+.card-subtotals-container {
+  border: 1px solid #32502e;
+  padding: 2rem;
+}
+
+.card-subtotals {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-subtotals .card-total {
+  font-weight: bold;
+}
+
+.subCardDiv{
+  display:Grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:auto;
+  padding-top: 2rem;
+  align-items: center;
+  justify-content:center;
+  /* column-gap:5rem; */
+
+ 
+}
+
+.cartPlantPrice{
+  display:flex;
+  align-items:flex-end;
+  justify-content: flex-end;
+}
+
+.cartImage{
+  display:flex;
+  align-items:flex-start;
+  justify-content: flex-start;
+  gap:2rem;
+  /* width:5rem; */
+
+}
+
+.iconDelete{
+  display:flex;
+  align-items:flex-end;
+  justify-content: flex-end;
+
+}
+
+.cartPlantName{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  /* font-size: 1rem; */
+}
+
+.checkout-container{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+}
+
+
+
+.checkout-container-left {
+  margin-left: 2rem;
+}
+
+.voucher-btn {
+  padding: 0.5rem 1rem;
+  color: #32502e;
+  outline: none;
+  background-color: #ece7b4;
+  border: 1px solid #ece7b4;
+}
+
+.voucher-input {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 1px solid #32502e;
+}
+
+.btn-proceed-checkout {
+  width: 100%;
+  padding: 1rem;
+  border: transparent;
+}
+
+.checkout-container-right {
+  margin-right: 2rem;
+}
+
+.checkout-container-right ul {
+  margin-bottom: 0;
+}
+
+input[type="radio"] {
+  accent-color: #32502e;
+}
+
+#checkbox :checked {
+  background-color: #32502e;
+}
+
+.shipping-address-input {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #32502e;
+}
+
+.shipping-address-input:focus {
+  outline: none;
+  border: 1px solid #32502e;
+  border-radius: 0.5rem;
+}
+
+.my-order-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.my-order-container ul li {
+  list-style-type: none;
+}
+
+.cash-on-delivery-container {
+  margin-top: 1rem;
+}
+
+.cash-on-delivery-form,
+.payment-options-methods {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pay-when-received {
+  opacity: 0.8;
+  color: #212121;
+  font-size: 0.9rem;
+  margin: 1rem 0 0;
+}
+
+.payment-logos img {
+  width: 6rem;
+}
+.btn-container {
+  display: flex;
+  justify-content: right;
+}
+.btn-place-order {
+  border: transparent;
+}
+
+.plant-item-details {
+  display: flex;
+  
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.btn-buy{
+  background-color:#32502e;
+  border-color:#32502e;
+  color: #fff
+}
+
+.btn-buy:hover{
+  background-color:#fff;
+  color:#000;
+  border-color: #32502e;
+}
+
+.buyThisPlantButton{
+
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  background-color: #32502e;
+  color:#fff;
+  margin-top: 2rem;
+  border-radius: 2rem;
+}
+
+.buyThisPlantButton:hover{
+  background-color:#fff;
+  color:#32502e;
+  border: 1px solid #32502e;
+  font-weight: bold;
 }
