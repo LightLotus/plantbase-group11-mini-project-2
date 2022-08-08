@@ -53,7 +53,7 @@
 				return showAll.toleratedlight;
 			  })
 		
-			  console.log(toleratedLight);
+			//   console.log(toleratedLight);
 
 			  const familyName = res.map((showAll)=>{
 				return showAll.family;
@@ -115,52 +115,35 @@
 
 				
 				
-				const iconP = document.createElement('p');
+				let iconP = document.createElement('p');
 				iconP.classList.add('iconP')
 				iconP.innerHTML = '<i class="bi bi-cart-plus fa-2x"></i>';
+				iconP.setAttribute('type', 'button')
+				// iconP.setAttribute('data-bs-target', '#cartModalConfirm')
 				subContainer.append(iconP);
+
+				
 				
 				const newDiv = document.createElement('div');
 				newDiv.classList.add('priceAndFavoriteDiv');
 				const price = document.createElement('p');
 				price.classList.add('price');
-				price.innerHTML = ('Php ' + '' + getRandomInt(100, 300) + '.00');
+				let val = getRandomInt(100, 300);
+				
+				price.innerHTML = val;
+
+				price.setAttribute('value', val)
 				newDiv.append(price);
+			
 				
 				const iconHeart = document.createElement('p');
 				iconHeart.classList.add('iconHeart')
 				iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>';
 				newDiv.append(iconHeart);
 
+
+
 			
-				// const subContainer = document.createElement('div');
-				// subContainer.classList.add('subContainer');
-				// const familyNames = document.createElement('p');
-				// familyNames.classList.add('familyName');
-				// familyNames.innerHTML = ('Family : ' + '' + familyAll);
-				// subContainer.append(familyNames);
-				// newMainContainer.append(subContainer);
-
-				// const latinName = document.createElement('p');
-				// latinName.classList.add('latinName');
-				// latinName.innerHTML = ('Latin : ' + '' + latNames);
-				// subContainer.append(latinName);
-				// newMainContainer.append(subContainer);
-
-				// const categoryName = document.createElement('p');
-				// categoryName.classList.add('categoryName');
-				// categoryName.innerHTML = ('Category : ' + '' + categories);
-				// subContainer.append(categoryName);
-				// newMainContainer.append(subContainer);
-
-				// const categoryName = ()=>{
-				// 	if (categories === 'hanging'){
-
-				// 	}
-				// }
-				// console.log(categories);
-			
-
 
 				const cardPlant = document.createElement('div');
 				cardPlant.classList.add('card');
@@ -180,18 +163,13 @@
 
 				// anchor.append(newImg);
 
-				
-				
-				// console.log(newImg.src);
-				
-
-				
-
-				
+		
 				
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
+
+				// console.log(newImg)
 
 
 
@@ -200,18 +178,21 @@
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
 
+
 				
+			
 
 				newImg.addEventListener('click', e =>{
 					
 					// console.log( e.target.src);
 					const modal = document.querySelector('.modal-body');
 					// modal({backdrop: 'static', keyboard: false})
-					const wrap = document.createElement('div');
+					let wrap = document.createElement('div');
 					wrap.classList.add('wrap');
 					const detailsDiv = document.createElement('div');
 					detailsDiv.classList.add('detailsDiv');
 
+					iconP.innerHTML = ' ';
 					wrap.append(cardPlant)
 
 					const categoryParagraph = document.createElement('p');
@@ -236,9 +217,17 @@
 
 					const toleratedLightParagraph = document.createElement('p');
 					toleratedLightParagraph.innerHTML = ('Tolerated Light : ' + '' + toleratedLights);
+
+					const buyThisPlantButton = document.createElement('p');
+					buyThisPlantButton.classList.add('buyThisPlantButton');
+					buyThisPlantButton.setAttribute('type', 'button')
+					buyThisPlantButton.setAttribute('data-bs-toggle', 'modal');
+					buyThisPlantButton.setAttribute('data-bs-target', '#cartModal');
+					
+					
+					buyThisPlantButton.innerHTML = 'Buy this Plant';
+
 				
-
-
 					detailsDiv.append(categoryParagraph);
 					detailsDiv.append(familyParagraph);
 					detailsDiv.append(latinParagraph);
@@ -246,65 +235,162 @@
 					detailsDiv.append(originParagraph);
 					detailsDiv.append(ideallightParagraph);
 					detailsDiv.append(toleratedLightParagraph);
+			
+					detailsDiv.append(buyThisPlantButton);
 
-					wrap.append(detailsDiv);
+					
+
+					 wrap.append(detailsDiv);
+					//  console.log(wrap)
+
+					
+
+					//  let clonedwrap = wrap.cloneNode(true);
+					// clonedwrap.classList= 'clone'
+
+					
+					// cloneDiv.append(clonedwrap);
+					// console.log(clonedwrap)
 
 					modal.append(wrap);
-					
-					console.log(dataAll)
-					console.log(categories)
-					console.log(familyAll)
-					console.log(latNames)
 
+			
+				
+					buyThisPlantButton.addEventListener('click', () =>{
+						
+						addToCart()
+						// console.log(clone)
+					})
+				
+				
+				})
+
+				const modalClose = document.querySelector('.btn-secondary');
+				modalClose.addEventListener('click', ()=>{
+
+			
+					window.location = window.location
 					
-									
+				})
+
+				iconHeart.addEventListener('click', ()=>{
+
+					if (iconHeart.innerHTML === '<i class="bi bi-heart fa-2x"></i>'){
+						iconHeart.innerHTML = '<i class="bi bi-heart-fill fa-2x"></i>'
+						iconHeart.style.color = 'green';
+					}else{
+						(iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>')
+						iconHeart.style.color = 'black';
+					}
+					
+					
+		
+					// function myFunction(iconHeart) {
+					// 	iconHeart.classList.toggle("bi bi-heart-fill fa-2x");
+					//   }
+		
+					})
+				// -----
+
+			
+					
+			// ----------------ADD TO CART FUNCTION--------------------------------------
+		// dito natapos
+			
+			iconP.addEventListener('click', (e) =>{
+				
+				addToCart()
+				getTotal()
+			
+			
+			
+
+				
+			
+				// cartPlantPrice.clone()
+				// subTotal.value = 900
+
+				// total.value = parseInt(subTotal.value) + parseInt(cartPlantPrice.value) + parseInt(shippingFee.value);
+
+				// subTotal.value = parseInt(plantPrice) + parseInt(plantPrice);
+			
+				iconP.style.color = "red";
+
+			})
+
+
+
+			function addToCart(){
+				const plantItems = document.querySelector('.plant-item-details');
+
+				const subCardDiv = document.createElement('div');
+				subCardDiv.classList.add('subCardDiv')
+
+			
+				const cartImage = document.createElement('img');
+
+				cartImage.classList.add('cartImage');
+				cartImage.src = newImg.src;
+				cartImage.setAttribute('width', '20%')
+
+				const cartPlantName = document.createElement('p');
+				cartPlantName.classList.add('cartPlantName');
+				cartPlantName.append(allData[i]);
+		
+				let cartPlantPrice = document.createElement('input');
+				cartPlantPrice.classList.add('cartPlantPrice');
+			
+				cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
+
+				// cartPlantPrice.value = (price.innerHTML).value;
+
+				
+		
+
+				const iconDelete = document.createElement('p');
+				iconDelete.classList.add('iconDelete')
+				iconDelete.innerHTML = '<i class="bi bi-trash"></i>';
+				
+
+				subCardDiv.append(cartImage);
+				subCardDiv.append(cartPlantName);
+				subCardDiv.append(cartPlantPrice);
+				subCardDiv.append(iconDelete);
+				plantItems.append(subCardDiv);
+				
+				
+				iconDelete.addEventListener('click', ()=>{
+					subCardDiv.remove(cartImage);
+					subCardDiv.remove(cartPlantName);
+					subCardDiv.remove(cartPlantPrice);
+					subCardDiv.remove(iconDelete);
 				})
 
 			
-					const modalClose = document.querySelector('.btn-secondary');
-					modalClose.addEventListener('click', ()=>{
-						
-						location.reload();
-						// window.location = window.location
-						
-					})
+			}
 			
-				
-				
 
-				// const plantClick = document.querySelector('card-img-top');
-				
-				// plantClick.addEventListener('click', ()=>{
-				// const container = document.querySelector('.containerPlant');
-			
-				
-				// containerPlant.append(cardPlant);
-				// })
-				// body.append(newMainContainer);
-				// console.log(dataAll);
-
-				// function specificPlant(){
-				// 	return dataAll
-				
-				//   }
-				//   console.log(specificPlant())
-				
-			
 			  }
 
-		
-			 
-			 
-			
 			})
 			.catch(err => console.error(err));
 
 
-
+			
+			function getTotal(){
+				
+				arr = []
+				
+				let cartPlantPrice = document.querySelector('.cartPlantPrice')
+				
+				arr.push(cartPlantPrice.value)
+				console.log(arr)
 			
 
+				}
 
 			
+		
 			function getRandomInt(min, max) {
 				min = Math.ceil(min);
 				max = Math.floor(max);

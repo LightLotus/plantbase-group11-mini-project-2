@@ -106,6 +106,7 @@
 				const iconP = document.createElement('p');
 				iconP.classList.add('iconP')
 				iconP.innerHTML = '<i class="bi bi-cart-plus fa-2x"></i>';
+				iconP.setAttribute('type', 'button')
 				subContainer.append(iconP);
 				
 				const newDiv = document.createElement('div');
@@ -139,6 +140,8 @@
 				cardPlant.append(subContainer);
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
+
+
 				
 				newImg.addEventListener('click', e =>{
 					const modal = document.querySelector('.modal-body');
@@ -173,6 +176,15 @@
 	
 						const toleratedLightParagraph = document.createElement('p');
 						toleratedLightParagraph.innerHTML = ('Tolerated Light : ' + '' + toleratedLights);
+
+						const buyThisPlantButton = document.createElement('p');
+						buyThisPlantButton.classList.add('buyThisPlantButton');
+						buyThisPlantButton.setAttribute('type', 'button')
+						buyThisPlantButton.setAttribute('data-bs-toggle', 'modal');
+						buyThisPlantButton.setAttribute('data-bs-target', '#cartModal');
+					
+					
+					buyThisPlantButton.innerHTML = 'Buy this Plant';
 					
 	
 	
@@ -183,9 +195,17 @@
 						detailsDiv.append(originParagraph);
 						detailsDiv.append(ideallightParagraph);
 						detailsDiv.append(toleratedLightParagraph);
+
+						detailsDiv.append(buyThisPlantButton);
 	
 						wrap.append(detailsDiv);
 						modal.append(wrap);
+
+						buyThisPlantButton.addEventListener('click', () =>{
+						
+							addToCart()
+							// console.log(clone)
+						})
 	
 					})
 	
@@ -194,6 +214,86 @@
 							location.reload();
 						})
                 
+						iconHeart.addEventListener('click', ()=>{
+
+							if (iconHeart.innerHTML === '<i class="bi bi-heart fa-2x"></i>'){
+								iconHeart.innerHTML = '<i class="bi bi-heart-fill fa-2x"></i>'
+								iconHeart.style.color = 'green';
+							}else{
+								(iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>')
+								iconHeart.style.color = 'black';
+							}
+							
+							})
+
+				// ----------------ADD TO CART FUNCTION--------------------------------------
+			
+				iconP.addEventListener('click', (e) =>{
+				
+				addToCart()
+				// getTotal()
+			
+				// cartPlantPrice.clone()
+				// subTotal.value = 900
+
+				// total.value = parseInt(subTotal.value) + parseInt(cartPlantPrice.value) + parseInt(shippingFee.value);
+
+				// subTotal.value = parseInt(plantPrice) + parseInt(plantPrice);
+			
+				iconP.style.color = "red";
+
+			})
+
+			function addToCart(){
+				const plantItems = document.querySelector('.plant-item-details');
+
+				const subCardDiv = document.createElement('div');
+				subCardDiv.classList.add('subCardDiv')
+
+			
+				const cartImage = document.createElement('img');
+
+				cartImage.classList.add('cartImage');
+				cartImage.src = newImg.src;
+				cartImage.setAttribute('width', '20%')
+
+				const cartPlantName = document.createElement('p');
+				cartPlantName.classList.add('cartPlantName');
+				cartPlantName.append(allData[i]);
+		
+				let cartPlantPrice = document.createElement('input');
+				cartPlantPrice.classList.add('cartPlantPrice');
+			
+				cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
+
+				// cartPlantPrice.value = (price.innerHTML).value;
+
+				
+		
+
+				const iconDelete = document.createElement('p');
+				iconDelete.classList.add('iconDelete')
+				iconDelete.innerHTML = '<i class="bi bi-trash"></i>';
+				
+
+				subCardDiv.append(cartImage);
+				subCardDiv.append(cartPlantName);
+				subCardDiv.append(cartPlantPrice);
+				subCardDiv.append(iconDelete);
+				plantItems.append(subCardDiv);
+				
+				
+				iconDelete.addEventListener('click', ()=>{
+					subCardDiv.remove(cartImage);
+					subCardDiv.remove(cartPlantName);
+					subCardDiv.remove(cartPlantPrice);
+					subCardDiv.remove(iconDelete);
+				})
+
+			
+			}
+
+							
 
 				
 				
