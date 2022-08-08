@@ -184,7 +184,7 @@
 						buyThisPlantButton.setAttribute('data-bs-target', '#cartModal');
 					
 					
-					buyThisPlantButton.innerHTML = 'Buy this Plant';
+						buyThisPlantButton.innerHTML = 'Buy this Plant';
 					
 	
 	
@@ -229,20 +229,11 @@
 				// ----------------ADD TO CART FUNCTION--------------------------------------
 			
 				iconP.addEventListener('click', (e) =>{
-				
 				addToCart()
-				// getTotal()
-			
-				// cartPlantPrice.clone()
-				// subTotal.value = 900
-
-				// total.value = parseInt(subTotal.value) + parseInt(cartPlantPrice.value) + parseInt(shippingFee.value);
-
-				// subTotal.value = parseInt(plantPrice) + parseInt(plantPrice);
-			
 				iconP.style.color = "red";
 
 			})
+
 
 			function addToCart(){
 				const plantItems = document.querySelector('.plant-item-details');
@@ -261,12 +252,12 @@
 				cartPlantName.classList.add('cartPlantName');
 				cartPlantName.append(allData[i]);
 		
-				let cartPlantPrice = document.createElement('input');
+				let cartPlantPrice = document.createElement('p');
 				cartPlantPrice.classList.add('cartPlantPrice');
 			
 				cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
 
-				// cartPlantPrice.value = (price.innerHTML).value;
+				cartPlantPrice.innerHTML = `${price.innerHTML}`;
 
 				
 		

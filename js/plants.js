@@ -130,7 +130,7 @@
 				price.classList.add('price');
 				let val = getRandomInt(100, 300);
 				
-				price.innerHTML = val;
+				price.innerHTML = ('Php' + val);
 
 				price.setAttribute('value', val)
 				newDiv.append(price);
@@ -155,16 +155,8 @@
 				newImg.setAttribute('id', 'imageCard');
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
-				
 				newImg.src = `./image/${dataAll}.webp`
 
-				// const anchor = document.createElement('a');
-				// anchor.setAttribute('href', newImg.src)
-
-				// anchor.append(newImg);
-
-		
-				
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
@@ -263,7 +255,7 @@
 					})
 				
 				
-				})
+				}) 
 
 				const modalClose = document.querySelector('.btn-secondary');
 				modalClose.addEventListener('click', ()=>{
@@ -295,26 +287,42 @@
 			
 					
 			// ----------------ADD TO CART FUNCTION--------------------------------------
-		// dito natapos
-			
-			iconP.addEventListener('click', (e) =>{
+			let arr = []
+			iconP.addEventListener('click', (event) =>{
 				
 				addToCart()
-				getTotal()
-			
-			
-			
+				// getTotal()
 
+				const cartPlantPrice = document.querySelector('.cartPlantPrice');
+			
+				let thirdchild = document.querySelector('.subCardDiv').children[2].value ;
+				const subTotal = document.querySelector('#subTotalPrice')
 				
+				// arr.push(thirdchild)
+				// +
+				
+				// for (let i = 0; i < cartPlantPrice.length; i++) {
+				// 	subTotal.value =  parseInt(subTotal.value) + parseInt(cartPlantPrice.value)
+					
+				//   }
+
+				// console.log(thirdchild)
 			
 				// cartPlantPrice.clone()
 				// subTotal.value = 900
 
 				// total.value = parseInt(subTotal.value) + parseInt(cartPlantPrice.value) + parseInt(shippingFee.value);
 
-				// subTotal.value = parseInt(plantPrice) + parseInt(plantPrice);
+				subTotal.value = parseInt(cartPlantPrice) + parseInt(cartPlantPrice);
 			
 				iconP.style.color = "red";
+
+			}, false)
+
+			iconP.addEventListener('change', ()=>{
+				const cartPlantPrice = document.querySelector('.cartPlantPrice');
+				const subTotal = document.querySelector('#subTotalPrice');
+				console.log(parseInt(cartPlantPrice.value) + parseInt(cartPlantPrice.value ))
 
 			})
 
@@ -337,12 +345,12 @@
 				cartPlantName.classList.add('cartPlantName');
 				cartPlantName.append(allData[i]);
 		
-				let cartPlantPrice = document.createElement('input');
+				let cartPlantPrice = document.createElement('p');
 				cartPlantPrice.classList.add('cartPlantPrice');
 			
 				cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
 
-				// cartPlantPrice.value = (price.innerHTML).value;
+				cartPlantPrice.innerHTML = `${price.innerHTML}`
 
 				
 		
@@ -377,17 +385,19 @@
 
 
 			
-			function getTotal(){
+			// function getTotal(){
 				
-				arr = []
+			// 	// arr = []
 				
-				let cartPlantPrice = document.querySelector('.cartPlantPrice')
-				
-				arr.push(cartPlantPrice.value)
-				console.log(arr)
 			
 
-				}
+			// 	let thirdchild = document.querySelector('.subCardDiv').children[2].value ;
+				
+			// 	// arr.push(thirdchild)
+			// 	console.log(thirdchild  + event.target.textContent)
+			
+
+			// 	}
 
 			
 		

@@ -251,12 +251,12 @@
 					cartPlantName.classList.add('cartPlantName');
 					cartPlantName.append(allData[i]);
 			
-					let cartPlantPrice = document.createElement('input');
+					let cartPlantPrice = document.createElement('p');
 					cartPlantPrice.classList.add('cartPlantPrice');
 				
 					cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
 	
-					// cartPlantPrice.value = (price.innerHTML).value;
+					cartPlantPrice.innerHTML = `${price.innerHTML}`;
 	
 					
 			
