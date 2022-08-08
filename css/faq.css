@@ -8,21 +8,12 @@
   box-sizing: border-box;
 }
 
-
 /* navbar section */
 .nav-container {
   margin: 0 2rem;
 }
 #logo {
   max-width: 8rem;
-}
-
-/* #navbarSupportedContent{
-  padding-left: 3rem;
-} */
-
-.cartIconNav{
- padding-left:3rem;
 }
 
 .search-form {
@@ -105,13 +96,56 @@
   color: #32502e;
   opacity: 1;
 }
-/* carousel section */
-.carousel-inner img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
+
+/* accordion */
+h5 {
+  margin-top: 8rem;
 }
 
+section {
+    margin-top: 4rem;
+}
+
+.faqs-container {
+  margin: 0 6rem;
+  border-bottom: 1px solid #32502e;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 0.5rem 0;
+}
+
+.question p {
+  font-weight: bold;
+  color: #32502e;
+  font-size: 1.3rem;
+}
+
+.chevron-icon i {
+  font-size: 1.5rem;
+}
+
+.faqs-container .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in;
+}
+
+.faqs-container.active .answer {
+    max-height: 300px;
+}
+
+.faqs-container.active .chevron-icon i {
+    transform: rotate(180deg);
+}
+
+.chevron-icon i {
+    transition: transform .5s ease-in;
+}
 /* about us section */
 .about-us-wrapper {
   display: grid;
@@ -430,49 +464,6 @@ footer {
     width: 100%;
   }
 
-  /* about us section mobile */
-  div.about-us-wrapper,
-  div.service-features {
-    grid-template-columns: 1fr;
-    margin: 4rem 2rem;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  div.about-us-text {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-
-  .about-us-image img {
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-
-  /* service features mobile*/
-  /* plant identifier section mobile*/
-  div.plant-identifier-wrapper {
-    margin: 4rem 2rem;
-    text-align: center;
-    width: 90%;
-  }
-
-  .plant-identifier-title {
-    padding-top: 5rem;
-  }
-
-  .plant-identifier img[src="./images/leaf.svg"] {
-    top: -20%;
-    width: 6rem;
-  }
-
-  .plant-identifier img[src="./images/leaf-2.svg"] {
-    right: 0;
-    top: unset;
-    bottom: -40%;
-    width: 15%;
-  }
-
   /* shop category section mobile*/
   .shop-category-label {
     flex-direction: column;
@@ -488,16 +479,8 @@ footer {
     margin-bottom: 2rem;
   }
 
-  /* .shop-category-items .category-label {
-    width: 100%;
-    height: 10rem;
-  } */
-
-  .shop-category-items {
-    height: 12rem;
-  }
-
   /* blogs section mobile */
+
   .blogs-container {
     grid-template-columns: 1fr;
     gap: 4rem;
@@ -567,7 +550,6 @@ footer {
 
 .card {
   width: 18rem;
-
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 }
 
@@ -631,18 +613,18 @@ img .card-img-top {
 }
 /* All Plants CSS c/o Gio  ENDS HERE*/
 
-.identifier .navbar{
-  background-color:#fff;
+.identifier .navbar {
+  background-color: #fff;
 }
 
-.identifier .main-container{
-    display:flex;
-    /* flex-direction:column; */
-    align-items: center;
-    justify-content:space-evenly;
-    row-gap: 5rem;
-    column-gap: 2rem; 
-    padding-bottom: 5rem;; 
+.identifier .main-container {
+  display: flex;
+  /* flex-direction:column; */
+  align-items: center;
+  justify-content: space-evenly;
+  row-gap: 5rem;
+  column-gap: 2rem;
+  padding-bottom: 5rem;
 }
 
 /* .identifier .navbar.navbar-expand{
