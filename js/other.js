@@ -111,7 +111,9 @@
 				newDiv.classList.add('priceAndFavoriteDiv');
 				const price = document.createElement('p');
 				price.classList.add('price');
-				price.innerHTML = ('Php ' + '' + getRandomInt(100, 300) + '.00');
+				let val = getRandomInt(100, 300);
+				price.innerHTML = (val);
+				price.setAttribute('value', val)
 				newDiv.append(price);
 				
 				const iconHeart = document.createElement('p');
@@ -148,7 +150,8 @@
 	
 					const detailsDiv = document.createElement('div');
 					detailsDiv.classList.add('detailsDiv');
-	
+
+					iconP.innerHTML = ' ';
 					wrap.append(cardPlant)
 	
 					const categoryParagraph = document.createElement('p');
@@ -202,6 +205,21 @@
 						buyThisPlantButton.addEventListener('click', () =>{
 						
 							addToCart()
+							const cartPlantPrice = document.querySelectorAll('.cartPlantPrice');
+						let subTotal = document.querySelector('#subTotalPrice');
+						const shippingFee = document.querySelector('.shippingFee');
+						const totalAll = document.querySelector('.card-total');
+
+						let sum = 0;
+					
+						for (let i =0; i< cartPlantPrice.length;i++){
+						sum += parseInt(cartPlantPrice[i].innerHTML)
+					
+						subTotal.innerHTML = sum
+
+						totalAll.innerHTML = sum + parseInt(shippingFee.innerHTML)
+
+						}
 							// console.log(clone)
 						})
 	
@@ -249,35 +267,58 @@
 					const cartPlantName = document.createElement('p');
 					cartPlantName.classList.add('cartPlantName');
 					cartPlantName.append(allData[i]);
-			
-<<<<<<< HEAD
-					let cartPlantPrice = document.createElement('input');
-=======
+
+					const plantQty = document.createElement('input');
+					plantQty.classList.add('plantQty');
+					plantQty.setAttribute('type', 'number')
+					plantQty.setAttribute('value',"1")
+					plantQty.setAttribute('min', "1")
+					plantQty.setAttribute('max', "10")
+				
 					let cartPlantPrice = document.createElement('p');
 >>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 					cartPlantPrice.classList.add('cartPlantPrice');
 				
 					cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
 	
-<<<<<<< HEAD
-					// cartPlantPrice.value = (price.innerHTML).value;
-=======
 					cartPlantPrice.innerHTML = `${price.innerHTML}`;
->>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 	
 					
 			
 	
 					const iconDelete = document.createElement('p');
 					iconDelete.classList.add('iconDelete')
-					iconDelete.innerHTML = '<i class="bi bi-trash"></i>';
+					iconDelete.innerHTML = '<i class="bi bi-trash fa-lg"></i>';
 					
 	
 					subCardDiv.append(cartImage);
 					subCardDiv.append(cartPlantName);
+					subCardDiv.append(plantQty);
 					subCardDiv.append(cartPlantPrice);
 					subCardDiv.append(iconDelete);
 					plantItems.append(subCardDiv);
+
+					// =========displaying the total price of plants in the cart==============
+				const placeOrder = document.querySelector('.cartIconNav')
+				placeOrder.addEventListener('click', ()=>{
+
+				const cartPlantPrice = document.querySelectorAll('.cartPlantPrice');
+				let subTotal = document.querySelector('#subTotalPrice');
+				const shippingFee = document.querySelector('.shippingFee');
+				const totalAll = document.querySelector('.card-total');
+
+				let sum = 0;
+			
+				for (let i =0; i< cartPlantPrice.length;i++){
+					  sum += parseInt(cartPlantPrice[i].innerHTML)
+				
+				subTotal.innerHTML = sum
+
+				totalAll.innerHTML = sum + parseInt(shippingFee.innerHTML)
+
+				}
+
+				})
 					
 					
 					iconDelete.addEventListener('click', ()=>{
@@ -285,6 +326,20 @@
 						subCardDiv.remove(cartPlantName);
 						subCardDiv.remove(cartPlantPrice);
 						subCardDiv.remove(iconDelete);
+
+						let subTotal = document.querySelector('#subTotalPrice');
+					const shippingFee = document.querySelector('.shippingFee');
+					const totalAll = document.querySelector('.card-total');
+
+					let sum = parseInt(subTotal.innerHTML);
+			
+					console.log(sum)
+					total = sum - parseInt(cartPlantPrice.innerHTML)
+					
+					subTotal.innerHTML = total
+
+					totalAll.innerHTML = total + parseInt(shippingFee.innerHTML)
+					
 					})
 	
 				
