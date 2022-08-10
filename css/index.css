@@ -910,7 +910,36 @@ H1{
 .card-subtotals {
   display: flex;
   justify-content: space-between;
+  font-size: 1.25rem;
 }
+
+.subtotallabel{
+  font-size: 1.25rem;
+}
+
+.shippingFeelabel{
+  font-size: 1.25rem;
+}
+
+.shippingFee{
+  font-size: 1.25rem;
+}
+
+.card-total-label{
+  font-size: 1.25rem;
+}
+.card-total{
+  font-size: 1.25rem;
+}
+
+/* .plantQty{
+  border: none;
+} */
+
+#subTotalPrice{
+  font-size: 1.25rem;
+}
+
 
 .card-subtotals .card-total {
   font-weight: bold;
@@ -918,20 +947,33 @@ H1{
 
 .subCardDiv{
   display:Grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows:auto;
   padding-top: 2rem;
   align-items: center;
   justify-content:center;
   /* column-gap:5rem; */
 
+
  
+}
+
+.subCardDiv .plantQty{
+  width:30%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-left: 3rem;
+  font-size: 1.25rem;
+
+
 }
 
 .cartPlantPrice{
   display:flex;
   align-items:flex-end;
   justify-content: flex-end;
+  font-size: 1.25rem;
 }
 
 .cartImage{
@@ -954,7 +996,7 @@ H1{
   display:flex;
   align-items:flex-start;
   justify-content:flex-start;
-  /* font-size: 1rem; */
+  font-size: 1.25rem;
 }
 
 .checkout-container{
