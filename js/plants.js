@@ -291,7 +291,7 @@
 					
 		
 					})
-			
+				// -----
 
 			
 					
@@ -300,10 +300,34 @@
 			iconP.addEventListener('click', (event) =>{
 				
 				addToCart()
+				// getTotal()
+				console.log(event)
+
+				const cartPlantPrice = document.querySelector('.cartPlantPrice');
+			
+				let thirdchild = document.querySelector('.subCardDiv').children[2].value ;
+				const subTotal = document.querySelector('#subTotalPrice')
+				
+				// arr.push(thirdchild)
+				// +
+				
+				// for (let i = 0; i < cartPlantPrice.length; i++) {
+				// 	subTotal.value =  parseInt(subTotal.value) + parseInt(cartPlantPrice.value)
+					
+				//   }
+
+				// console.log(thirdchild)
+			
+				// cartPlantPrice.clone()
+				// subTotal.value = 900
+
+				// total.value = parseInt(subTotal.value) + parseInt(cartPlantPrice.value) + parseInt(shippingFee.value);
+
+				subTotal.value = parseInt(cartPlantPrice) + parseInt(cartPlantPrice);
 			
 				iconP.style.color = "red";
 
-			})
+			}, false)
 
 			iconP.addEventListener('change', ()=>{
 				const cartPlantPrice = document.querySelector('.cartPlantPrice');
@@ -460,6 +484,7 @@
 			
 
 			// 	}
+>>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 
 			
 		

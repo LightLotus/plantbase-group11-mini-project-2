@@ -2,13 +2,11 @@
 
 * {
   font-family: "Lato", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 /* navbar section */
 .nav-container {
@@ -22,8 +20,8 @@
   padding-left: 3rem;
 } */
 
-.cartIconNav{
- padding-left:3rem;
+.cartIconNav {
+  padding-left: 3rem;
 }
 
 .search-form {
@@ -88,7 +86,7 @@
 .shop-items {
   padding: 1rem;
   margin-top: 2rem;
-  width: 20vw;
+  width: 30vw;
 }
 
 .shop-items span {
@@ -96,15 +94,16 @@
 }
 
 .shop-items span a {
-  opacity: 0.5;
   transition: cubic-bezier(1, 0, 0, 1) 0.3s;
+  display: block;
+  width: 100%;
+  margin: 0.3rem 0;
 }
 
 .shop-items span a:hover,
 .shop-items span a:focus,
 .shop-items span a:active {
-  color: #32502e;
-  opacity: 1;
+  background-color: #32502e3c;
 }
 /* carousel section */
 .carousel-inner img {
@@ -489,16 +488,11 @@ footer {
     margin-bottom: 2rem;
   }
 
-  /* .shop-category-items .category-label {
-    width: 100%;
-    height: 10rem;
-  } */
-
   .shop-category-items {
-    height: 12rem;
+    height: 30vh;
   }
-
   /* blogs section mobile */
+
   .blogs-container {
     grid-template-columns: 1fr;
     gap: 4rem;
@@ -632,31 +626,29 @@ img .card-img-top {
 }
 /* All Plants CSS c/o Gio  ENDS HERE*/
 
-.identifier .navbar{
-  background-color:#fff;
+.identifier .navbar {
+  background-color: #fff;
 }
 
-.identifier #newsletter{
-  
+.identifier #newsletter {
   display: flex;
   flex-direction: column;
-  
+
   /* margin-left: 6.7rem; */
- 
 }
 
-.identifier .newsletters-btn{
-  width:10rem;
+.identifier .newsletters-btn {
+  width: 10rem;
 }
 
-.identifier .main-container{
-    display:flex;
-    /* flex-direction:column; */
-    align-items: center;
-    justify-content:space-evenly;
-    row-gap: 5rem;
-    column-gap: 2rem; 
-    padding-bottom: 5rem;; 
+.identifier .main-container {
+  display: flex;
+  /* flex-direction:column; */
+  align-items: center;
+  justify-content: space-evenly;
+  row-gap: 5rem;
+  column-gap: 2rem;
+  padding-bottom: 5rem;
 }
 
 /* .identifier .navbar.navbar-expand{
@@ -891,27 +883,24 @@ H1 {
   padding-top: 10rem;
 }
 
-.detailsDiv p{
+.detailsDiv p {
   font-size: 1.25rem;
 }
 
-.commonName{
+.commonName {
   font-weight: bold;
-  color:#056e24;
+  color: #056e24;
   font-size: 1.08rem;
   /* line-height: 1.5rem; */
 }
 
-
 /*-------------------- ADD TO CART  modal---------------------*/
-.plant-item-details{
-  display:flex;
-  flex-direction:column;
+.plant-item-details {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  
 }
-
 
 .delivery-method-container,
 .my-order-container,
@@ -965,7 +954,7 @@ H1 {
   grid-template-rows:auto;
   padding-top: 2rem;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   /* column-gap:5rem; */
 
 
@@ -990,20 +979,18 @@ H1 {
   font-size: 1.25rem;
 }
 
-.cartImage{
-  display:flex;
-  align-items:flex-start;
+.cartImage {
+  display: flex;
+  align-items: flex-start;
   justify-content: flex-start;
-  gap:2rem;
+  gap: 2rem;
   /* width:5rem; */
-
 }
 
-.iconDelete{
-  display:flex;
-  align-items:flex-end;
+.iconDelete {
+  display: flex;
+  align-items: flex-end;
   justify-content: flex-end;
-
 }
 
 .cartPlantName{
@@ -1013,13 +1000,11 @@ H1 {
   font-size: 1.25rem;
 }
 
-.checkout-container{
+.checkout-container {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 4rem;
 }
-
-
 
 .checkout-container-left {
   margin-left: 2rem;
@@ -1115,39 +1100,38 @@ input[type="radio"] {
 
 .plant-item-details {
   display: flex;
-  
+
   align-items: flex-start;
   justify-content: space-between;
 }
 
-.btn-buy{
-  background-color:#32502e;
-  border-color:#32502e;
-  color: #fff
+.btn-buy {
+  background-color: #32502e;
+  border-color: #32502e;
+  color: #fff;
 }
 
-.btn-buy:hover{
-  background-color:#fff;
-  color:#000;
+.btn-buy:hover {
+  background-color: #fff;
+  color: #000;
   border-color: #32502e;
 }
 
-.buyThisPlantButton{
-
+.buyThisPlantButton {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   width: 10rem;
   height: 3rem;
   background-color: #32502e;
-  color:#fff;
+  color: #fff;
   margin-top: 2rem;
   border-radius: 2rem;
 }
 
-.buyThisPlantButton:hover{
-  background-color:#fff;
-  color:#32502e;
+.buyThisPlantButton:hover {
+  background-color: #fff;
+  color: #32502e;
   border: 1px solid #32502e;
   font-weight: bold;
 }

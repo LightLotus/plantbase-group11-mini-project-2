@@ -271,20 +271,12 @@
 					plantQty.setAttribute('min', "1")
 					plantQty.setAttribute('max', "10")
 			
-<<<<<<< HEAD
-					let cartPlantPrice = document.createElement('input');
-=======
 					let cartPlantPrice = document.createElement('p');
->>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 					cartPlantPrice.classList.add('cartPlantPrice');
 				
 					cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
 	
-<<<<<<< HEAD
-					// cartPlantPrice.value = (price.innerHTML).value;
-=======
 					cartPlantPrice.innerHTML = `${price.innerHTML}`;
->>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 	
 					
 			

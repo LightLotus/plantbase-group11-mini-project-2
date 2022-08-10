@@ -276,7 +276,6 @@
 					plantQty.setAttribute('max', "10")
 				
 					let cartPlantPrice = document.createElement('p');
->>>>>>> ac42f70c772a9a83c631bc25d0a049fa514c55c2
 					cartPlantPrice.classList.add('cartPlantPrice');
 				
 					cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
