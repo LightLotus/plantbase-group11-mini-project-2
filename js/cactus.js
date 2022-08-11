@@ -219,7 +219,16 @@
 						totalAll.innerHTML = sum + parseInt(shippingFee.innerHTML)
 
 						}
-							// console.log(clone)
+							// ############### copy the total price from cart to checkout 
+					const proceedTocheckoutButton = document.querySelector('.btn-proceed-checkout');
+					proceedTocheckoutButton.addEventListener('click', ()=>{
+					const totalPriceOfPlant = document.querySelector('#totalPriceOfPlant');
+					const grandTotal = document.querySelector('#grandTotal');
+					
+
+					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML)+ '.00');
+					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML)+ '.00');
+				})
 						})
 	
 	
@@ -318,6 +327,16 @@
 				totalAll.innerHTML = sum + parseInt(shippingFee.innerHTML)
 
 				}
+				// ############### copy the total price from cart to checkout 
+					const proceedTocheckoutButton = document.querySelector('.btn-proceed-checkout');
+					proceedTocheckoutButton.addEventListener('click', ()=>{
+					const totalPriceOfPlant = document.querySelector('#totalPriceOfPlant');
+					const grandTotal = document.querySelector('#grandTotal');
+					
+
+					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML)+ '.00');
+					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML)+ '.00');
+				})
 
 				})
 					
