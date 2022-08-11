@@ -105,7 +105,7 @@
 
 				const newParagraph = document.createElement('p');
 				newParagraph.classList.add('commonName')
-				newParagraph.innerHTML = ( dataAll );
+				newParagraph.innerHTML = ( dataAll ).toUpperCase();
 				subContainer.append(newParagraph);
 				newMainContainer.append(subContainer);
 
@@ -217,16 +217,7 @@
 					
 
 					 wrap.append(detailsDiv);
-					//  console.log(wrap)
-
 					
-
-					//  let clonedwrap = wrap.cloneNode(true);
-					// clonedwrap.classList= 'clone'
-
-					
-					// cloneDiv.append(clonedwrap);
-					// console.log(clonedwrap)
 
 					modal.append(wrap);
 
@@ -250,6 +241,17 @@
 						totalAll.innerHTML = sum + parseInt(shippingFee.innerHTML)
 
 						}
+
+						// ############### copy the total price from cart to checkout
+						const proceedTocheckoutButton = document.querySelector('.btn-proceed-checkout');
+						proceedTocheckoutButton.addEventListener('click', ()=>{
+							const totalPriceOfPlant = document.querySelector('#totalPriceOfPlant');
+							const grandTotal = document.querySelector('#grandTotal');
+							
+		
+							totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML)+ '.00');
+							grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML)+ '.00');
+						})
 					
 					})
 				
@@ -291,13 +293,14 @@
 
 			})
 
-			iconP.addEventListener('change', ()=>{
-				const cartPlantPrice = document.querySelector('.cartPlantPrice');
-				const subTotal = document.querySelector('#subTotalPrice');
-				console.log(parseInt(cartPlantPrice.value) + parseInt(cartPlantPrice.value ))
+			// iconP.addEventListener('change', ()=>{
+			// 	const cartPlantPrice = document.querySelector('.cartPlantPrice');
+			// 	const subTotal = document.querySelector('#subTotalPrice');
+			// 	console.log(parseInt(cartPlantPrice.value) + parseInt(cartPlantPrice.value ))
 
-			})
+			// })
 
+		
 
 
 			function addToCart(){
@@ -311,11 +314,11 @@
 
 				cartImage.classList.add('cartImage');
 				cartImage.src = newImg.src;
-				cartImage.setAttribute('width', '20%')
+				cartImage.setAttribute('width', '40%')
 
 				const cartPlantName = document.createElement('p');
 				cartPlantName.classList.add('cartPlantName');
-				cartPlantName.append(allData[i]);
+				cartPlantName.append(allData[i].toUpperCase());
 
 				const plantQty = document.createElement('input');
 				plantQty.classList.add('plantQty');
@@ -362,7 +365,7 @@
 			
 					
 					let a = parseInt(cartPlantPrice.innerHTML) * parseInt(plantQty.value)
-					console.log(a)
+					// console.log(a)
 				let sum = 0;
 				
 			
@@ -378,24 +381,19 @@
 				}
 
 			
+				// ############### copy the total price from cart to checkout
+				const proceedTocheckoutButton = document.querySelector('.btn-proceed-checkout');
+				proceedTocheckoutButton.addEventListener('click', ()=>{
+					const totalPriceOfPlant = document.querySelector('#totalPriceOfPlant');
+					const grandTotal = document.querySelector('#grandTotal');
+					
 
+					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML)+ '.00');
+					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML)+ '.00');
+				})
 				
 				})
 
-				// plantQty.addEventListener('change', ()=>{
-				// 	let plantprice = document.querySelectorAll('.cartPlantPrice');
-
-				// 	for (let i =0; i< plantprice.length;i++){
-
-				// 		console.log(plantprice[i])
-
-				// 	}
-
-					
-
-				// })
-			
-				
 			
 				
 				

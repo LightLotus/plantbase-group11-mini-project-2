@@ -201,7 +201,7 @@
                         </div>
                   
                     <div class="btn-container">
-                      <a class="link-button btn-place-order" href="#">CONTINUE SHOPPING</a>
+                      <a class="link-button btn-place-order" href="allplants.html">CONTINUE SHOPPING</a>
                     </div>
                   </form>
                 </div>
@@ -263,7 +263,7 @@
       <div class="checkout-container-left">
         <div>
           <p class="form-label">Delivery Method</p>
-          <div class=" card delivery-method-container">
+          <div class="card delivery-method-container">
 
             <form class="delivery-method-options">
 
@@ -360,20 +360,22 @@
 
           <div class="card my-order-container">
             <div class="product">
-              <p>Product</p>
+              <p></p>
               <ul>
-                <li>Aglaonema Katrina × 3</li>
-                <li>Shipping</li>
+                <li>TOTAL PLANT PRICE</li>
+                <li>SHIPPING</li>
+                <li id = "gradTotalLabel"><strong>TOTAL</strong></li>
               </ul>
-              <p class="my-order-total fs-2"><strong>&emsp;&emsp;Total</strong></p>
+              <!-- <p class="my-order-total fs-2"><strong>&emsp;&emsp;TOTAL</strong></p> -->
             </div>
             <div class="total">
-              <p>Subtotal</p>
+              <p></p>
               <ul>
-                <li>₱ 750.00</li>
+                <li id = "totalPriceOfPlant"></li>
                 <li>₱ 200.00 <span>(via Third Party Courier)</span></li>
+                <strong><li id= 'grandTotal' ></li></strong>
               </ul>
-              <p class="my-order-total fs-2"><strong>&emsp;&emsp;₱ 950.00</strong></p>
+              <!-- <p id= 'grandTotal' class="my-order-totals "><strong></strong></p> -->
             </div>
           </div>
           <div class="payment-options-container">
@@ -384,7 +386,7 @@
                     <img src="./images/cash-on-delivery-icon.svg" alt="" />
                     <label for="delivery-method">&emsp;Cash On Delivery</label>
                   </div>
-                  <input type="radio" name="cash-on-delivery" />
+                  <input type="radio" name="cash-on-delivery" checked/>
                 </div>
                 <p id="pay-when-received">Pay when you received</p>
                 <div class="cash-on-delivery-form mt-3">
@@ -442,10 +444,11 @@
         </div>
       </div>
     </div>
-           
+    <!-- <button class="btn backToCartBtn" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button> -->
           </div>
+          
           <div class="modal-footer">
-            <button class="btn btn-primary" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button>
+            <button class="btn backToCartBtn" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button>
           </div>
         </div>
       </div>
