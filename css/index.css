@@ -899,11 +899,22 @@ H1{
 }
 
 
-.delivery-method-container,
-.my-order-container,
-.payment-cash-on-delivery,
+.delivery-method-container{
+  padding: 2rem;
+  width: 100%;
+}
+
+.my-order-container{
+  padding: 2rem;
+  width: 100%;
+}
+.payment-cash-on-delivery{
+  padding: 2rem;
+  width: 100%;
+}
 .card-subtotals-container {
-  border: 1px solid #32502e;
+  /* border: 1px solid #32502e; */
+  width: 100%;
   padding: 2rem;
 }
 
@@ -932,9 +943,9 @@ H1{
   font-size: 1.25rem;
 }
 
-/* .plantQty{
-  border: none;
-} */
+.btn-place-order{
+  border-radius:0.5rem;
+}
 
 #subTotalPrice{
   font-size: 1.25rem;
@@ -1029,6 +1040,7 @@ H1{
   width: 100%;
   padding: 1rem;
   border: transparent;
+  border-radius:0.5rem;
 }
 
 .checkout-container-right {
@@ -1096,7 +1108,9 @@ input[type="radio"] {
   justify-content: right;
 }
 .btn-place-order {
+ 
   border: transparent;
+  /* margin-top: 4rem; */
 }
 
 .plant-item-details {
@@ -1136,4 +1150,20 @@ input[type="radio"] {
   color:#32502e;
   border: 1px solid #32502e;
   font-weight: bold;
+}
+
+
+.form-group{
+  padding-top: 0.75rem;
+  padding-left:1rem;
+  padding-right:1rem;
+ 
+}
+
+#addressCheckout{
+  width: 100%;
+}
+
+#address{
+  margin-bottom: 2rem;
 }

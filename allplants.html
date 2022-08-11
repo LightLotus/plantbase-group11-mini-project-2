@@ -127,7 +127,7 @@
               <a href="#">Contact Us</a>
             </li>
             <li class="nav-link-items">
-              <i class="bi bi-cart fa-lg cartIconNav" data-bs-target="#cartModal" data-bs-toggle="modal" type="button"></i>
+              <span><i class="bi bi-cart fa-lg cartIconNav" data-bs-target="#cartModal" data-bs-toggle="modal" type="button"></i>Cart </span>
             </li>
           </ul>
           <form class="search-form d-flex" role="search">
@@ -191,7 +191,7 @@
                 <div class="checkout-container">
                   <div class="checkout-container-left">
                     <p class="form-label">ITEM SUMMARY</p>
-                    <div class="delivery-method-container">
+                    <div class=" card delivery-method-container">
                       <form class="delivery-method-options">
                         <!-- <input type="checkbox" name="plant-item" />
                         <label for="">All</label> -->
@@ -208,7 +208,7 @@
               </div>
               <div class="checkout-container-right">
                 <p class="form-label">CARD TOTAL</p>
-                <div class="card-subtotals-container">
+                <div class="card card-subtotals-container">
                   <div class="card-subtotals">
                     <span class="subtotallabel">SUB TOTAL</span>
                     <span  id = 'subTotalPrice'></span>
@@ -254,17 +254,19 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="modalCheckoutLabel">Plant Base</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body">
 
             <h5 class="fs-2">checkout</h5>
-    <div class="checkout-container">
+    <div class="  checkout-container">
       <div class="checkout-container-left">
         <div>
           <p class="form-label">Delivery Method</p>
-          <div class="delivery-method-container">
+          <div class=" card delivery-method-container">
+
             <form class="delivery-method-options">
+
               <div>
                 <input type="radio" name="delivery-method" />
                 <img src="./images/store-icon.svg" alt="" />
@@ -275,71 +277,88 @@
                 <img src="./images/bus-icon.svg" alt="" />
                 <label for="delivery-method">&emsp;Door to Door Delivery</label>
               </div>
+
             </form>
+            
           </div>
         </div>
         <div class="shipping-form">
           <p class="form-label mt-3">Shipping Address</p>
           <div class="address-form">
-            <input
-              class="shipping-address-input"
-              type="text"
-              placeholder="  Country / Region"
-            />
-            <div class="name-details">
-              <input
-                class="shipping-address-input"
-                type="text"
-                placeholder="  First Name"
-              />
-              <input
-                class="shipping-address-input"
-                type="text"
-                placeholder="  Last Name"
-              />
+
+            <div id = "addressCheckout"class="card" >
+
+                  <div class="form-group ">
+                      <label for="lastname">Lastname</label>
+                      <input type="text" class="form-control" id="lastname" placeholder="Lastname">
+                  </div>
+
+                  <div class="form-group">
+                      <label for="firstname">Firstname</label>
+                      <input type="text" class="form-control" id="firstname" placeholder="Firstname">
+                  </div>
+
+                  <div class="form-group ">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" class="form-control" id="mobile" placeholder="Mobile">
+                  </div>
+    
+
+                  <div class="form-group">
+                    <label for="region">Region</label>
+                    <select id="region" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                    </select>
+                  </div>
+
+                    <div class="form-group ">
+                      <label for="province">Province</label>
+                      <select id="province" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                      </select>
+                    </div>
+            
+                    <div class="form-group ">
+                        <label for="city">City / Municipality</label>
+                        <select id="city" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                        </select>
+
+                      </div>
+                    <div  class="form-group ">
+
+                      <label for="barangay">Baragay</label>
+                        <select id="barangay" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                        </select>
+                
+                  </div>
+
+                  <div class="form-group ">
+                    <label for="address">address</label>
+                    <input type="text" class="form-control" id="address" placeholder="House no. / Sitio">
+                </div>
+
+             
             </div>
-            <input
-              class="shipping-address-input"
-              type="text"
-              placeholder="  Address"
-            />
-            <div class="name-details">
-              <input
-                class="shipping-address-input"
-                type="text"
-                placeholder="  Postal Code"
-              />
-              <input
-                class="shipping-address-input"
-                type="text"
-                placeholder="  City"
-              />
-            </div>
-            <div>
-              <input
-                class="shipping-address-input"
-                type="text"
-                placeholder="  Region"
-              />
-            </div>
-            <div>
-              <input
-                class="shipping-address-input"
-                type="text"
-                placeholder="  Phone"
-              />
-            </div>
-            <div>
-              <input id="checkbox" type="checkbox" />
-              <label for="">Save this information for next time</label>
-            </div>
+            
           </div>
         </div>
       </div>
       <div class="checkout-container-right">
         <div>
           <p class="form-label">My Order</p>
-          <div class="my-order-container">
+
+          <div class="card my-order-container">
             <div class="product">
               <p>Product</p>
               <ul>
@@ -359,7 +378,7 @@
           </div>
           <div class="payment-options-container">
             <form class="payment-options">
-              <div class="payment-cash-on-delivery mt-3">
+              <div class="card payment-cash-on-delivery mt-3">
                 <div class="cash-on-delivery-form">
                   <div>
                     <img src="./images/cash-on-delivery-icon.svg" alt="" />
@@ -376,7 +395,7 @@
                   <input type="radio" name="cash-on-delivery" />
                 </div>
               </div>
-              <div class="payment-cash-on-delivery mt-3">
+              <div class="card payment-cash-on-delivery mt-3">
                 <div class="cash-on-delivery-form">
                   <div>
                     <img
