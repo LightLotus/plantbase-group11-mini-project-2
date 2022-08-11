@@ -109,11 +109,6 @@
 				subContainer.append(newParagraph);
 				newMainContainer.append(subContainer);
 
-				// document.addEventListener("click", function(){
-					
-				//   });
-
-				
 				
 				let iconP = document.createElement('p');
 				iconP.classList.add('iconP')
@@ -140,9 +135,6 @@
 				newDiv.append(iconHeart);
 
 
-
-			
-
 				const cardPlant = document.createElement('div');
 				cardPlant.classList.add('card');
 
@@ -159,18 +151,12 @@
 				const fig = document.createElement('figure');
 				fig.append(newImg);
 
-				// console.log(newImg)
-
-
 
 				cardPlant.append(fig);
 				cardPlant.append(subContainer);
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
 
-
-				
-			
 
 				newImg.addEventListener('click', e =>{
 					
