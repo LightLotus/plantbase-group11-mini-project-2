@@ -2,7 +2,7 @@
 
 * {
   font-family: "Lato", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -78,7 +78,7 @@
 .shop-items {
   padding: 1rem;
   margin-top: 2rem;
-  width: 20vw;
+  width: 30vw;
 }
 
 .shop-items span {
@@ -86,15 +86,16 @@
 }
 
 .shop-items span a {
-  opacity: 0.5;
   transition: cubic-bezier(1, 0, 0, 1) 0.3s;
+  display: block;
+  width: 100%;
+  margin: 0.3rem 0;
 }
 
 .shop-items span a:hover,
 .shop-items span a:focus,
 .shop-items span a:active {
-  color: #32502e;
-  opacity: 1;
+  background-color: #32502e3c;
 }
 /* carousel section */
 .carousel-inner img {
