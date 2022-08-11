@@ -387,7 +387,7 @@ footer {
   text-align: center;
 }
 
-/* mobile view */
+/*##################### mobile view #############################*/
 
 @media (max-width: 800px) {
   /* navbar section mobile */
@@ -929,22 +929,22 @@ H1 {
 }
 
 .subtotallabel{
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .shippingFeelabel{
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .shippingFee{
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .card-total-label{
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 .card-total{
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .btn-place-order{
@@ -952,7 +952,7 @@ H1 {
 }
 
 #subTotalPrice{
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 
@@ -964,7 +964,7 @@ H1 {
   display:Grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows:auto;
-  padding-top: 2rem;
+  margin-top: 2rem;
   align-items: center;
   justify-content: center;
   /* column-gap:5rem; */
@@ -976,19 +976,19 @@ H1 {
 .subCardDiv .plantQty{
   width:30%;
   display:flex;
-  align-items:center;
+  align-items:center            ;
   justify-content:center;
   margin-left: 3rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
 
 
 }
 
 .cartPlantPrice{
   display:flex;
-  align-items:flex-end;
-  justify-content: flex-end;
-  font-size: 1.25rem;
+  align-items:center;
+  justify-content: center;
+  font-size: 1rem;
 }
 
 .cartImage {
@@ -1009,7 +1009,7 @@ H1 {
   display:flex;
   align-items:flex-start;
   justify-content:flex-start;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .checkout-container {
@@ -1152,11 +1152,29 @@ input[type="radio"] {
 }
 
 
+/* ************MODAL CHECKOUT CART************** */
 .form-group{
   padding-top: 0.75rem;
   padding-left:1rem;
   padding-right:1rem;
  
+}
+
+.backToCartBtn{
+  background-color:#32502e;
+  border-color:#32502e;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.backToCartBtn:hover{
+  background-color:#fff;
+  color:#32502e;
+  border: 1px solid #32502e;
+  font-weight: bold;
 }
 
 #addressCheckout{
@@ -1165,4 +1183,59 @@ input[type="radio"] {
 
 #address{
   margin-bottom: 2rem;
+}
+
+#grandTotal, #gradTotalLabel{
+  padding-top: 1rem;
+}
+
+@media (max-width: 800px){
+  .checkout-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+   
+ 
+  }
+
+ .checkout-container-left, .checkout-container-right{
+  width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  
+ 
+ }
+
+ .modal-content{
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+ }
+
+ .subCardDiv .plantQty{
+  width:40%;
+
+  /* padding-left: 1rem; */
+  font-size: .75rem;
+  transform:translateY(-.5rem);
+
+
+}
+
+.cartImage{
+  width:80%;
+}
+
+.cartPlantName{
+ width: 100%;
+ font-size: .75rem;
+ padding-left: .75rem;
+}
+
+/* .plant-item-details{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+} */
 }
