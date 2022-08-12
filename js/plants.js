@@ -53,7 +53,7 @@
 				return showAll.toleratedlight;
 			  })
 		
-			  console.log(toleratedLight);
+			//   console.log(toleratedLight);
 
 			  const familyName = res.map((showAll)=>{
 				return showAll.family;
@@ -105,61 +105,34 @@
 
 				const newParagraph = document.createElement('p');
 				newParagraph.classList.add('commonName')
-				newParagraph.innerHTML = ( dataAll );
+				newParagraph.innerHTML = ( dataAll ).toUpperCase();
 				subContainer.append(newParagraph);
 				newMainContainer.append(subContainer);
 
-				// document.addEventListener("click", function(){
-					
-				//   });
-
 				
-				
-				const iconP = document.createElement('p');
+				let iconP = document.createElement('p');
 				iconP.classList.add('iconP')
 				iconP.innerHTML = '<i class="bi bi-cart-plus fa-2x"></i>';
+				iconP.setAttribute('type', 'button')
+				// iconP.setAttribute('data-bs-target', '#cartModalConfirm')
 				subContainer.append(iconP);
+
+				
 				
 				const newDiv = document.createElement('div');
 				newDiv.classList.add('priceAndFavoriteDiv');
 				const price = document.createElement('p');
 				price.classList.add('price');
-				price.innerHTML = ('Php ' + '' + getRandomInt(100, 300) + '.00');
+				let val = getRandomInt(100, 300);
+				price.innerHTML = (val);
+				price.setAttribute('value', val)
 				newDiv.append(price);
+			
 				
 				const iconHeart = document.createElement('p');
 				iconHeart.classList.add('iconHeart')
 				iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>';
 				newDiv.append(iconHeart);
-
-			
-				// const subContainer = document.createElement('div');
-				// subContainer.classList.add('subContainer');
-				// const familyNames = document.createElement('p');
-				// familyNames.classList.add('familyName');
-				// familyNames.innerHTML = ('Family : ' + '' + familyAll);
-				// subContainer.append(familyNames);
-				// newMainContainer.append(subContainer);
-
-				// const latinName = document.createElement('p');
-				// latinName.classList.add('latinName');
-				// latinName.innerHTML = ('Latin : ' + '' + latNames);
-				// subContainer.append(latinName);
-				// newMainContainer.append(subContainer);
-
-				// const categoryName = document.createElement('p');
-				// categoryName.classList.add('categoryName');
-				// categoryName.innerHTML = ('Category : ' + '' + categories);
-				// subContainer.append(categoryName);
-				// newMainContainer.append(subContainer);
-
-				// const categoryName = ()=>{
-				// 	if (categories === 'hanging'){
-
-				// 	}
-				// }
-				// console.log(categories);
-			
 
 
 				const cardPlant = document.createElement('div');
@@ -172,27 +145,11 @@
 				newImg.setAttribute('id', 'imageCard');
 				newImg.setAttribute('data-bs-toggle', 'modal');
 				newImg.setAttribute('data-bs-target', '#exampleModal');
-				
 				newImg.src = `./image/${dataAll}.webp`
 
-				// const anchor = document.createElement('a');
-				// anchor.setAttribute('href', newImg.src)
-
-				// anchor.append(newImg);
-
-				
-				
-				// console.log(newImg.src);
-				
-
-				
-
-				
-				
 
 				const fig = document.createElement('figure');
 				fig.append(newImg);
-
 
 
 				cardPlant.append(fig);
@@ -200,18 +157,18 @@
 				cardPlant.append(newDiv);
 				newMainContainer.append(cardPlant);
 
-				
 
 				newImg.addEventListener('click', e =>{
 					
 					// console.log( e.target.src);
 					const modal = document.querySelector('.modal-body');
 					// modal({backdrop: 'static', keyboard: false})
-					const wrap = document.createElement('div');
+					let wrap = document.createElement('div');
 					wrap.classList.add('wrap');
 					const detailsDiv = document.createElement('div');
 					detailsDiv.classList.add('detailsDiv');
 
+					iconP.innerHTML = ' ';
 					wrap.append(cardPlant)
 
 					const categoryParagraph = document.createElement('p');
@@ -236,9 +193,17 @@
 
 					const toleratedLightParagraph = document.createElement('p');
 					toleratedLightParagraph.innerHTML = ('Tolerated Light : ' + '' + toleratedLights);
+
+					const buyThisPlantButton = document.createElement('p');
+					buyThisPlantButton.classList.add('buyThisPlantButton');
+					buyThisPlantButton.setAttribute('type', 'button')
+					buyThisPlantButton.setAttribute('data-bs-toggle', 'modal');
+					buyThisPlantButton.setAttribute('data-bs-target', '#cartModal');
+					
+					
+					buyThisPlantButton.innerHTML = 'Buy this Plant';
+
 				
-
-
 					detailsDiv.append(categoryParagraph);
 					detailsDiv.append(familyParagraph);
 					detailsDiv.append(latinParagraph);
@@ -246,65 +211,267 @@
 					detailsDiv.append(originParagraph);
 					detailsDiv.append(ideallightParagraph);
 					detailsDiv.append(toleratedLightParagraph);
+			
+					detailsDiv.append(buyThisPlantButton);
 
-					wrap.append(detailsDiv);
+					
+
+					 wrap.append(detailsDiv);
+					
 
 					modal.append(wrap);
-					
-					console.log(dataAll)
-					console.log(categories)
-					console.log(familyAll)
-					console.log(latNames)
 
+			
+				
+					buyThisPlantButton.addEventListener('click', () =>{
+						
+						addToCart()
+						const cartPlantPrice = document.querySelectorAll('.cartPlantPrice');
+						let subTotal = document.querySelector('#subTotalPrice');
+						const shippingFee = document.querySelector('.shippingFee');
+						const totalAll = document.querySelector('.card-total');
+
+						let sum = 0;
 					
-									
+						for (let i =0; i< cartPlantPrice.length;i++){
+						sum += parseInt(cartPlantPrice[i].innerHTML)
+					
+						subTotal.innerHTML = sum
+
+						totalAll.innerHTML = sum + parseInt(shippingFee.innerHTML)
+
+						}
+
+						// ############### copy the total price from cart to checkout
+						const proceedTocheckoutButton = document.querySelector('.btn-proceed-checkout');
+						proceedTocheckoutButton.addEventListener('click', ()=>{
+							const totalPriceOfPlant = document.querySelector('#totalPriceOfPlant');
+							const grandTotal = document.querySelector('#grandTotal');
+							
+		
+							totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML)+ '.00');
+							grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML)+ '.00');
+						})
+					
+					})
+				
+				
+				}) 
+
+				const modalClose = document.querySelector('.btn-secondary');
+				modalClose.addEventListener('click', ()=>{
+
+			
+					window.location = window.location
+					
+				})
+
+				iconHeart.addEventListener('click', ()=>{
+
+					if (iconHeart.innerHTML === '<i class="bi bi-heart fa-2x"></i>'){
+						iconHeart.innerHTML = '<i class="bi bi-heart-fill fa-2x"></i>'
+						iconHeart.style.color = 'green';
+					}else{
+						(iconHeart.innerHTML = '<i class="bi bi-heart fa-2x"></i>')
+						iconHeart.style.color = 'black';
+					}
+					
+					
+		
+					})
+				// -----
+
+			
+					
+			// ----------------ADD TO CART FUNCTION--------------------------------------
+			let arr = []
+			iconP.addEventListener('click', (event) =>{
+				
+				addToCart()
+				// getTotal()
+				console.log(event)
+
+				const cartPlantPrice = document.querySelector('.cartPlantPrice');
+			
+				let thirdchild = document.querySelector('.subCardDiv').children[2].value ;
+				const subTotal = document.querySelector('#subTotalPrice')
+				
+				// arr.push(thirdchild)
+				// +
+				
+				// for (let i = 0; i < cartPlantPrice.length; i++) {
+				// 	subTotal.value =  parseInt(subTotal.value) + parseInt(cartPlantPrice.value)
+					
+				//   }
+
+				// console.log(thirdchild)
+			
+				// cartPlantPrice.clone()
+				// subTotal.value = 900
+
+				// total.value = parseInt(subTotal.value) + parseInt(cartPlantPrice.value) + parseInt(shippingFee.value);
+
+				subTotal.value = parseInt(cartPlantPrice) + parseInt(cartPlantPrice);
+			
+				iconP.style.color = "red";
+
+			}, false)
+
+			// iconP.addEventListener('change', ()=>{
+			// 	const cartPlantPrice = document.querySelector('.cartPlantPrice');
+			// 	const subTotal = document.querySelector('#subTotalPrice');
+			// 	console.log(parseInt(cartPlantPrice.value) + parseInt(cartPlantPrice.value ))
+
+			// })
+
+		
+
+
+			function addToCart(){
+				const plantItems = document.querySelector('.plant-item-details');
+
+				const subCardDiv = document.createElement('div');
+				subCardDiv.classList.add('subCardDiv')
+
+			
+				const cartImage = document.createElement('img');
+
+				cartImage.classList.add('cartImage');
+				cartImage.src = newImg.src;
+				cartImage.setAttribute('width', '40%')
+
+				const cartPlantName = document.createElement('p');
+				cartPlantName.classList.add('cartPlantName');
+				cartPlantName.append(allData[i].toUpperCase());
+
+				const plantQty = document.createElement('input');
+				plantQty.classList.add('plantQty');
+				plantQty.setAttribute('type', 'number')
+				plantQty.setAttribute('value',"1")
+				plantQty.setAttribute('min', "1")
+				plantQty.setAttribute('max', "10")
+		
+				
+		
+				let cartPlantPrice = document.createElement('p');
+				cartPlantPrice.classList.add('cartPlantPrice');
+			
+				cartPlantPrice.setAttribute('value', `${price.innerHTML}` )
+
+				cartPlantPrice.innerHTML = `${price.innerHTML}`
+
+				
+		
+
+				const iconDelete = document.createElement('p');
+				iconDelete.classList.add('iconDelete')
+				iconDelete.innerHTML = '<i class="bi bi-trash fa-lg"></i>';
+				
+				
+
+				subCardDiv.append(cartImage);
+				subCardDiv.append(cartPlantName);
+				subCardDiv.append(plantQty);
+				subCardDiv.append(cartPlantPrice);
+				subCardDiv.append(iconDelete);
+				plantItems.append(subCardDiv);
+
+				// =========displaying the total price of plants in the cart==============
+				const placeOrder = document.querySelector('.cartIconNav')
+				placeOrder.addEventListener('click', ()=>{
+
+				const cartPlantPrice = document.querySelectorAll('.cartPlantPrice');
+				let subTotal = document.querySelector('#subTotalPrice');
+				const shippingFee = document.querySelector('.shippingFee');
+				const totalAll = document.querySelector('.card-total');
+				const plantQty = document.querySelector('.plantQty');
+
+			
+					
+					let a = parseInt(cartPlantPrice.innerHTML) * parseInt(plantQty.value)
+					// console.log(a)
+				let sum = 0;
+				
+			
+			
+				for (let i =0; i< cartPlantPrice.length;i++){
+
+					// let s = parseInt(cartPlantPrice[i].innerHTML) *
+
+					sum += parseInt(cartPlantPrice[i].innerHTML)
+					subTotal.innerHTML = sum
+					totalAll.innerHTML = sum + parseInt(shippingFee.innerHTML)
+
+				}
+
+			
+				// ############### copy the total price from cart to checkout
+				const proceedTocheckoutButton = document.querySelector('.btn-proceed-checkout');
+				proceedTocheckoutButton.addEventListener('click', ()=>{
+					const totalPriceOfPlant = document.querySelector('#totalPriceOfPlant');
+					const grandTotal = document.querySelector('#grandTotal');
+					
+
+					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML)+ '.00');
+					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML)+ '.00');
+				})
+				
 				})
 
 			
-					const modalClose = document.querySelector('.btn-secondary');
-					modalClose.addEventListener('click', ()=>{
-						
-						location.reload();
-						// window.location = window.location
-						
-					})
-			
 				
 				
+				
+				iconDelete.addEventListener('click', ()=>{
+					subCardDiv.remove(cartImage);
+					subCardDiv.remove(cartPlantName);
+					subCardDiv.remove(cartPlantPrice);
+					subCardDiv.remove(iconDelete);
 
-				// const plantClick = document.querySelector('card-img-top');
-				
-				// plantClick.addEventListener('click', ()=>{
-				// const container = document.querySelector('.containerPlant');
-			
-				
-				// containerPlant.append(cardPlant);
-				// })
-				// body.append(newMainContainer);
-				// console.log(dataAll);
+					let subTotal = document.querySelector('#subTotalPrice');
+					const shippingFee = document.querySelector('.shippingFee');
+					const totalAll = document.querySelector('.card-total');
 
-				// function specificPlant(){
-				// 	return dataAll
-				
-				//   }
-				//   console.log(specificPlant())
-				
+					let sum = parseInt(subTotal.innerHTML);
 			
+				console.log(sum)
+				 total = sum - parseInt(cartPlantPrice.innerHTML)
+				
+				subTotal.innerHTML = total
+
+				totalAll.innerHTML = total + parseInt(shippingFee.innerHTML)
+
+				
+				})
+
+			
+			}
+			
+
 			  }
 
-		
-			 
-			 
-			
 			})
 			.catch(err => console.error(err));
 
 
-
+			
+			// function getTotal(){
+				
+			// 	// arr = []
+				
 			
 
+			// 	let thirdchild = document.querySelector('.subCardDiv').children[2].value ;
+				
+			// 	// arr.push(thirdchild)
+			// 	console.log(thirdchild  + event.target.textContent)
+			
+
+			// 	}
+
 
 			
+		
 			function getRandomInt(min, max) {
 				min = Math.ceil(min);
 				max = Math.floor(max);
