@@ -97,12 +97,6 @@
 .shop-items span a:active {
   background-color: #32502e3c;
 }
-/* carousel section */
-.carousel-inner img {
-  width: 100%;
-  height: 85vh;
-  object-fit: cover;
-}
 
 /* about us section */
 .about-us-wrapper {
@@ -137,6 +131,10 @@ h2 {
 }
 
 /* blogs section */
+.blogs-header {
+  margin-top: 10rem;
+}
+
 .blogs-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
