@@ -381,7 +381,7 @@
 				}
 
 			
-				// ############### copy the total price from cart to checkout
+				// ############### copy the total price from cart to checkout 
 				const proceedTocheckoutButton = document.querySelector('.btn-proceed-checkout');
 				proceedTocheckoutButton.addEventListener('click', ()=>{
 					const totalPriceOfPlant = document.querySelector('#totalPriceOfPlant');
