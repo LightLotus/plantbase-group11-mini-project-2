@@ -609,9 +609,10 @@ img .card-img-top {
 --------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: 6rem;
+  right: 2rem;
   z-index: 996;
+  font-size: 4rem;
   /* font-size: 2rem;  */
   /* padding:.75rem; */
   /* border: 1px solid rgb(227, 79,38); */
