@@ -619,7 +619,7 @@ img .card-img-top {
 --------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
-  bottom: 6rem;
+  bottom: 0;
   right: 2rem;
   z-index: 996;
   font-size: 4rem;
