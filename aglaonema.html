@@ -116,8 +116,6 @@
                   </div>
                 </div>
               </div>
-                </div>
-              </div>
             </li>
             <li class="nav-link-items">
               <a href="./blogs.html">Blogs</a>
@@ -212,13 +210,13 @@
           <div class="modal-body-cart">
             <!-- checkout main content -->
 
-                <h5 class="fs-2">YOUR CART</h5>
-                <div class="checkout-container">
-                  <div class="checkout-container-left">
-                    <p class="form-label">ITEM SUMMARY</p>
-                    <div class="card delivery-method-container">
-                      <form class="delivery-method-options">
-                        <!-- <input type="checkbox" name="plant-item" />
+            <h5 class="fs-2">YOUR CART</h5>
+            <div class="checkout-container">
+              <div class="checkout-container-left">
+                <p class="form-label">ITEM SUMMARY</p>
+                <div class="card delivery-method-container">
+                  <form class="delivery-method-options">
+                    <!-- <input type="checkbox" name="plant-item" />
                         <label for="">All</label> -->
 
                     <div class="plant-item-details"></div>
@@ -226,7 +224,7 @@
                     <div class="btn-container">
                       <a
                         class="link-button btn-place-order"
-                        href="allplants.html"
+                        href="./allplants.html"
                         >CONTINUE SHOPPING</a
                       >
                     </div>
@@ -259,7 +257,14 @@
                     <span class="card-total"></span>
                   </div>
                 </div>
-                <button class="link-button btn-proceed-checkout" data-bs-target="#modalCheckout" data-bs-toggle="modal" data-bs-dismiss="modal">PROCEED TO CHECKOUT</button>
+                <button
+                  class="link-button btn-proceed-checkout"
+                  data-bs-target="#modalCheckout"
+                  data-bs-toggle="modal"
+                  data-bs-dismiss="modal"
+                >
+                  PROCEED TO CHECKOUT
+                </button>
               </div>
             </div>
           </div>
@@ -271,9 +276,15 @@
       </div>
     </div>
 
-     <!-- ---------------------MODAL CHECKOUT START--------------------- --> 
+    <!-- ---------------------MODAL CHECKOUT START--------------------- -->
 
-     <div class="modal fade" id="modalCheckout" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div
+      class="modal fade"
+      id="modalCheckout"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1"
+    >
       <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content">
           <div class="modal-header">
@@ -281,7 +292,6 @@
             <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body">
-
             <h5 class="fs-2">checkout</h5>
     <div class="  checkout-container">
       <div class="checkout-container-left">
@@ -334,25 +344,23 @@
                 
               </div>
 
-              <div class="form-group">
-                <label for="middlename">Middlename</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="middlename"
-                  placeholder="Middlename"
-                required>
-              </div>
+                      <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mobile"
+                          placeholder="Mobile"
+                        />
+                      </div>
 
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Email"
-                required>
-              </div>
+                      <div class="form-group">
+                        <label for="region">Region</label>
+                        <select id="region" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>...</option>
+                        </select>
+                      </div>
 
               <div class="form-group">
                 <label for="mobile">Mobile</label>
@@ -476,15 +484,22 @@
     </div>
     <!-- <button class="btn backToCartBtn" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button> -->
           </div>
-          
+
           <div class="modal-footer">
-            <button class="btn backToCartBtn" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button>
+            <button
+              class="btn backToCartBtn"
+              data-bs-target="#cartModal"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal"
+            >
+              Back to Cart
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ---------------------MODAL CHECKOUT END--------------------- --> 
+    <!-- ---------------------MODAL CHECKOUT END--------------------- -->
 
      <!-- MODAL PLACE ORDER-->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#placeOrderModal">

@@ -132,7 +132,7 @@ section {
 .faqs-container .answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.8s ease-in;
+    transition: max-height 0.5s ease-in;
 }
 
 .faqs-container.active .answer {
@@ -144,7 +144,7 @@ section {
 }
 
 .chevron-icon i {
-    transition: transform .5s ease-in;
+    transition: transform .3s ease-in;
 }
 /* about us section */
 .about-us-wrapper {

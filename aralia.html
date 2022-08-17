@@ -110,8 +110,6 @@
                   </div>
                 </div>
               </div>
-                </div>
-              </div>
             </li>
             <li class="nav-link-items">
               <a href="./blogs.html">Blogs</a>
@@ -213,13 +211,13 @@
           <div class="modal-body-cart">
             <!-- checkout main content -->
 
-                <h5 class="fs-2">YOUR CART</h5>
-                <div class="checkout-container">
-                  <div class="checkout-container-left">
-                    <p class="form-label">ITEM SUMMARY</p>
-                    <div class="card delivery-method-container">
-                      <form class="delivery-method-options">
-                        <!-- <input type="checkbox" name="plant-item" />
+            <h5 class="fs-2">YOUR CART</h5>
+            <div class="checkout-container">
+              <div class="checkout-container-left">
+                <p class="form-label">ITEM SUMMARY</p>
+                <div class="card delivery-method-container">
+                  <form class="delivery-method-options">
+                    <!-- <input type="checkbox" name="plant-item" />
                         <label for="">All</label> -->
 
                     <div class="plant-item-details"></div>
@@ -260,7 +258,14 @@
                     <span class="card-total"></span>
                   </div>
                 </div>
-                <button class="link-button btn-proceed-checkout"data-bs-target="#modalCheckout" data-bs-toggle="modal" data-bs-dismiss="modal">PROCEED TO CHECKOUT</button>
+                <button
+                  class="link-button btn-proceed-checkout"
+                  data-bs-target="#modalCheckout"
+                  data-bs-toggle="modal"
+                  data-bs-dismiss="modal"
+                >
+                  PROCEED TO CHECKOUT
+                </button>
               </div>
             </div>
           </div>
@@ -272,9 +277,15 @@
       </div>
     </div>
 
-    <!-- ---------------------MODAL CHECKOUT START--------------------- --> 
+    <!-- ---------------------MODAL CHECKOUT START--------------------- -->
 
-    <div class="modal fade" id="modalCheckout" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div
+      class="modal fade"
+      id="modalCheckout"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1"
+    >
       <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content">
           <div class="modal-header">
@@ -282,7 +293,6 @@
             <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body">
-
             <h5 class="fs-2">checkout</h5>
     <div class="  checkout-container">
       <div class="checkout-container-left">
@@ -324,13 +334,18 @@
                 required>
               </div>
 
-              <div class="form-group">
-                <label for="firstname">Firstname</label>
-                <input
-                  type="text"
+                  <div class="form-group">
+                  <label for="firstname">Firstname</label>
+                  <input
+                 
+                          type="text"
+                         
                   class="form-control "
-                  id="firstname"
+                 
+                          id="firstname"
+                         
                   placeholder="Firstname"
+                        /
                 required>
                 
               </div>
@@ -343,7 +358,7 @@
                   id="middlename"
                   placeholder="Middlename"
                 required>
-              </div>
+                  </div>
 
               <div class="form-group">
                 <label for="email">Email</label>
@@ -479,16 +494,22 @@
     </div>
     <!-- <button class="btn backToCartBtn" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button> -->
           </div>
-          
+
           <div class="modal-footer">
-            <button class="btn backToCartBtn" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button>
+            <button
+              class="btn backToCartBtn"
+              data-bs-target="#cartModal"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal"
+            >
+              Back to Cart
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ---------------------MODAL CHECKOUT END--------------------- --> 
-
+    <!-- ---------------------MODAL CHECKOUT END--------------------- -->
 
 
      <!-- MODAL PLACE ORDER-->
@@ -626,7 +647,74 @@
 
     <script src="https://www.paypal.com/sdk/js?client-id=ATk1RaTce2kvt7Ph1k3h16FrSZ3iZYLoKW4S5hGVMbVj6PEfp0CZIRB5oW_TKnbkt6GT2LuLS2ZHiAPb&currency=PHP" data-namespace="paypal_sdk"></script>
 
-    <script src="/js/aralia.js"></script>
+       <!-- Messenger Desktop View Start -->
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
+
+    <script>
+      var chatbox = document.getElementById("fb-customer-chat");
+      chatbox.setAttribute("page_id", "109542351867780");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: "v14.0",
+        });
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+    <!-- Messenger Desktop View End -->
+    <!-- Messenger Mobile View Start here -->
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
+
+    <script>
+      var chatbox = document.getElementById("fb-customer-chat");
+      chatbox.setAttribute("page_id", "109542351867780");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: "v14.0",
+        });
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+    <!-- Messenger Mobile View Ends here -->
+
+    <script src="./js/aralia.js"></script>
     <!-- <script src="plants.js"></script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
