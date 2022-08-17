@@ -1265,8 +1265,43 @@ input[type="radio"] {
   justify-content:center;
   /* display:none; */
 }
+
+#cardpaypal{
+  width:80%;
+  margin-left:10%;
+  margin-right:10%;
 }
 
+#paypalContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width:30%; */
+}
+.detailsDiv p{
+  font-size: 1rem;
+}
+
+.iconHeart{
+  display:none;
+}
+
+#imageCard{
+  height:12rem;
+}
+.modal-content{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+}
+
+
+@media (max-width: 1199px){
+  .iconHeart{
+    display:none;
+  }
+}
 
 #paypal{
  
@@ -1285,6 +1320,9 @@ input[type="radio"] {
 }
 
 #cardpaypal{
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
   width:40rem;
 }
 
@@ -1400,3 +1438,5 @@ input[type="radio"] {
   color: #0d0d0d;
   border: 1px solid #32502e;
 }
+
+
