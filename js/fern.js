@@ -363,6 +363,11 @@
 					subTotal.innerHTML = total
 
 					totalAll.innerHTML = total + parseInt(shippingFee.innerHTML)
+
+					if (subTotal.innerHTML === "0"){
+						document.querySelector('.btn-proceed-checkout').disabled = true;
+						document.querySelector('.btn-proceed-checkout').style.backgroundColor = "grey"
+					}
 					
 					})
 	
@@ -489,3 +494,13 @@ paypal_sdk.Buttons({
 		 formSubmit.setAttribute('data-bs-dismiss', 'modal')
 	  })
  
+
+	  const btnPrime = document.querySelector('.btn-prime')
+	  btnPrime.addEventListener('click', ()=>{
+		 const formSubmit = document.querySelector('#formSubmit');
+		 formSubmit.removeAttribute('data-bs-toggle')
+		 formSubmit.removeAttribute('data-bs-target')
+		 formSubmit.removeAttribute('data-bs-dismiss')
+		 
+ 
+	  })

@@ -307,6 +307,8 @@
 			
 				iconP.style.color = "red";
 
+				
+
 			})
 
 
@@ -370,14 +372,14 @@
 				const plantQty = document.querySelector('.plantQty');
 
 				
-				
+			
 			
 					
 					let a = parseInt(cartPlantPrice.innerHTML) * parseInt(plantQty.value)
 					// console.log(a)
 				let sum = 0;
 				
-			
+				
 			
 				for (let i =0; i< cartPlantPrice.length;i++){
 
@@ -387,8 +389,11 @@
 					subTotal.innerHTML = sum
 					totalAll.innerHTML = sum + parseInt(shippingFee.innerHTML)
 
+					
+
 				}
 
+				
 			
 				// ############### copy the total price from cart to checkout
 				const proceedTocheckoutButton = document.querySelector('.btn-proceed-checkout');
@@ -404,8 +409,10 @@
 
 					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML));
 					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML));
-					
+
 				})
+
+			
 				
 				})
 
@@ -432,6 +439,10 @@
 
 				totalAll.innerHTML = total + parseInt(shippingFee.innerHTML)
 
+				if (subTotal.innerHTML === "0"){
+					document.querySelector('.btn-proceed-checkout').disabled = true;
+					document.querySelector('.btn-proceed-checkout').style.backgroundColor = "grey"
+				}
 				
 				})
 
@@ -643,4 +654,15 @@ paypal_sdk.Buttons({
 		formSubmit.setAttribute('data-bs-toggle', 'modal')
 		formSubmit.setAttribute('data-bs-target', '#placeOrderModal')
 		formSubmit.setAttribute('data-bs-dismiss', 'modal')
+	 })
+
+
+	 const btnPrime = document.querySelector('.btn-prime')
+	 btnPrime.addEventListener('click', ()=>{
+		const formSubmit = document.querySelector('#formSubmit');
+		formSubmit.removeAttribute('data-bs-toggle')
+		formSubmit.removeAttribute('data-bs-target')
+		formSubmit.removeAttribute('data-bs-dismiss')
+		
+
 	 })
