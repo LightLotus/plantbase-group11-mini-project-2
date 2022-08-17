@@ -110,11 +110,15 @@
 				
 				const newDiv = document.createElement('div');
 				newDiv.classList.add('priceAndFavoriteDiv');
+				const pesoSign = document.createElement('p');
+				pesoSign.classList.add('pesoSign')
+				pesoSign.innerHTML = '₱'
 				const price = document.createElement('p');
 				price.classList.add('price');
 				let val = getRandomInt(100, 300);
 				price.innerHTML = (val);
 				price.setAttribute('value', val)
+				newDiv.append(pesoSign);
 				newDiv.append(price);
 				
 				const iconHeart = document.createElement('p');
@@ -227,8 +231,8 @@
 					const grandTotal = document.querySelector('#grandTotal');
 					
 
-					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML)+ '.00');
-					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML)+ '.00');
+					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML));
+					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML));
 				})
 						})
 	
@@ -333,8 +337,8 @@
 					const grandTotal = document.querySelector('#grandTotal');
 					
 
-					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML)+ '.00');
-					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML)+ '.00');
+					totalPriceOfPlant.innerHTML = ('₱' + ' ' + parseInt(subTotal.innerHTML));
+					grandTotal.innerHTML = ('₱' + ' ' + parseInt(totalAll.innerHTML));
 				})
 
 				})
@@ -412,3 +416,76 @@
 			  
 		
 
+
+
+// ############################## PAYPAL PAYMENT ################################################################
+
+const amountElement = document.querySelector('#amount')
+paypal_sdk.Buttons({
+        // Sets up the transaction when a payment button is clicked
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: amountElement.value // Can also reference a variable or function
+              }
+            }]
+          });
+        },
+        // Finalize the transaction after payer approval
+        onApprove: (data, actions) => {
+          return actions.order.capture().then(function(orderData) {
+            // Successful capture! For dev/demo purposes:
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            const transaction = orderData.purchase_units[0].payments.captures[0];
+            alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+            // When ready to go live, remove the alert and show a success message within this page. For example:
+            // const element = document.getElementById('paypal-button-container');
+            // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+            // Or go to another URL:  actions.redirect('thank_you.html');
+          });
+        }
+      }).render('#paypal');
+	
+
+
+	  const formSubmit = document.querySelector('#formSubmit');
+	  formSubmit.addEventListener('submit', (e)=>{
+		 e.preventDefault();
+		 const lname = document.querySelector('#lastname').value
+		 const fname = document.querySelector('#firstname').value
+		 const mname = document.querySelector('#middlename').value
+		 const email = document.querySelector('#email').value
+		 const mobile = document.querySelector('#mobile').value
+		 const address = document.querySelector('#address').value
+		 const cardTotal = document.querySelector('.card-total')
+		 const pickUp = document.querySelector('#pickup')
+		 const doorToDoor = document.querySelector('#doorToDoor')
+ 
+ 
+		 const payname = document.querySelector('#payname');
+		 const payemail = document.querySelector('#payemail');
+		 const paymobile = document.querySelector('#paymobile');
+		 const payaddress = document.querySelector('#payaddress');
+		 const amount = document.querySelector('#amount');
+		 const delivery = document.querySelector('#delivery');
+ 
+		 if (pickUp.checked){
+			 delivery.innerHTML = pickUp.value
+ 
+		 }else{
+			 delivery.innerHTML = doorToDoor.value
+		 }
+ 
+		 
+		 payname.innerHTML = (`${fname}  ${mname}  ${lname}`);
+		 payemail.innerHTML = email;
+		 paymobile.innerHTML = mobile;
+		 payaddress.innerHTML = address;
+		 amount.value = parseInt(cardTotal.innerHTML)
+ 
+		 formSubmit.setAttribute('data-bs-toggle', 'modal')
+		 formSubmit.setAttribute('data-bs-target', '#placeOrderModal')
+		 formSubmit.setAttribute('data-bs-dismiss', 'modal')
+	  })
+ 

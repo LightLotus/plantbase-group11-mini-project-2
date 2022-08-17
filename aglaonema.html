@@ -293,60 +293,56 @@
           </div>
           <div class="modal-body">
             <h5 class="fs-2">checkout</h5>
-            <div class="checkout-container">
-              <div class="checkout-container-left">
-                <div>
-                  <p class="form-label">Delivery Method</p>
-                  <div class="card delivery-method-container">
-                    <form class="delivery-method-options">
-                      <div>
-                        <input type="radio" name="delivery-method" />
-                        <img src="./images/store-icon.svg" alt="" />
-                        <label for="delivery-method">&emsp;Pick Up</label>
-                      </div>
-                      <div>
-                        <input type="radio" name="delivery-method" />
-                        <img src="./images/bus-icon.svg" alt="" />
-                        <label for="delivery-method"
-                          >&emsp;Door to Door Delivery</label
-                        >
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                <div class="shipping-form">
-                  <p class="form-label mt-3">Shipping Address</p>
-                  <div class="address-form">
-                    <div id="addressCheckout" class="card">
-                      <div class="form-group">
-                        <label for="lastname">Lastname</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="lastname"
-                          placeholder="Lastname"
-                        />
-                      </div>
+    <div class="  checkout-container">
+      <div class="checkout-container-left">
+        <div>
+          <p class="form-label">Delivery Method</p>
+          <div class="card delivery-method-container">
 
-                      <div class="form-group">
-                        <label for="firstname">Firstname</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="firstname"
-                          placeholder="Firstname"
-                        />
-                      </div>
+            <!-- <form class="delivery-method-options"> -->
+              <div class="form-check">
+                <input id = "pickup" class="form-check-input" type="radio" name="delivery-option" value="Pickup" >
+                <img src="./images/store-icon.svg" alt="" />
+                <label for="pickup">&emsp;Pick Up</label>
+              </div>
 
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          placeholder="Email"
-                        />
-                      </div>
+              <div class="form-check">
+                <input id = "doorToDoor" class="form-check-input"  type="radio" name="delivery-option" value = "Door to Door Delivery" checked>
+                <img src="./images/bus-icon.svg" alt="" />
+                <label for="doorToDoor"
+                  >&emsp;Door to Door Delivery</label
+                >
+              </div>
+            <!-- </form> -->
+            
+          </div>
+        </div>
+        <div class="shipping-form">
+          <p class="form-label mt-3">Shipping Address</p>
+          <div class="address-form">
+
+            <div id = "addressCheckout"class="card" >
+              <form id="formSubmit">
+              <div class="form-group">
+                <label for="lastname">Lastname</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastname"
+                  placeholder="Lastname"
+                required>
+              </div>
+
+              <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input
+                  type="text"
+                  class="form-control "
+                  id="firstname"
+                  placeholder="Firstname"
+                required>
+                
+              </div>
 
                       <div class="form-group">
                         <label for="mobile">Mobile</label>
@@ -366,146 +362,127 @@
                         </select>
                       </div>
 
-                      <div class="form-group">
-                        <label for="province">Province</label>
-                        <select id="province" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="city">City / Municipality</label>
-                        <select id="city" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="barangay">Baragay</label>
-                        <select id="barangay" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="address">address</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="address"
-                          placeholder="House no. / Sitio"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="mobile"
+                  placeholder="Mobile"
+                required>
               </div>
-              <div class="checkout-container-right">
-                <div>
-                  <p class="form-label">My Order</p>
 
-                  <div class="card my-order-container">
-                    <div class="product">
-                      <p></p>
-                      <ul>
-                        <li>TOTAL PLANT PRICE</li>
-                        <li>SHIPPING</li>
-                        <li id="gradTotalLabel"><strong>TOTAL</strong></li>
-                      </ul>
-                      <!-- <p class="my-order-total fs-2"><strong>&emsp;&emsp;TOTAL</strong></p> -->
-                    </div>
-                    <div class="total">
-                      <p></p>
-                      <ul>
-                        <li id="totalPriceOfPlant"></li>
-                        <li>₱ 200.00 <span>(via Third Party Courier)</span></li>
-                        <strong><li id="grandTotal"></li></strong>
-                      </ul>
-                      <!-- <p id= 'grandTotal' class="my-order-totals "><strong></strong></p> -->
-                    </div>
-                  </div>
-                  <div class="payment-options-container">
-                    <form class="payment-options">
-                      <div class="card payment-cash-on-delivery mt-3">
-                        <div class="cash-on-delivery-form">
-                          <div>
-                            <img
-                              src="./images/cash-on-delivery-icon.svg"
-                              alt=""
-                            />
-                            <label for="delivery-method"
-                              >&emsp;Cash On Delivery</label
-                            >
-                          </div>
-                          <input type="radio" name="cash-on-delivery" checked />
-                        </div>
-                        <p id="pay-when-received">Pay when you received</p>
-                        <div class="cash-on-delivery-form mt-3">
-                          <div>
-                            <img
-                              class="w-25"
-                              src="./images/GCah_2019.webp"
-                              alt=""
-                            />
-                            <label for="delivery-method">&emsp;GCash</label>
-                          </div>
-                          <input type="radio" name="cash-on-delivery" />
-                        </div>
-                      </div>
-                      <div class="card payment-cash-on-delivery mt-3">
-                        <div class="cash-on-delivery-form">
-                          <div>
-                            <img
-                              class="w-25"
-                              src="./images/credit-debit-card-icon.svg"
-                              alt=""
-                            />
-                            <label for="delivery-method"
-                              >&emsp;Debit / Credit</label
-                            >
-                          </div>
-                          <input type="radio" name="cash-on-delivery" />
-                        </div>
-                        <hr />
-                        <div class="payment-options">
-                          <div class="payment-options-methods">
-                            <p id="pay-when-received">Tap to add cart</p>
-                            <div class="payment-logos">
-                              <img
-                                class="container-fluid"
-                                src="./images/american-express.png"
-                                alt=""
-                              />
-                              <img
-                                class="container-fluid"
-                                src="./images/visa.png"
-                                alt=""
-                              />
-                              <img
-                                class="container-fluid"
-                                src="./images/mastercard.png"
-                                alt=""
-                              />
-                              <img
-                                class="container-fluid"
-                                src="./images/ucb-logo.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <button class="link-button btn-place-order">
-                        Place Order
-                      </button>
-                    </form>
-                  </div>
-                </div>
+             
+              <div class="form-group">
+                <label for="address">address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="Please provide complete address including House no. / Sitio"
+                required>
+                
               </div>
+              <button class="confirmBtn" type="submit">PLACE ORDER</button>
+                     
+              </form>
+             
             </div>
-            <!-- <button class="btn backToCartBtn" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button> -->
+            
+          </div>
+        </div>
+      </div>
+      <div class="checkout-container-right">
+        <div>
+          <p class="form-label">My Order</p>
+
+          <div class="card my-order-container">
+            <div class="product">
+              <p></p>
+              <ul>
+                <li>TOTAL PLANT PRICE</li>
+                <li>SHIPPING</li>
+                <li id = "gradTotalLabel"><strong>TOTAL</strong></li>
+              </ul>
+              <!-- <p class="my-order-total fs-2"><strong>&emsp;&emsp;TOTAL</strong></p> -->
+            </div>
+            <div class="total">
+              <p></p>
+              <ul>
+                <li id = "totalPriceOfPlant"></li>
+                <li>₱ 200</li>
+                <strong><li id= 'grandTotal' ></li></strong>
+              </ul>
+              <!-- <p id= 'grandTotal' class="my-order-totals "><strong></strong></p> -->
+            </div>
+          </div>
+          <div class="payment-options-container">
+            <form class="payment-options">
+              <div class="card payment-cash-on-delivery mt-3">
+                <div class="cash-on-delivery-form">
+                  <div>
+                    <img src="./images/cash-on-delivery-icon.svg" alt="" />
+                    <label for="delivery-method">&emsp;Cash On Delivery</label>
+                  </div>
+                  <input type="radio" name="cash-on-delivery" disabled/>
+                </div>
+                <p id="pay-when-received">Pay when you received</p>
+                <div class="cash-on-delivery-form mt-3">
+                  <div>
+                    <img class="w-25" src="./images/Paypal-Logo.webp" alt="" />
+                    <label for="delivery-method"></label>
+                  </div>
+                  <input type="radio" name="cash-on-delivery" checked/>
+                </div>
+              </div>
+              <div class="card payment-cash-on-delivery mt-3">
+                <div class="cash-on-delivery-form">
+                  <div>
+                    <img
+                      class="w-25"
+                      src="./images/credit-debit-card-icon.svg"
+                      alt=""
+                    />
+                    <label for="delivery-method">&emsp;Debit / Credit</label>
+                  </div>
+                  <input type="radio" name="cash-on-delivery" disabled/>
+                </div>
+                <hr />
+                <div class="payment-options">
+                  <div class="payment-options-methods">
+                    <p id="pay-when-received"></p>
+                    <div class="payment-logos">
+                      <img
+                        class="container-fluid"
+                        src="./images/american-express.png"
+                        alt=""
+                      />
+                      <img
+                        class="container-fluid"
+                        src="./images/visa.png"
+                        alt=""
+                      />
+                      <img
+                        class="container-fluid"
+                        src="./images/mastercard.png"
+                        alt=""
+                      />
+                      <img
+                        class="container-fluid"
+                        src="./images/ucb-logo.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <button type = "button" id = "placeOrder" class="link-button btn-place-order" data-bs-target="#placeOrderModal" data-bs-toggle="modal" data-bs-dismiss="modal">Place Order</button> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <button class="btn backToCartBtn" data-bs-target="#cartModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Cart</button> -->
           </div>
 
           <div class="modal-footer">
@@ -524,9 +501,49 @@
 
     <!-- ---------------------MODAL CHECKOUT END--------------------- -->
 
-    <!-- GITFOR LOADING ANIMATION -->
-    <div id="loader"></div>
-    <div style="display: none" id="myDiv" class="animate-bottom"></div>
+     <!-- MODAL PLACE ORDER-->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#placeOrderModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="placeOrderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen"  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Plant Base</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div id= "paypalContainer" class="modal-body">
+        <div id="cardpaypal" class="card">
+          <h2 class="paymenth2">Payment</h2>
+          <div class="customerInfo">
+          <p id="payname"></p>
+          <p id="payemail"></p>
+          <p id="paymobile"></p>
+          <p id="payaddress"></p>
+          <p id="delivery"></p>
+        </div>
+        <p class="amountToPay" >Amount to pay</p>
+        <div id="amountInput">₱ <input type="number" id="amount" disabled></div>
+        <div id="paypal"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-prime" data-bs-target="#modalCheckout" data-bs-toggle="modal" data-bs-dismiss="modal">Back To Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- GITFOR LOADING ANIMATION -->
+      <div id="loader"></div>
+      <div style="display:none;" id="myDiv" class="animate-bottom"></div>
+        
+
 
     <!-- DON'T DELETE THIS CONTAINER -->
     <div class="main-container"></div>
@@ -626,74 +643,9 @@
       <p class="copyright">Copyright &copy; 2022 | All Rights Reserved</p>
     </footer>
 
-       <!-- Messenger Desktop View Start -->
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
+    <script src="https://www.paypal.com/sdk/js?client-id=ATk1RaTce2kvt7Ph1k3h16FrSZ3iZYLoKW4S5hGVMbVj6PEfp0CZIRB5oW_TKnbkt6GT2LuLS2ZHiAPb&currency=PHP" data-namespace="paypal_sdk"></script>
 
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-    <script>
-      var chatbox = document.getElementById("fb-customer-chat");
-      chatbox.setAttribute("page_id", "109542351867780");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: "v14.0",
-        });
-      };
-
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
-    <!-- Messenger Desktop View End -->
-    <!-- Messenger Mobile View Start here -->
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-    <script>
-      var chatbox = document.getElementById("fb-customer-chat");
-      chatbox.setAttribute("page_id", "109542351867780");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: "v14.0",
-        });
-      };
-
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
-    <!-- Messenger Mobile View Ends here -->
-
-    <script src="./js/aglaonema.js"></script>
+    <script src="/js/aglaonema.js"></script>
     <!-- <script src="plants.js"></script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
