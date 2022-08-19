@@ -1219,6 +1219,14 @@ input[type="radio"] {
  
   }
 
+.wrap{
+  width:80%;
+  margin-left:10%;
+  margin-right:10%;
+}
+
+
+
  .checkout-container-left, .checkout-container-right{
   width: 100%;
   margin-left: 2rem;
@@ -1293,6 +1301,10 @@ input[type="radio"] {
   display:flex;
   align-items: center;
   justify-content: center;
+}
+
+.plantQty{
+  border: none;
 }
 }
 

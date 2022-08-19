@@ -371,7 +371,8 @@
 				const totalAll = document.querySelector('.card-total');
 				const plantQty = document.querySelector('.plantQty');
 
-				
+		
+			
 			
 			
 					
@@ -666,3 +667,15 @@ paypal_sdk.Buttons({
 		
 
 	 })
+
+	 function btnDisabled(){
+
+		let subTotal = document.querySelector('#subTotalPrice');
+		if (!subTotal){
+			document.querySelector('.btn-proceed-checkout').disabled = true;
+		}
+
+		console.log(subTotal.innerHTML)
+	 }
+
+	console.log(btnDisabled())
