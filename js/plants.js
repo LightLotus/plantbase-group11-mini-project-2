@@ -32,6 +32,7 @@
 			   
 			  })
 
+			  console.log(allData)
 			 
 			  const origin = res.map((showAll)=>{
 				return showAll.origin;
@@ -99,13 +100,13 @@
 				const subContainer = document.createElement('div');
 				subContainer.classList.add('subContainer');
 
-				// console.log(dataAll);
+				console.log(dataAll);
 				// console.log(categories);
 
 
 				const newParagraph = document.createElement('p');
 				newParagraph.classList.add('commonName')
-				newParagraph.innerHTML = ( dataAll ).toUpperCase();
+				newParagraph.innerHTML = ( dataAll );
 				subContainer.append(newParagraph);
 				newMainContainer.append(subContainer);
 
